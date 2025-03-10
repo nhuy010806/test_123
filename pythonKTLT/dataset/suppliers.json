@@ -1,0 +1,137 @@
+[
+    {
+        "id": "SUP1",
+        "name": "Công ty TNHH ABC",
+        "contact_name": "Nguyễn Văn An",
+        "email": "contact@abc.com",
+        "phone": "0123456789",
+        "password": "pass123",
+        "address": "Số 123, Đường Hoàng Hoa Thám, Ba Đình, Hà Nội"
+    },
+    {
+        "id": "SUP2",
+        "name": "Công ty CP XYZ",
+        "contact_name": "Trần Thị Bích",
+        "email": "contact@xyz.com",
+        "phone": "0987654321",
+        "password": "xyzpass",
+        "address": "Số 456, Đường Nguyễn Trãi, Quận 5, TP. Hồ Chí Minh"
+    },
+    {
+        "id": "SUP3",
+        "name": "Công ty TNHH MNO",
+        "contact_name": "Lê Văn Cường",
+        "email": "contact@mno.com",
+        "phone": "0345678912",
+        "password": "mno789",
+        "address": "Số 789, Đường Lê Lợi, Hải Châu, Đà Nẵng"
+    },
+    {
+        "id": "SUP4",
+        "name": "Công ty CP PQR",
+        "contact_name": "Phạm Thị Dung",
+        "email": "contact@pqr.com",
+        "phone": "0567891234",
+        "password": "pqrsecure",
+        "address": "Số 321, Đường Ngô Quyền, Ninh Kiều, Cần Thơ"
+    },
+    {
+        "id": "SUP5",
+        "name": "Công ty TNHH STU",
+        "contact_name": "Hoàng Văn Long",
+        "email": "contact@stu.com",
+        "phone": "0678912345",
+        "password": "stu456",
+        "address": "Số 654, Đường Trần Hưng Đạo, TP. Huế"
+    },
+    {
+        "id": "SUP6",
+        "name": "Công ty CP VWX",
+        "contact_name": "Bùi Thị Lan",
+        "email": "contact@vwx.com",
+        "phone": "0789123456",
+        "password": "vwxpass",
+        "address": "Số 987, Đường Lê Thánh Tông, Quận Ngô Quyền, Hải Phòng"
+    },
+    {
+        "id": "SUP7",
+        "name": "Công ty TNHH YZA",
+        "contact_name": "Đặng Văn Minh",
+        "email": "contact@yza.com",
+        "phone": "0891234567",
+        "password": "yzapass",
+        "address": "Số 741, Đường Bình Dương, Thủ Dầu Một, Bình Dương"
+    },
+    {
+        "id": "SUP8",
+        "name": "Công ty CP BCD",
+        "contact_name": "Phạm Văn Hải",
+        "email": "contact@bcd.com",
+        "phone": "0901234567",
+        "password": "bcdpass",
+        "address": "Số 852, Đường Cao Thắng, Hạ Long, Quảng Ninh"
+    },
+    {
+        "id": "SUP9",
+        "name": "Công ty TNHH EFG",
+        "contact_name": "Nguyễn Thị Hoa",
+        "email": "contact@efg.com",
+        "phone": "0912345678",
+        "password": "efg789",
+        "address": "Số 963, Đường Hoàng Văn Thụ, TP. Bắc Giang"
+    },
+    {
+        "id": "SUP10",
+        "name": "Công ty CP HIJ",
+        "contact_name": "Lê Văn Thành",
+        "email": "contact@hij.com",
+        "phone": "0923456789",
+        "password": "hijpass",
+        "address": "Số 147, Đường Nguyễn Chí Thanh, TP. Thanh Hóa"
+    },
+    {
+        "id": "SUP11",
+        "name": "Công ty TNHH KLM",
+        "contact_name": "Trương Thị Cẩm",
+        "email": "contact@klm.com",
+        "phone": "0934567891",
+        "password": "klm321",
+        "address": "Số 258, Đường Lê Duẩn, TP. Vinh, Nghệ An"
+    },
+    {
+        "id": "SUP12",
+        "name": "Công ty CP NOP",
+        "contact_name": "Đỗ Văn Hưng",
+        "email": "contact@nop.com",
+        "phone": "0945678912",
+        "password": "nop654",
+        "address": "Số 369, Đường Phan Đình Phùng, TP. Hà Tĩnh"
+    },
+    {
+        "id": "SUP13",
+        "name": "Công ty TNHH QRS",
+        "contact_name": "Ngô Thị Mai",
+        "email": "contact@qrs.com",
+        "phone": "0956789123",
+        "password": "qrs963",
+        "address": "Số 753, Đường Hùng Vương, TP. Đông Hà, Quảng Trị"
+    },
+    {
+        "id": "SUP14",
+        "name": "Công ty CP TUV",
+        "contact_name": "Võ Văn Bình",
+        "email": "contact@tuv.com",
+        "phone": "0967891234",
+        "password": "tuvpass",
+        "address": "Số 852, Đường Đồng Khởi, TP. Biên Hòa, Đồng Nai"
+    },
+    {
+        "id": "SUP15",
+        "name": "Công ty TNHH WXY",
+        "contact_name": "Tô Thị Oanh",
+        "email": "contact@wxy.com",
+        "phone": "0978912345",
+        "password": "wxypass",
+        "address": "Số 951, Đường Trần Phú, TP. Phan Thiết, Bình Thuận"
+    }
+]

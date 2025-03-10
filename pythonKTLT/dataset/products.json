@@ -1,0 +1,62 @@
+[
+    {
+        "prodId": 1,
+        "prodName": "Laptop",
+        "prodQty": 10,
+        "prodPrice": 1500.0
+    },
+    {
+        "prodId": 2,
+        "prodName": "Mouse",
+        "prodQty": 50,
+        "prodPrice": 20.0
+    },
+    {
+        "prodId": 3,
+        "prodName": "Keyboard",
+        "prodQty": 30,
+        "prodPrice": 50.0
+    },
+    {
+        "prodId": 4,
+        "prodName": "Monitor",
+        "prodQty": 15,
+        "prodPrice": 300.0
+    },
+    {
+        "prodId": 5,
+        "prodName": "Headphones",
+        "prodQty": 25,
+        "prodPrice": 100.0
+    },
+    {
+        "prodId": 6,
+        "prodName": "Smartphone",
+        "prodQty": 20,
+        "prodPrice": 800.0
+    },
+    {
+        "prodId": 7,
+        "prodName": "Tablet",
+        "prodQty": 12,
+        "prodPrice": 600.0
+    },
+    {
+        "prodId": 8,
+        "prodName": "Smartwatch",
+        "prodQty": 18,
+        "prodPrice": 250.0
+    },
+    {
+        "prodId": 9,
+        "prodName": "Camera",
+        "prodQty": 8,
+        "prodPrice": 1200.0
+    },
+    {
+        "prodId": 10,
+        "prodName": "Printer",
+        "prodQty": 5,
+        "prodPrice": 500.0
+    }
+]

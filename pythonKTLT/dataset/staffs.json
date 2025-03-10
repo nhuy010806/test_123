@@ -1,0 +1,72 @@
+[
+    {
+        "staffId": "STAFF1",
+        "staffName": "Nguyễn Văn An",
+        "staffAddress": "Số 123, Đường Lê Lợi, Phường 1, Quận 1, TP. Hồ Chí Minh",
+        "staffUsername": "an.nguyen",
+        "staffPassword": "password123"
+    },
+    {
+        "staffId": "STAFF2",
+        "staffName": "Trần Thị Bích",
+        "staffAddress": "Số 456, Đường Nguyễn Trãi, Phường 5, Quận 5, TP. Hồ Chí Minh",
+        "staffUsername": "bich.tran",
+        "staffPassword": "password234"
+    },
+    {
+        "staffId": "STAFF3",
+        "staffName": "Lê Hoàng Cường",
+        "staffAddress": "Số 789, Đường Hoàng Hoa Thám, Phường 7, Quận Bình Thạnh, TP. Hồ Chí Minh",
+        "staffUsername": "cuong.le",
+        "staffPassword": "password345"
+    },
+    {
+        "staffId": "STAFF4",
+        "staffName": "Phạm Thị Dung",
+        "staffAddress": "Số 321, Đường Phan Chu Trinh, Phường 2, TP. Đà Nẵng",
+        "staffUsername": "dung.pham",
+        "staffPassword": "password456"
+    },
+    {
+        "staffId": "STAFF5",
+        "staffName": "Đỗ Văn Hiếu",
+        "staffAddress": "Số 654, Đường Trần Hưng Đạo, Phường 3, TP. Hải Phòng",
+        "staffUsername": "hieu.do",
+        "staffPassword": "password567"
+    },
+    {
+        "staffId": "STAFF6",
+        "staffName": "Bùi Thị Lan",
+        "staffAddress": "Số 987, Đường Lê Thánh Tông, Phường 6, TP. Hà Nội",
+        "staffUsername": "lan.bui",
+        "staffPassword": "password678"
+    },
+    {
+        "staffId": "STAFF7",
+        "staffName": "Võ Hoàng Minh",
+        "staffAddress": "Số 741, Đường Nguyễn Huệ, Phường 4, TP. Nha Trang",
+        "staffUsername": "minh.vo",
+        "staffPassword": "password789"
+    },
+    {
+        "staffId": "STAFF8",
+        "staffName": "Ngô Thị Ngọc",
+        "staffAddress": "Số 852, Đường Bạch Đằng, Phường 8, TP. Huế",
+        "staffUsername": "ngoc.ngo",
+        "staffPassword": "password890"
+    },
+    {
+        "staffId": "STAFF9",
+        "staffName": "Trương Văn Phát",
+        "staffAddress": "Số 963, Đường Hai Bà Trưng, Phường 9, TP. Cần Thơ",
+        "staffUsername": "phat.truong",
+        "staffPassword": "password901"
+    },
+    {
+        "staffId": "STAFF10",
+        "staffName": "Đặng Thị Quỳnh",
+        "staffAddress": "Số 147, Đường Phạm Ngũ Lão, Phường 10, TP. Biên Hòa",
+        "staffUsername": "quynh.dang",
+        "staffPassword": "password012"
+    }
+]
