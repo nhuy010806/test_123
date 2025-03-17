@@ -1,0 +1,12 @@
+proid,proname,price,quantity,cateid,date
+F1,Cam Sành,100,8.000,Trái cây,20-2-2025
+F2,Xoài Tứ Quý,50,15.000,Trái cây,20-2-2025
+F3,Táo Envy,50,70.000,Trái cây,20-2-2025
+F4,Ổi Hồng,100,20.000,Trái cây,20-2-2025
+V1,Cải Thảo,150,10.000,Rau củ,10-2-2025
+V2,Khoai Tây,100,11.000,Rau củ,10-2-2025
+V3,Bí Ngô,50,20.000,Rau củ,10-2-2025
+V4,Dưa leo,100,25.000,Rau củ,15-2-2025
+O1,Hạt Dẻ Cười,50,70.000,Khác,20-3-2025
+O2,Hạt Óc Chó,50,90.000,Khác,20-3-2025
+O3,Nước Ép Táo,50,6.000,Khác,20-3-2025
