@@ -238,22 +238,22 @@ class MainWindowDoAnExt(Ui_MainWindow):
             self.lineEditProductname.setText(supplier.tensanpham)
             self.lineEditQuantity.setText(str(supplier.soluong))
 
-        description = (
-            f"Thời gian hợp tác: {supplier.thoigian_hoptac}\n"
-            
-            f"Chứng nhận chất lượng: {supplier.chung_nhan}\n"
-            
-            f"Nguồn gốc sản phẩm: {supplier.nguon_goc}\n"
-            
-            f"Thông tin liên lạc: {supplier.thongtin_lienlac}"
-        )
-        self.textEditDescription.setText(description)
+            description = (
+                f"Thời gian hợp tác: {supplier.thoigian_hoptac}\n"
+                
+                f"Chứng nhận chất lượng: {supplier.chung_nhan}\n"
+                
+                f"Nguồn gốc sản phẩm: {supplier.nguon_goc}\n"
+                
+                f"Thông tin liên lạc: {supplier.thongtin_lienlac}"
+            )
+            self.textEditDescription.setText(description)
 
-        for row in range(self.tableWidgetSupplier.rowCount()):
-            if self.tableWidgetSupplier.item(row, 0).text() == search_id:
-                for col in range(self.tableWidgetSupplier.columnCount()):
-                    self.tableWidgetSupplier.item(row, col).setBackground(QColor(255, 255, 0))
-                break
+            for row in range(self.tableWidgetSupplier.rowCount()):
+                if self.tableWidgetSupplier.item(row, 0).text() == search_id:
+                    for col in range(self.tableWidgetSupplier.columnCount()):
+                        self.tableWidgetSupplier.item(row, col).setBackground(QColor(255, 255, 0))
+                    break
 
         else:
             QMessageBox.warning(self.MainWindow, "Không tìm thấy", f"Không tìm thấy nhà cung cấp có ID: {search_id}")
