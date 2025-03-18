@@ -79,7 +79,7 @@ class MainWindowEmployeeExt(Ui_MainWindow):
         self.pushButtonClear.clicked.connect(self.clear_product_detail)
         self.pushButtonSearch.clicked.connect(self.search_employee)
         self.pushButtonShowAll.clicked.connect(self.show_all_employees)
-        self.menuHelp.triggered.connect(self.open_help)
+        self.actionHelp.triggered.connect(self.open_help)
 
     def xuly_luu_moi(self):
         empid = self.lineEditId.text().strip()

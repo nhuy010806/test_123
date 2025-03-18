@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(821, 547)
+        MainWindow.resize(821, 577)
         MainWindow.setStyleSheet("QMenuBar {\n"
 "    background-color: #00806c;  /* Màu nền */\n"
 "    color: White;  /* Màu chữ */\n"
@@ -81,46 +81,8 @@ class Ui_MainWindow(object):
 "    font-size: 16px;        /* Cỡ chữ */\n"
 "}")
         self.groupBox_2.setObjectName("groupBox_2")
-        self.label_2 = QtWidgets.QLabel(parent=self.groupBox_2)
-        self.label_2.setGeometry(QtCore.QRect(10, 40, 41, 20))
-        self.label_2.setStyleSheet("font: 11pt \"Tahoma\";")
-        self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.label_2.setObjectName("label_2")
-        self.label_3 = QtWidgets.QLabel(parent=self.groupBox_2)
-        self.label_3.setGeometry(QtCore.QRect(10, 70, 51, 21))
-        self.label_3.setStyleSheet("font: 12pt \"Tahoma\";")
-        self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.label_3.setObjectName("label_3")
-        self.label_4 = QtWidgets.QLabel(parent=self.groupBox_2)
-        self.label_4.setGeometry(QtCore.QRect(10, 100, 81, 41))
-        self.label_4.setStyleSheet("font: 11pt \"Tahoma\";")
-        self.label_4.setScaledContents(False)
-        self.label_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.label_4.setObjectName("label_4")
-        self.lineEditName = QtWidgets.QLineEdit(parent=self.groupBox_2)
-        self.lineEditName.setGeometry(QtCore.QRect(110, 70, 221, 31))
-        self.lineEditName.setStyleSheet("\n"
-"QLineEdit {\n"
-"    background-color: white;\n"
-"    border: 2px solid #00806c;\n"
-"    border-radius: 8px;\n"
-"    padding: 5px;\n"
-"    font: 12pt \"Tahoma\";\n"
-"}")
-        self.lineEditName.setObjectName("lineEditName")
-        self.lineEditUserName = QtWidgets.QLineEdit(parent=self.groupBox_2)
-        self.lineEditUserName.setGeometry(QtCore.QRect(110, 110, 221, 31))
-        self.lineEditUserName.setStyleSheet("\n"
-"QLineEdit {\n"
-"    background-color: white;\n"
-"    border: 2px solid #00806c;\n"
-"    border-radius: 8px;\n"
-"    padding: 5px;\n"
-"    font: 12pt \"Tahoma\";\n"
-"}")
-        self.lineEditUserName.setObjectName("lineEditUserName")
         self.pushButtonSave = QtWidgets.QPushButton(parent=self.groupBox_2)
-        self.pushButtonSave.setGeometry(QtCore.QRect(580, 250, 91, 41))
+        self.pushButtonSave.setGeometry(QtCore.QRect(580, 280, 91, 41))
         self.pushButtonSave.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -151,11 +113,11 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../../Chuong4/BaiTap85/images/2931171_download_import_save_down_storage_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../images/134229_cloud_guardar_save_store_up_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonSave.setIcon(icon)
         self.pushButtonSave.setObjectName("pushButtonSave")
         self.pushButtonRemove = QtWidgets.QPushButton(parent=self.groupBox_2)
-        self.pushButtonRemove.setGeometry(QtCore.QRect(460, 250, 91, 41))
+        self.pushButtonRemove.setGeometry(QtCore.QRect(460, 280, 91, 41))
         self.pushButtonRemove.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -186,56 +148,11 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../../Chuong4/BaiTap85/images/185090_delete_garbage_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../images/8664938_trash_can_delete_remove_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonRemove.setIcon(icon1)
         self.pushButtonRemove.setObjectName("pushButtonRemove")
-        self.lineEditId = QtWidgets.QLineEdit(parent=self.groupBox_2)
-        self.lineEditId.setGeometry(QtCore.QRect(110, 30, 221, 31))
-        self.lineEditId.setStyleSheet("\n"
-"QLineEdit {\n"
-"    background-color: white;\n"
-"    border: 2px solid #00806c;\n"
-"    border-radius: 8px;\n"
-"    padding: 5px;\n"
-"    font: 12pt \"Tahoma\";\n"
-"}")
-        self.lineEditId.setObjectName("lineEditId")
-        self.lineEditUserPassword = QtWidgets.QLineEdit(parent=self.groupBox_2)
-        self.lineEditUserPassword.setGeometry(QtCore.QRect(110, 150, 221, 31))
-        self.lineEditUserPassword.setStyleSheet("\n"
-"QLineEdit {\n"
-"    background-color: white;\n"
-"    border: 2px solid #00806c;\n"
-"    border-radius: 8px;\n"
-"    padding: 5px;\n"
-"    font: 12pt \"Tahoma\";\n"
-"}")
-        self.lineEditUserPassword.setObjectName("lineEditUserPassword")
-        self.label_6 = QtWidgets.QLabel(parent=self.groupBox_2)
-        self.label_6.setGeometry(QtCore.QRect(10, 140, 91, 41))
-        self.label_6.setStyleSheet("font: 11pt \"Tahoma\";")
-        self.label_6.setScaledContents(False)
-        self.label_6.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.label_6.setObjectName("label_6")
-        self.lineEditUserRole = QtWidgets.QLineEdit(parent=self.groupBox_2)
-        self.lineEditUserRole.setGeometry(QtCore.QRect(110, 190, 221, 31))
-        self.lineEditUserRole.setStyleSheet("\n"
-"QLineEdit {\n"
-"    background-color: white;\n"
-"    border: 2px solid #00806c;\n"
-"    border-radius: 8px;\n"
-"    padding: 5px;\n"
-"    font: 12pt \"Tahoma\";\n"
-"}")
-        self.lineEditUserRole.setObjectName("lineEditUserRole")
-        self.label_7 = QtWidgets.QLabel(parent=self.groupBox_2)
-        self.label_7.setGeometry(QtCore.QRect(10, 190, 71, 21))
-        self.label_7.setStyleSheet("font: 11pt \"Tahoma\";")
-        self.label_7.setScaledContents(False)
-        self.label_7.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.label_7.setObjectName("label_7")
         self.pushButtonClear = QtWidgets.QPushButton(parent=self.groupBox_2)
-        self.pushButtonClear.setGeometry(QtCore.QRect(130, 250, 91, 41))
+        self.pushButtonClear.setGeometry(QtCore.QRect(130, 280, 91, 41))
         self.pushButtonClear.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -265,10 +182,12 @@ class Ui_MainWindow(object):
 "        color: #ffffff;\n"
 "}\n"
 "")
-        self.pushButtonClear.setIcon(icon)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../images/3669378_clear_ic_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonClear.setIcon(icon2)
         self.pushButtonClear.setObjectName("pushButtonClear")
         self.pushButtonSearch = QtWidgets.QPushButton(parent=self.groupBox_2)
-        self.pushButtonSearch.setGeometry(QtCore.QRect(240, 250, 91, 41))
+        self.pushButtonSearch.setGeometry(QtCore.QRect(240, 280, 91, 41))
         self.pushButtonSearch.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -298,10 +217,12 @@ class Ui_MainWindow(object):
 "        color: #ffffff;\n"
 "}\n"
 "")
-        self.pushButtonSearch.setIcon(icon)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../images/211817_search_strong_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonSearch.setIcon(icon3)
         self.pushButtonSearch.setObjectName("pushButtonSearch")
         self.lineEditAddress = QtWidgets.QLineEdit(parent=self.groupBox_2)
-        self.lineEditAddress.setGeometry(QtCore.QRect(570, 190, 221, 31))
+        self.lineEditAddress.setGeometry(QtCore.QRect(570, 230, 221, 41))
         self.lineEditAddress.setStyleSheet("\n"
 "QLineEdit {\n"
 "    background-color: white;\n"
@@ -312,7 +233,7 @@ class Ui_MainWindow(object):
 "}")
         self.lineEditAddress.setObjectName("lineEditAddress")
         self.lineEditShift = QtWidgets.QLineEdit(parent=self.groupBox_2)
-        self.lineEditShift.setGeometry(QtCore.QRect(570, 110, 221, 31))
+        self.lineEditShift.setGeometry(QtCore.QRect(570, 130, 221, 41))
         self.lineEditShift.setStyleSheet("\n"
 "QLineEdit {\n"
 "    background-color: white;\n"
@@ -323,7 +244,7 @@ class Ui_MainWindow(object):
 "}")
         self.lineEditShift.setObjectName("lineEditShift")
         self.lineEditLevel = QtWidgets.QLineEdit(parent=self.groupBox_2)
-        self.lineEditLevel.setGeometry(QtCore.QRect(570, 70, 221, 31))
+        self.lineEditLevel.setGeometry(QtCore.QRect(570, 80, 221, 41))
         self.lineEditLevel.setStyleSheet("\n"
 "QLineEdit {\n"
 "    background-color: white;\n"
@@ -334,7 +255,7 @@ class Ui_MainWindow(object):
 "}")
         self.lineEditLevel.setObjectName("lineEditLevel")
         self.lineEditEmail = QtWidgets.QLineEdit(parent=self.groupBox_2)
-        self.lineEditEmail.setGeometry(QtCore.QRect(570, 30, 221, 31))
+        self.lineEditEmail.setGeometry(QtCore.QRect(570, 30, 221, 41))
         self.lineEditEmail.setStyleSheet("\n"
 "QLineEdit {\n"
 "    background-color: white;\n"
@@ -345,7 +266,7 @@ class Ui_MainWindow(object):
 "}")
         self.lineEditEmail.setObjectName("lineEditEmail")
         self.lineEditNumber = QtWidgets.QLineEdit(parent=self.groupBox_2)
-        self.lineEditNumber.setGeometry(QtCore.QRect(570, 150, 221, 31))
+        self.lineEditNumber.setGeometry(QtCore.QRect(570, 180, 221, 41))
         self.lineEditNumber.setStyleSheet("\n"
 "QLineEdit {\n"
 "    background-color: white;\n"
@@ -356,35 +277,35 @@ class Ui_MainWindow(object):
 "}")
         self.lineEditNumber.setObjectName("lineEditNumber")
         self.label_9 = QtWidgets.QLabel(parent=self.groupBox_2)
-        self.label_9.setGeometry(QtCore.QRect(460, 100, 81, 41))
+        self.label_9.setGeometry(QtCore.QRect(460, 130, 81, 41))
         self.label_9.setStyleSheet("font: 11pt \"Tahoma\";")
         self.label_9.setScaledContents(False)
         self.label_9.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label_9.setObjectName("label_9")
         self.label_10 = QtWidgets.QLabel(parent=self.groupBox_2)
-        self.label_10.setGeometry(QtCore.QRect(460, 140, 91, 41))
+        self.label_10.setGeometry(QtCore.QRect(460, 180, 91, 41))
         self.label_10.setStyleSheet("font: 11pt \"Tahoma\";")
         self.label_10.setScaledContents(False)
         self.label_10.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label_10.setObjectName("label_10")
         self.label_12 = QtWidgets.QLabel(parent=self.groupBox_2)
-        self.label_12.setGeometry(QtCore.QRect(460, 29, 91, 31))
+        self.label_12.setGeometry(QtCore.QRect(460, 39, 91, 31))
         self.label_12.setStyleSheet("font: 11pt \"Tahoma\";")
         self.label_12.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label_12.setObjectName("label_12")
         self.label_13 = QtWidgets.QLabel(parent=self.groupBox_2)
-        self.label_13.setGeometry(QtCore.QRect(460, 70, 71, 21))
+        self.label_13.setGeometry(QtCore.QRect(460, 90, 71, 21))
         self.label_13.setStyleSheet("font: 12pt \"Tahoma\";")
         self.label_13.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label_13.setObjectName("label_13")
         self.label_14 = QtWidgets.QLabel(parent=self.groupBox_2)
-        self.label_14.setGeometry(QtCore.QRect(460, 190, 91, 41))
+        self.label_14.setGeometry(QtCore.QRect(460, 230, 91, 41))
         self.label_14.setStyleSheet("font: 11pt \"Tahoma\";")
         self.label_14.setScaledContents(False)
         self.label_14.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label_14.setObjectName("label_14")
         self.pushButtonUpdate = QtWidgets.QPushButton(parent=self.groupBox_2)
-        self.pushButtonUpdate.setGeometry(QtCore.QRect(700, 250, 91, 41))
+        self.pushButtonUpdate.setGeometry(QtCore.QRect(700, 280, 91, 41))
         self.pushButtonUpdate.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -414,10 +335,12 @@ class Ui_MainWindow(object):
 "        color: #ffffff;\n"
 "}\n"
 "")
-        self.pushButtonUpdate.setIcon(icon)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../images/1564533_arrow_refrech_reload_update_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonUpdate.setIcon(icon4)
         self.pushButtonUpdate.setObjectName("pushButtonUpdate")
         self.pushButtonShowAll = QtWidgets.QPushButton(parent=self.groupBox_2)
-        self.pushButtonShowAll.setGeometry(QtCore.QRect(20, 250, 91, 41))
+        self.pushButtonShowAll.setGeometry(QtCore.QRect(20, 280, 91, 41))
         self.pushButtonShowAll.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -447,8 +370,94 @@ class Ui_MainWindow(object):
 "        color: #ffffff;\n"
 "}\n"
 "")
-        self.pushButtonShowAll.setIcon(icon)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../images/all_5578931.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonShowAll.setIcon(icon5)
+        self.pushButtonShowAll.setIconSize(QtCore.QSize(24, 12))
         self.pushButtonShowAll.setObjectName("pushButtonShowAll")
+        self.label_18 = QtWidgets.QLabel(parent=self.groupBox_2)
+        self.label_18.setGeometry(QtCore.QRect(40, 230, 91, 41))
+        self.label_18.setStyleSheet("font: 11pt \"Tahoma\";")
+        self.label_18.setScaledContents(False)
+        self.label_18.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_18.setObjectName("label_18")
+        self.lineEditUserRole = QtWidgets.QLineEdit(parent=self.groupBox_2)
+        self.lineEditUserRole.setGeometry(QtCore.QRect(160, 230, 221, 41))
+        self.lineEditUserRole.setStyleSheet("\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 2px solid #00806c;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px;\n"
+"    font: 12pt \"Tahoma\";\n"
+"}")
+        self.lineEditUserRole.setObjectName("lineEditUserRole")
+        self.lineEditId = QtWidgets.QLineEdit(parent=self.groupBox_2)
+        self.lineEditId.setGeometry(QtCore.QRect(160, 30, 221, 41))
+        self.lineEditId.setStyleSheet("\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 2px solid #00806c;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px;\n"
+"    font: 12pt \"Tahoma\";\n"
+"}")
+        self.lineEditId.setObjectName("lineEditId")
+        self.label_15 = QtWidgets.QLabel(parent=self.groupBox_2)
+        self.label_15.setGeometry(QtCore.QRect(40, 70, 131, 51))
+        self.label_15.setStyleSheet("font: 12pt \"Tahoma\";")
+        self.label_15.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_15.setObjectName("label_15")
+        self.label_11 = QtWidgets.QLabel(parent=self.groupBox_2)
+        self.label_11.setGeometry(QtCore.QRect(40, 130, 81, 41))
+        self.label_11.setStyleSheet("font: 11pt \"Tahoma\";")
+        self.label_11.setScaledContents(False)
+        self.label_11.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_11.setObjectName("label_11")
+        self.lineEditUserName = QtWidgets.QLineEdit(parent=self.groupBox_2)
+        self.lineEditUserName.setGeometry(QtCore.QRect(160, 130, 221, 41))
+        self.lineEditUserName.setStyleSheet("\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 2px solid #00806c;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px;\n"
+"    font: 12pt \"Tahoma\";\n"
+"}")
+        self.lineEditUserName.setObjectName("lineEditUserName")
+        self.lineEditUserPassword = QtWidgets.QLineEdit(parent=self.groupBox_2)
+        self.lineEditUserPassword.setGeometry(QtCore.QRect(160, 180, 221, 41))
+        self.lineEditUserPassword.setStyleSheet("\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 2px solid #00806c;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px;\n"
+"    font: 12pt \"Tahoma\";\n"
+"}")
+        self.lineEditUserPassword.setObjectName("lineEditUserPassword")
+        self.label_16 = QtWidgets.QLabel(parent=self.groupBox_2)
+        self.label_16.setGeometry(QtCore.QRect(40, 30, 111, 31))
+        self.label_16.setStyleSheet("font: 11pt \"Tahoma\";")
+        self.label_16.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_16.setObjectName("label_16")
+        self.lineEditName = QtWidgets.QLineEdit(parent=self.groupBox_2)
+        self.lineEditName.setGeometry(QtCore.QRect(160, 80, 221, 41))
+        self.lineEditName.setStyleSheet("\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 2px solid #00806c;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px;\n"
+"    font: 12pt \"Tahoma\";\n"
+"}")
+        self.lineEditName.setObjectName("lineEditName")
+        self.label_17 = QtWidgets.QLabel(parent=self.groupBox_2)
+        self.label_17.setGeometry(QtCore.QRect(40, 180, 91, 41))
+        self.label_17.setStyleSheet("font: 11pt \"Tahoma\";")
+        self.label_17.setScaledContents(False)
+        self.label_17.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_17.setObjectName("label_17")
         self.tableWidgetProduct = QtWidgets.QTableWidget(parent=self.centralwidget)
         self.tableWidgetProduct.setGeometry(QtCore.QRect(10, 70, 811, 151))
         self.tableWidgetProduct.setMaximumSize(QtCore.QSize(16777215, 500))
@@ -550,18 +559,27 @@ class Ui_MainWindow(object):
         self.menuOptions.setObjectName("menuOptions")
         self.menuExit = QtWidgets.QMenu(parent=self.menuBar)
         self.menuExit.setObjectName("menuExit")
-        self.menuHelp = QtWidgets.QMenu(parent=self.menuBar)
-        self.menuHelp.setObjectName("menuHelp")
         MainWindow.setMenuBar(self.menuBar)
         self.actionImport = QtGui.QAction(parent=MainWindow)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../images/2931171_download_import_save_down_storage_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.actionImport.setIcon(icon6)
         self.actionImport.setObjectName("actionImport")
         self.actionExxport = QtGui.QAction(parent=MainWindow)
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../images/2931143_export_share_upload_up_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.actionExxport.setIcon(icon7)
         self.actionExxport.setObjectName("actionExxport")
+        self.actionHelp = QtGui.QAction(parent=MainWindow)
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap("D:\\do_an\\ui\\../images/211757_help_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.actionHelp.setIcon(icon8)
+        self.actionHelp.setObjectName("actionHelp")
         self.menuOptions.addAction(self.actionImport)
         self.menuOptions.addAction(self.actionExxport)
-        self.menuBar.addAction(self.menuOptions.menuAction())
-        self.menuBar.addAction(self.menuHelp.menuAction())
+        self.menuOptions.addAction(self.actionHelp)
         self.menuBar.addAction(self.menuExit.menuAction())
+        self.menuBar.addAction(self.menuOptions.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -570,13 +588,8 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Employee Details"))
-        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#00806c;\">ID:</span></p></body></html>"))
-        self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; color:#00806c;\">Name:</span></p></body></html>"))
-        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#00806c;\">Username:</span></p></body></html>"))
         self.pushButtonSave.setText(_translate("MainWindow", "Save"))
         self.pushButtonRemove.setText(_translate("MainWindow", "Remove"))
-        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#00806c;\">Password:</span></p></body></html>"))
-        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#00806c;\">Role:</span></p></body></html>"))
         self.pushButtonClear.setText(_translate("MainWindow", "Clear"))
         self.pushButtonSearch.setText(_translate("MainWindow", "Search"))
         self.label_9.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#00806c;\">Shift:</span></p></body></html>"))
@@ -586,6 +599,11 @@ class Ui_MainWindow(object):
         self.label_14.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#00806c;\">Address:</span></p></body></html>"))
         self.pushButtonUpdate.setText(_translate("MainWindow", "Update"))
         self.pushButtonShowAll.setText(_translate("MainWindow", "Show All"))
+        self.label_18.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#00806c;\">Role:</span></p></body></html>"))
+        self.label_15.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; color:#00806c;\"> Name:</span></p></body></html>"))
+        self.label_11.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#00806c;\">Username:</span></p></body></html>"))
+        self.label_16.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#00806c;\">Employee ID:</span></p></body></html>"))
+        self.label_17.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#00806c;\">Password:</span></p></body></html>"))
         item = self.tableWidgetProduct.verticalHeaderItem(0)
         item.setText(_translate("MainWindow", "1"))
         item = self.tableWidgetProduct.verticalHeaderItem(1)
@@ -670,6 +688,6 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600; color:#00806c;\">EMPLOYEE MANAGEMENT</span></p></body></html>"))
         self.menuOptions.setTitle(_translate("MainWindow", "Options"))
         self.menuExit.setTitle(_translate("MainWindow", "Back"))
-        self.menuHelp.setTitle(_translate("MainWindow", "Help"))
         self.actionImport.setText(_translate("MainWindow", "Import"))
         self.actionExxport.setText(_translate("MainWindow", "Export"))
+        self.actionHelp.setText(_translate("MainWindow", "Help"))

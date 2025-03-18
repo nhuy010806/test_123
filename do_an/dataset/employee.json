@@ -1,15 +1,51 @@
 [
     {
+        "EmployeeId": "U1",
+        "EmployeeName": "Nguyễn Văn An",
+        "UserName": "An123",
+        "Password": "Pass1@123",
+        "Role": "staff",
+        "Email": "an@company.com",
+        "Level": "Graduated",
+        "Shift": "Shift 1",
+        "Number": "0987600001",
+        "Address": "Hà Nội"
+    },
+    {
         "EmployeeId": "U3",
         "EmployeeName": "Lê Văn Châu",
         "UserName": "Chau345",
         "Password": "Pass3@123",
-        "Role": "Admin",
+        "Role": "staff",
         "Email": "chau@company.com",
         "Level": "Graduated",
         "Shift": "Shift 3",
         "Number": "0987600003",
         "Address": "Đà Nẵng"
+    },
+    {
+        "EmployeeId": "U4",
+        "EmployeeName": "Phạm Thị Duy",
+        "UserName": "Duy456",
+        "Password": "Pass4@123",
+        "Role": "admin",
+        "Email": "duy@company.com",
+        "Level": "Graduated",
+        "Shift": "Shift 1",
+        "Number": "0987600004",
+        "Address": "Hồ Chí Minh"
+    },
+    {
+        "EmployeeId": "U5",
+        "EmployeeName": "Hoàng Văn Em",
+        "UserName": "Em567",
+        "Password": "Pass5@123",
+        "Role": "staff",
+        "Email": "em@company.com",
+        "Level": "Undergraduated",
+        "Shift": "Shift 2",
+        "Number": "0987600005",
+        "Address": "Cần Thơ"
     },
     {
         "EmployeeId": "U6",
@@ -552,15 +588,15 @@
         "Address": "Thành phố 50"
     },
     {
-        "EmployeeId": "U4",
-        "EmployeeName": "Phạm Thị Duy",
-        "UserName": "Duy456",
-        "Password": "Pass4@123",
-        "Role": "admin",
-        "Email": "duy@company.com",
-        "Level": "Graduated",
-        "Shift": "Shift 1",
-        "Number": "0987600004",
-        "Address": "Hồ Chí Minh"
+        "EmployeeId": "U2",
+        "EmployeeName": "Trần Thị Bình",
+        "UserName": "Binh234",
+        "Password": "Pass2@123",
+        "Role": "staff",
+        "Email": "binh@company.com",
+        "Level": "e",
+        "Shift": "Shift 2",
+        "Number": "0987600002",
+        "Address": "Hải Phòng"
     }
 ]
