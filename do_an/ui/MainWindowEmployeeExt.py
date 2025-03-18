@@ -81,6 +81,18 @@ class MainWindowEmployeeExt(Ui_MainWindow):
         self.pushButtonShowAll.clicked.connect(self.show_all_employees)
         self.actionHelp.triggered.connect(self.open_help)
 
+        self.lineEditId.textChanged.connect(self.toggle_clear_button)
+        self.lineEditName.textChanged.connect(self.toggle_clear_button)
+        self.lineEditUserName.textChanged.connect(self.toggle_clear_button)
+        self.lineEditUserPassword.textChanged.connect(self.toggle_clear_button)
+        self.lineEditUserRole.textChanged.connect(self.toggle_clear_button)
+        self.lineEditEmail.textChanged.connect(self.toggle_clear_button)
+        self.lineEditLevel.textChanged.connect(self.toggle_clear_button)
+        self.lineEditShift.textChanged.connect(self.toggle_clear_button)
+        self.lineEditNumber.textChanged.connect(self.toggle_clear_button)
+        self.lineEditAddress.textChanged.connect(self.toggle_clear_button)
+        self.toggle_clear_button()
+
     def xuly_luu_moi(self):
         empid = self.lineEditId.text().strip()
         empname = self.lineEditName.text().strip()
@@ -184,6 +196,7 @@ class MainWindowEmployeeExt(Ui_MainWindow):
         self.lineEditAddress.setText("")
         self.lineEditId.setFocus()
         self.load_all_employees()
+        self.toggle_clear_button()
 
     # def search_employee(self):
     #     search_id = self.lineEditId.text().strip()
@@ -244,12 +257,10 @@ class MainWindowEmployeeExt(Ui_MainWindow):
                 self.tableWidgetProduct.item(index, j).setBackground(pastel_color)
 
     def show_search_result_in_table(self, employee):
-        """Cập nhật tableWidgetProduct để chỉ hiển thị nhân viên tìm thấy"""
-        self.tableWidgetProduct.setRowCount(0)  # Xóa toàn bộ bảng hiện tại
+
+        self.tableWidgetProduct.setRowCount(0)
         row = self.tableWidgetProduct.rowCount()
         self.tableWidgetProduct.insertRow(row)
-
-        # Tạo các ô dữ liệu
         col_proid = QTableWidgetItem(employee.EmployeeId)
         col_proname = QTableWidgetItem(employee.EmployeeName)
         col_price = QTableWidgetItem(str(employee.UserName))
@@ -261,7 +272,7 @@ class MainWindowEmployeeExt(Ui_MainWindow):
         col_number = QTableWidgetItem(employee.Number)
         col_address = QTableWidgetItem(employee.Address)
 
-        # Đưa dữ liệu vào bảng
+
         self.tableWidgetProduct.setItem(row, 0, col_proid)
         self.tableWidgetProduct.setItem(row, 1, col_proname)
         self.tableWidgetProduct.setItem(row, 2, col_price)
@@ -273,8 +284,8 @@ class MainWindowEmployeeExt(Ui_MainWindow):
         self.tableWidgetProduct.setItem(row, 8, col_number)
         self.tableWidgetProduct.setItem(row, 9, col_address)
 
-        # Tô màu dòng tìm thấy
-        pastel_color = QColor("#B2D8D8")  # Xanh pastel nhẹ
+
+        pastel_color = QColor("#B2D8D8")
         for j in range(self.tableWidgetProduct.columnCount()):
             if self.tableWidgetProduct.item(row, j):
                 self.tableWidgetProduct.item(row, j).setBackground(pastel_color)
@@ -286,11 +297,11 @@ class MainWindowEmployeeExt(Ui_MainWindow):
             QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
             return
 
-        # Tìm nhân viên theo ID
+
         employee = next((e for e in self.employees if e.EmployeeId == search_id), None)
 
         if employee:
-            # Hiển thị thông tin lên các ô nhập
+
             self.lineEditName.setText(employee.EmployeeName)
             self.lineEditUserName.setText(employee.UserName)
             self.lineEditUserPassword.setText(employee.Password)
@@ -300,11 +311,7 @@ class MainWindowEmployeeExt(Ui_MainWindow):
             self.lineEditLevel.setText(employee.Level)
             self.lineEditNumber.setText(employee.Number)
             self.lineEditAddress.setText(employee.Address)
-
-            # Hiển thị trên bảng
             self.show_search_result_in_table(employee)
-
-            # Nếu có combobox, cập nhật chúng
             if hasattr(self, 'comboBoxLevel'):
                 self.comboBoxLevel.setCurrentText(employee.Level)
             if hasattr(self, 'comboBoxShift'):
@@ -314,8 +321,7 @@ class MainWindowEmployeeExt(Ui_MainWindow):
             QMessageBox.warning(self.MainWindow, "Không tìm thấy", f"Không tìm thấy nhân viên có ID: {search_id}")
 
     def load_all_employees(self):
-        """Nạp lại toàn bộ danh sách nhân viên vào bảng"""
-        self.tableWidgetProduct.setRowCount(0)  # Xóa bảng cũ
+        self.tableWidgetProduct.setRowCount(0)
         for employee in self.employees:
             row = self.tableWidgetProduct.rowCount()
             self.tableWidgetProduct.insertRow(row)
@@ -336,6 +342,22 @@ class MainWindowEmployeeExt(Ui_MainWindow):
         current_path = os.getcwd()
         file_help = f"{current_path}/../help/{file_help}"
         webbrowser.open_new(file_help)
+
+    def toggle_clear_button(self):
+        has_text = any([
+            self.lineEditId.text().strip(),
+            self.lineEditName.text().strip(),
+            self.lineEditUserName.text().strip(),
+            self.lineEditUserPassword.text().strip(),
+            self.lineEditUserRole.text().strip(),
+            self.lineEditEmail.text().strip(),
+            self.lineEditLevel.text().strip(),
+            self.lineEditShift.text().strip(),
+            self.lineEditNumber.text().strip(),
+            self.lineEditAddress.text().strip()
+        ])
+
+        self.pushButtonClear.setEnabled(has_text)
 
     # def show_all_products(self):
     #     self.products = self.dc.get_all_products()
