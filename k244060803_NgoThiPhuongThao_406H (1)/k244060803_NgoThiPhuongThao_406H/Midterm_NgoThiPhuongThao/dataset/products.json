@@ -1,0 +1,50 @@
+[
+    {
+        "prodId": "F1",
+        "prodName": "Cam Sành",
+        "quantity": "100",
+        "cateId": "Trái cây",
+        "proMaketPrice": "10.000",
+        "prodEntryPrice": "8.000"
+    },
+    {
+        "prodId": "F2",
+        "prodName": "Xoài Tứ Quý",
+        "quantity": "50",
+        "cateId": "Trái cây",
+        "proMaketPrice": "18.000",
+        "prodEntryPrice": "15.000"
+    },
+    {
+        "prodId": "F2",
+        "prodName": "Táo Envy",
+        "quantity": "50",
+        "cateId": "Trái cây",
+        "proMaketPrice": "110.000",
+        "prodEntryPrice": "70.000"
+    },
+    {
+        "prodId": "V1",
+        "prodName": "Cải Thảo",
+        "quantity": "150",
+        "cateId": "Rau củ",
+        "proMaketPrice": "12.000",
+        "prodEntryPrice": "10.000"
+    },
+    {
+        "prodId": "V2",
+        "prodName": "Khoai Tây",
+        "quantity": "100",
+        "cateId": ",Rau củ",
+        "proMaketPrice": "15.000",
+        "prodEntryPrice": "11.000"
+    },
+    {
+        "prodId": "V2",
+        "prodName": "Bí Ngô",
+        "quantity": "50",
+        "cateId": ",Rau củ",
+        "proMaketPrice": "25.000",
+        "prodEntryPrice": "20.000"
+    }
+]

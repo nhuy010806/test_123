@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1302</width>
+    <height>822</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ngô Thị Phương Thảo-K244060803</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>11</y>
+      <width>1280</width>
+      <height>800</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../Downloads/✅ (1).png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditUserName">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>290</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    border: 2px solid #ff66b2;  /* Viền màu xanh */
+    border-radius: 15px;        /* Bo tròn góc */
+    padding: 5px;               /* Khoảng cách chữ với viền */
+    background-color: white;    /* Màu nền */
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditPassword">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>440</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    border: 2px solid #ff66b2;  /* Viền màu xanh */
+    border-radius: 15px;        /* Bo tròn góc */
+    padding: 5px;               /* Khoảng cách chữ với viền */
+    background-color: white;    /* Màu nền */
+}
+</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxSinhVien">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>500</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+    spacing: 10px; /* Khoảng cách giữa checkbox và chữ */
+    font-size: 14px; /* Kích thước chữ */
+    color: #2c3e50; /* Màu chữ */
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px; /* Bo tròn góc */
+    border: 2px solid #ff66b2; /* Viền màu hồng */
+    background-color: white;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff66b2; /* Màu nền khi được chọn */
+    border: 2px solid #e91e63; /* Viền khi được chọn */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Sinh viên</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonLogin">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>640</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #ff66b2;  /* Nền hồng */
+    border: 2px solid white;    /* Viền trắng */
+    border-radius: 10px;        /* Bo tròn góc */
+    padding: 8px 16px;          /* Khoảng cách chữ với viền */
+    font-size: 16px;            /* Kích thước chữ */
+    color: white;               /* Màu chữ trắng */
+    font-weight: bold;          /* Chữ in đậm */
+}
+
+QPushButton:hover {
+    background-color: #e91e63;  /* Màu khi di chuột vào */
+}
+
+QPushButton:pressed {
+    background-color: #c2185b;  /* Màu khi bấm */
+    border: 2px solid #f1f1f1;  /* Viền trắng nhạt khi bấm */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Login</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonExit">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>640</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #ff66b2;  /* Nền hồng */
+    border: 2px solid white;    /* Viền trắng */
+    border-radius: 10px;        /* Bo tròn góc */
+    padding: 8px 16px;          /* Khoảng cách chữ với viền */
+    font-size: 16px;            /* Kích thước chữ */
+    color: white;               /* Màu chữ trắng */
+    font-weight: bold;          /* Chữ in đậm */
+}
+
+QPushButton:hover {
+    background-color: #e91e63;  /* Màu khi di chuột vào */
+}
+
+QPushButton:pressed {
+    background-color: #c2185b;  /* Màu khi bấm */
+    border: 2px solid #f1f1f1;  /* Viền trắng nhạt khi bấm */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Exit </string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxGiangVien">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>540</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+    spacing: 10px; /* Khoảng cách giữa checkbox và chữ */
+    font-size: 14px; /* Kích thước chữ */
+    color: #2c3e50; /* Màu chữ */
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px; /* Bo tròn góc */
+    border: 2px solid #ff66b2; /* Viền màu hồng */
+    background-color: white;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff66b2; /* Màu nền khi được chọn */
+    border: 2px solid #e91e63; /* Viền khi được chọn */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Giảng viên</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxThuThu">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>580</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+    spacing: 10px; /* Khoảng cách giữa checkbox và chữ */
+    font-size: 14px; /* Kích thước chữ */
+    color: #2c3e50; /* Màu chữ */
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px; /* Bo tròn góc */
+    border: 2px solid #ff66b2; /* Viền màu hồng */
+    background-color: white;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff66b2; /* Màu nền khi được chọn */
+    border: 2px solid #e91e63; /* Viền khi được chọn */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Thủ thư</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

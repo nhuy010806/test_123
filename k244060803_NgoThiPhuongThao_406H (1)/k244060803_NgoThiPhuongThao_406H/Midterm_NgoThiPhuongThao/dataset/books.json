@@ -1,0 +1,37 @@
+[
+    {
+        "bookid": "B1",
+        "bookname": "Tinh Ta Pho Kiem",
+        "author": "Thanh",
+        "year": 2001,
+        "quantity": 10
+    },
+    {
+        "bookid": "B2",
+        "bookname": "Cuu Am Chan Kinh",
+        "author": "Tran",
+        "year": 2011,
+        "quantity": 11
+    },
+    {
+        "bookid": "B3",
+        "bookname": "That Tich",
+        "author": "Duy",
+        "year": 2101,
+        "quantity": 12
+    },
+    {
+        "bookid": "B4",
+        "bookname": "Bich Huyet Kiem",
+        "author": "Nguyen",
+        "year": 2003,
+        "quantity": 13
+    },
+    {
+        "bookid": "B5",
+        "bookname": "Nhat Duong Chi",
+        "author": "Thao",
+        "year": 2501,
+        "quantity": 14
+    }
+]

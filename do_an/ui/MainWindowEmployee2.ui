@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>584</width>
+    <height>390</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>591</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>C:/Users/tmanhuynh/Downloads/FARMERS'(1).png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>110</y>
+      <width>291</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(180, 255, 185);
+font: 25 10pt &quot;Perpetua Titling MT&quot;;</string>
+    </property>
+    <property name="title">
+     <string>Employee Details</string>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+font: 25 9pt &quot;Perpetua Titling MT&quot;;</string>
+     </property>
+     <property name="text">
+      <string>id</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+font: 25 9pt &quot;Perpetua Titling MT&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>100</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+font: 25 9pt &quot;Perpetua Titling MT&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Username</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditName">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>60</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid #ff66b2;
+    border-radius: 8px;
+    padding: 5px;
+    font: 12pt &quot;Segoe UI&quot;;
+}
+</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditUserName">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>100</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid #ff66b2;
+    border-radius: 8px;
+    padding: 5px;
+    font: 12pt &quot;Segoe UI&quot;;
+}
+</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonSave">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>180</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: 14pt &quot;Times New Roman&quot;;
+
+}
+QPushButton:enabled {
+		background-color: white;
+		color: Black;
+}
+
+QPushButton:pressed {
+		background-color: #0d2f72;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #E1F4FF;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+     </property>
+     <property name="text">
+      <string>Save</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../Chuong4/BaiTap85/images/2931171_download_import_save_down_storage_icon.png</normaloff>../../Chuong4/BaiTap85/images/2931171_download_import_save_down_storage_icon.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonRemove">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>180</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: 14pt &quot;Times New Roman&quot;;
+
+}
+QPushButton:enabled {
+		background-color: white;
+		color: Black;
+}
+
+QPushButton:pressed {
+		background-color: #0d2f72;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #E1F4FF;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+     </property>
+     <property name="text">
+      <string>Remove</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../Chuong4/BaiTap85/images/185090_delete_garbage_icon.png</normaloff>../../Chuong4/BaiTap85/images/185090_delete_garbage_icon.png</iconset>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditId">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>20</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QLineEdit {
+    background-color: white;
+    border: 2px solid #ff66b2;
+    border-radius: 8px;
+    padding: 5px;
+    font: 12pt &quot;Segoe UI&quot;;
+}</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditUserPassword">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>140</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    background-color: white;
+    border: 2px solid #ff66b2;
+    border-radius: 8px;
+    padding: 5px;
+    font: 12pt &quot;Segoe UI&quot;;
+}
+</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>140</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+font: 25 9pt &quot;Perpetua Titling MT&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Password</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButtonexport_2">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>330</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: 14pt &quot;Times New Roman&quot;;
+
+}
+QPushButton:enabled {
+		background-color: white;
+		color: Black;
+}
+
+QPushButton:pressed {
+		background-color: #0d2f72;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #E1F4FF;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Export</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonImport_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: 14pt &quot;Times New Roman&quot;;
+
+}
+QPushButton:enabled {
+		background-color: white;
+		color: Black;
+}
+
+QPushButton:pressed {
+		background-color: #0d2f72;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #E1F4FF;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Import</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonexit_2">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>330</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: 14pt &quot;Times New Roman&quot;;
+
+}
+QPushButton:enabled {
+		background-color: white;
+		color: Black;
+}
+
+QPushButton:pressed {
+		background-color: #0d2f72;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #E1F4FF;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>271</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 10pt &quot;Perpetua Titling MT&quot;;</string>
+    </property>
+    <property name="title">
+     <string>Assets</string>
+    </property>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>251</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>249</width>
+        <height>189</height>
+       </rect>
+      </property>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>231</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout"/>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

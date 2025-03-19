@@ -472,18 +472,3 @@ class ProductMainWindowExt(Ui_MainWindow):
         current_path = os.getcwd()
         file_help = f"{current_path}/../assets/{file_help}"
         webbrowser.open_new(file_help)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
