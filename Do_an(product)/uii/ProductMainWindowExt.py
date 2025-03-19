@@ -2,7 +2,7 @@ import os
 import webbrowser
 import datetime
 
-
+from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import QListWidgetItem, QTableWidgetItem, QMessageBox
 
@@ -23,13 +23,15 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.products = self.all_products.copy()
         self.selected_cate = None
         self.is_filtered = False
-        # self.categories=[]
-        # self.products=[]
-    def setupUi(self,MainWindow):
+
+
+    def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
-        self.MainWindow=MainWindow
+        self.MainWindow = MainWindow
         self.show_categories_gui()
+        self.products = []
         self.show_products_gui()
+        self.is_show_all_clicked = False
         self.setupSignalAndSlot()
     def showWindow(self):
         self.MainWindow.show()
@@ -43,6 +45,7 @@ class ProductMainWindowExt(Ui_MainWindow):
     def show_all_products(self):
         self.products = self.original_all_products.copy()
         self.is_filtered = False
+        self.is_show_all_clicked = True
         self.listWidgetCategory.clearSelection()
         self.show_products_gui()
 
@@ -78,8 +81,9 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.pushButtonSearch.clicked.connect(self.search_product)
         self.pushButtonFilterDate.clicked.connect(self.toggle_filter_colored_products)
         self.pushButtonShowall.clicked.connect(self.show_all_products)
+        self.pushButtonBack.clicked.connect(self.back_program)
 
-        self.actionExit.triggered.connect(self.exit_program)
+
         self.exportExcel_file.triggered.connect(self.export_to_excel)
         self.importExcel_file.triggered.connect(self.import_from_excel)
         self.actionHelp_2.triggered.connect(self.open_help)
@@ -95,6 +99,9 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.importJson_file.triggered.connect(self.import_from_json)
 
     def filter_product(self):
+        if not self.is_show_all_clicked:
+            return
+
         row = self.listWidgetCategory.currentRow()
         if row < 0:
             return
@@ -158,7 +165,13 @@ class ProductMainWindowExt(Ui_MainWindow):
             elif is_low_stock:
                 count_low_stock += 1
 
-        summary_text = (f"Sắp hết hạn (vàng): {count_expiring}\nSắp hết hàng (xanh): {count_low_stock}\nCả hai (đỏ): {count_both}")
+        summary_text = (
+            f"<p style='line-height: 1.8;'>"
+            f"<b>Sắp hết hạn (vàng):</b> {count_expiring}<br>"
+            f"<b>Sắp hết hàng (xanh):</b> {count_low_stock}<br>"
+            f"<b>Cả hai (đỏ):</b> {count_both}"
+            f"</p>"
+        )
         self.labelPhoto.setText(summary_text)
 
     def days_until_expiry(self, product, today):
@@ -176,14 +189,13 @@ class ProductMainWindowExt(Ui_MainWindow):
             return None
 
         if days_left <= 15 and quantity < 30:
-            return QColor("red")  # Cả hai
+            return QColor(255, 0, 0) #đỏ
         elif days_left <= 15:
-            return QColor("yellow")  # Sắp hết hạn
+            return QColor(255, 255, 0) #vàng
         elif quantity < 30:
-            return QColor("green")  # Sắp hết hàng
+            return QColor(0, 150, 255) #xanh dương
 
         return None
-
 
     def show_detail_product(self):
         index = self.tableWidgetProduct.currentRow()
@@ -198,13 +210,15 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.lineEditDate.setText(str(product.date))
 
     def clear_product_details(self):
-        self.lineEditProductID.setText("")
-        self.lineEditProductName.setText("")
-        self.lineEditPrice.setText(str(""))
-        self.lineEditQuantity.setText(str(""))
-        self.lineEditCateID.setText("")
-        self.lineEditDate.setText(str(""))
-        self.lineEditProductID.setFocus()
+        self.lineEditProductID.clear()
+        self.lineEditProductName.clear()
+        self.lineEditPrice.clear()
+        self.lineEditQuantity.clear()
+        self.lineEditCateID.clear()
+        self.lineEditDate.clear()
+        self.lineEditSearch.clear()
+        self.labelPhoto.clear()
+        self.restore_previous_product_color()
 
     def save_product(self):
         proid = self.lineEditProductID.text()
@@ -255,26 +269,61 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.show_products_gui()
 
     def search_product(self):
-        search_id = self.lineEditProductID.text().strip()
-        if not search_id:
-            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
+        search_text = self.lineEditSearch.text().strip().lower()
+        if not search_text:
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID hoặc Tên sản phẩm để tìm kiếm.")
             return
 
-        product = next((p for p in self.products if p.proid == search_id), None)
+        product = next((p for p in self.products if p.proid.lower() == search_text or p.proname.lower() == search_text),
+                       None)
+
+        if hasattr(self, 'selected_row') and self.selected_row is not None:
+            self.restore_previous_product_color()
 
         if product:
-            self.lineEditProductName.setText(product.proname)
-            self.lineEditPrice.setText(str(product.price))
-            self.lineEditQuantity.setText(str(product.quantity))
-            self.lineEditCateID.setText(product.cateid)
-            self.lineEditDate.setText(str(product.date))
-        else:
-            QMessageBox.warning(self.MainWindow, "Không tìm thấy", f"Không tìm thấy sản phẩm có ID: {search_id}")
+            info_text = (
+                f"<p style='line-height: 1.8;'>"
+                f"<b>ID:</b> {product.proid}<br>"
+                f"<b>Tên:</b> {product.proname}<br>"
+                f"<b>Giá:</b> {product.price}/kg<br>"
+                f"<b>Số lượng:</b> {product.quantity}kg<br>"
+                f"<b>Danh mục:</b> {product.cateid}<br>"
+                f"<b>Ngày:</b> {product.date}"
+                f"</p>"
+            )
+            self.labelPhoto.setText(info_text)
+            self.labelPhoto.setAlignment(Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
 
-    def exit_program(self):
+            for row in range(self.tableWidgetProduct.rowCount()):
+                item = self.tableWidgetProduct.item(row, 0)
+                if item and (item.text().lower() == product.proid.lower()):
+                    self.selected_row = row
+                    self.previous_colors = {}
+
+                    for col in range(self.tableWidgetProduct.columnCount()):
+                        cell = self.tableWidgetProduct.item(row, col)
+                        if cell:
+                            self.previous_colors[col] = cell.background()
+                            cell.setBackground(QColor(0, 200, 0)) #xanh lá
+                    break
+        else:
+            QMessageBox.warning(self.MainWindow, "Không tìm thấy",
+                                f"Không tìm thấy sản phẩm có ID hoặc Tên: {search_text}")
+            self.labelPhoto.setText("Không tìm thấy sản phẩm.")
+
+    def restore_previous_product_color(self):
+        if hasattr(self, 'selected_row') and self.selected_row is not None:
+            for col, color in self.previous_colors.items():
+                item = self.tableWidgetProduct.item(self.selected_row, col)
+                if item:
+                    item.setBackground(color)
+            self.selected_row = None
+            self.previous_colors = {}
+
+    def back_program(self):
         msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText("Muốn thoát hả?")
-        msgbox.setWindowTitle("Xác nhận thoát")
+        msgbox.setText("Muốn trở về?")
+        msgbox.setWindowTitle("Xác nhận trở về")
         msgbox.setIcon(QMessageBox.Icon.Critical)
         buttons = QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
         msgbox.setStandardButtons(buttons)
