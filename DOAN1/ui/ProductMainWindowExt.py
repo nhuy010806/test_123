@@ -1,9 +1,9 @@
 import os
 import webbrowser
-from DOAN.models.Category import Category
-from DOAN.ui.ProductMainWindow import Ui_MainWindow
+from DOAN1.models.Category import Category
+from DOAN1.ui.ProductMainWindow import Ui_MainWindow
 from PyQt6.QtWidgets import QListWidgetItem, QMessageBox
-from DOAN.libs.DataConnector import DataConnector
+from DOAN1.libs.DataConnector import DataConnector
 
 class ProductMainWindowExt(Ui_MainWindow):
     def __init__(self):

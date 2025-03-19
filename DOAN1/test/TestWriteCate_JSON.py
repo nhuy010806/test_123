@@ -1,5 +1,5 @@
-from DOAN.libs.JsonFileFactory import JsonFileFactory
-from DOAN.models.Category import Category
+from DOAN1libs.JsonFileFactory import JsonFileFactory
+from DOAN1.models.Category import Category
 
 categories=[]
 categories.append(Category("Trái cây","Các loại trái cây tươi ngon, giàu vitamin"))
