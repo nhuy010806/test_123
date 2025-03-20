@@ -12,31 +12,61 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(694, 540)
+        MainWindow.resize(1074, 707)
+        MainWindow.setMaximumSize(QtCore.QSize(100000, 800))
+        MainWindow.setStyleSheet("QMenuBar {\n"
+"    background-color: #00806c;  /* Màu nền */\n"
+"    color: White;  /* Màu chữ */\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QMenuBar::item {\n"
+"    background-color: transparent;\n"
+"    padding: 5px 10px;\n"
+"}\n"
+"\n"
+"QMenuBar::item:selected { \n"
+"    background-color: #86ad6f;  /* Màu khi hover */\n"
+"}\n"
+"QTableWidget {\n"
+"    border: 2px solid #2E8B57; /* Viền màu xanh lá đậm */\n"
+"    gridline-color: black;     /* Màu đường kẻ ô */\n"
+"    background-color: #d2e3c3; /* Màu nền */\n"
+"     gridline-color: #006400; /* Màu đường kẻ */\n"
+"    font-size: 12pt;\n"
+"    font-family: \"Times New Roman\";\n"
+"}\n"
+"QHeaderView::section {\n"
+"    background-color: #00806c; /* Màu nền tiêu đề bảng */\n"
+"    color: White;\n"
+"    font-weight: bold;\n"
+"    border: 1px solid #006400;\n"
+"}\n"
+"QTableCornerButton::section {\n"
+"    background-color: #00806c; /* Cùng màu với tiêu đề */\n"
+"    border: 1px solid #006400;\n"
+"}\n"
+"background-image: url(\"nentron.png\");\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;\n"
+"background-size: cover;\n"
+"")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setMaximumSize(QtCore.QSize(16777215, 50))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setStyleSheet("color: rgb(0, 133, 111);")
-        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label.setObjectName("label")
-        self.verticalLayout.addWidget(self.label)
-        self.horizontalLayout = QtWidgets.QHBoxLayout()
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.tableWidgetSupplier = QtWidgets.QTableWidget(parent=self.centralwidget)
-        self.tableWidgetSupplier.setMaximumSize(QtCore.QSize(390, 500))
+        self.layoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
+        self.layoutWidget.setGeometry(QtCore.QRect(12, 57, 1041, 581))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.tableWidgetSupplier = QtWidgets.QTableWidget(parent=self.layoutWidget)
+        self.tableWidgetSupplier.setMaximumSize(QtCore.QSize(600, 700))
+        self.tableWidgetSupplier.setStyleSheet("font: 11pt \"Tahoma\";\n"
+"background-color: rgb(208, 225, 193);")
+        self.tableWidgetSupplier.setGridStyle(QtCore.Qt.PenStyle.CustomDashLine)
         self.tableWidgetSupplier.setObjectName("tableWidgetSupplier")
         self.tableWidgetSupplier.setColumnCount(5)
-        self.tableWidgetSupplier.setRowCount(15)
+        self.tableWidgetSupplier.setRowCount(10)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidgetSupplier.setVerticalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -58,221 +88,463 @@ class Ui_MainWindow(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidgetSupplier.setVerticalHeaderItem(9, item)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setVerticalHeaderItem(10, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setVerticalHeaderItem(11, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setVerticalHeaderItem(12, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setVerticalHeaderItem(13, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setVerticalHeaderItem(14, item)
-        item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        item.setFont(font)
+        item.setBackground(QtGui.QColor(255, 255, 255))
         self.tableWidgetSupplier.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        item.setFont(font)
         self.tableWidgetSupplier.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        item.setFont(font)
         self.tableWidgetSupplier.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        item.setFont(font)
         self.tableWidgetSupplier.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        item.setFont(font)
         self.tableWidgetSupplier.setHorizontalHeaderItem(4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(0, 0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(0, 1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(0, 2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(0, 3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(0, 4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(1, 0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(1, 1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(1, 2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(1, 3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(1, 4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(2, 0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(2, 1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(2, 2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(2, 3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(2, 4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(3, 0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(3, 1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(3, 2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(3, 3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(3, 4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(4, 0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(4, 1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(4, 2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(4, 3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidgetSupplier.setItem(4, 4, item)
-        self.horizontalLayout.addWidget(self.tableWidgetSupplier)
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.groupBox = QtWidgets.QGroupBox(parent=self.centralwidget)
-        self.groupBox.setMinimumSize(QtCore.QSize(200, 0))
+        self.tableWidgetSupplier.horizontalHeader().setVisible(True)
+        self.tableWidgetSupplier.horizontalHeader().setCascadingSectionResizes(False)
+        self.tableWidgetSupplier.horizontalHeader().setDefaultSectionSize(120)
+        self.tableWidgetSupplier.horizontalHeader().setHighlightSections(True)
+        self.tableWidgetSupplier.horizontalHeader().setMinimumSectionSize(70)
+        self.tableWidgetSupplier.verticalHeader().setVisible(True)
+        self.tableWidgetSupplier.verticalHeader().setCascadingSectionResizes(False)
+        self.tableWidgetSupplier.verticalHeader().setDefaultSectionSize(40)
+        self.tableWidgetSupplier.verticalHeader().setHighlightSections(True)
+        self.tableWidgetSupplier.verticalHeader().setMinimumSectionSize(50)
+        self.tableWidgetSupplier.verticalHeader().setSortIndicatorShown(False)
+        self.tableWidgetSupplier.verticalHeader().setStretchLastSection(False)
+        self.horizontalLayout_4.addWidget(self.tableWidgetSupplier)
+        self.groupBox = QtWidgets.QGroupBox(parent=self.layoutWidget)
+        self.groupBox.setMaximumSize(QtCore.QSize(500, 700))
+        self.groupBox.setStyleSheet("QGroupBox {\n"
+"    border: 2px solid #00806c; /* Viền xanh đậm */\n"
+"    border-radius: 5px; /* Bo góc nhẹ */\n"
+"    margin-top: 10px; /* Đẩy tiêu đề lên trên viền */\n"
+"    font: bold 14pt \"Tahoma\"; /* Chữ in đậm */\n"
+"    color: #00806c; /* Màu chữ xanh ngọc */\n"
+"    background-color: rgb(208, 225, 193);\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top left; /* Tiêu đề nằm góc trái */\n"
+"    padding: 2px 5px;\n"
+"    border-radius: 3px;\n"
+"}\n"
+"QLabel {\n"
+"    font: bold 12pt \"Tahoma\";        /* Cỡ chữ */\n"
+"    color: #00806c;             /* Màu chữ */\n"
+"    font-weight: bold;      /* Chữ đậm */\n"
+"}\n"
+"QLineEdit {\n"
+"    font-size: 16px;        /* Cỡ chữ */\n"
+"}\n"
+"QLineEdit {\n"
+"    border: 2px solid #00806c; /* Viền xanh lá đậm */\n"
+"    border-radius: 10px;       /* Bo tròn góc */\n"
+"    padding: 5px;              /* Khoảng cách nội dung với viền */\n"
+"    background-color: white;   /* Nền trắng */\n"
+"}")
+        self.groupBox.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.groupBox.setObjectName("groupBox")
         self.label_2 = QtWidgets.QLabel(parent=self.groupBox)
-        self.label_2.setGeometry(QtCore.QRect(10, 60, 71, 31))
+        self.label_2.setGeometry(QtCore.QRect(30, 100, 131, 31))
         self.label_2.setObjectName("label_2")
+        self.lineEditSearch = QtWidgets.QLineEdit(parent=self.groupBox)
+        self.lineEditSearch.setGeometry(QtCore.QRect(10, 30, 211, 41))
+        self.lineEditSearch.setObjectName("lineEditSearch")
         self.label_3 = QtWidgets.QLabel(parent=self.groupBox)
-        self.label_3.setGeometry(QtCore.QRect(10, 100, 91, 31))
+        self.label_3.setGeometry(QtCore.QRect(30, 150, 151, 31))
         self.label_3.setObjectName("label_3")
-        self.label_4 = QtWidgets.QLabel(parent=self.groupBox)
-        self.label_4.setGeometry(QtCore.QRect(10, 140, 81, 31))
-        self.label_4.setObjectName("label_4")
-        self.label_5 = QtWidgets.QLabel(parent=self.groupBox)
-        self.label_5.setGeometry(QtCore.QRect(10, 180, 91, 31))
-        self.label_5.setObjectName("label_5")
-        self.label_6 = QtWidgets.QLabel(parent=self.groupBox)
-        self.label_6.setGeometry(QtCore.QRect(10, 220, 71, 31))
-        self.label_6.setObjectName("label_6")
         self.lineEditSupplierID = QtWidgets.QLineEdit(parent=self.groupBox)
-        self.lineEditSupplierID.setGeometry(QtCore.QRect(100, 60, 161, 21))
+        self.lineEditSupplierID.setGeometry(QtCore.QRect(170, 90, 231, 41))
         self.lineEditSupplierID.setObjectName("lineEditSupplierID")
         self.lineEditSupplierName = QtWidgets.QLineEdit(parent=self.groupBox)
-        self.lineEditSupplierName.setGeometry(QtCore.QRect(100, 100, 161, 21))
+        self.lineEditSupplierName.setGeometry(QtCore.QRect(170, 140, 231, 41))
         self.lineEditSupplierName.setObjectName("lineEditSupplierName")
+        self.label_4 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_4.setGeometry(QtCore.QRect(30, 200, 121, 31))
+        self.label_4.setObjectName("label_4")
         self.lineEditSupplydate = QtWidgets.QLineEdit(parent=self.groupBox)
-        self.lineEditSupplydate.setGeometry(QtCore.QRect(100, 140, 161, 21))
+        self.lineEditSupplydate.setGeometry(QtCore.QRect(170, 190, 231, 41))
         self.lineEditSupplydate.setObjectName("lineEditSupplydate")
+        self.label_5 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_5.setGeometry(QtCore.QRect(30, 250, 121, 31))
+        self.label_5.setObjectName("label_5")
         self.lineEditProductname = QtWidgets.QLineEdit(parent=self.groupBox)
-        self.lineEditProductname.setGeometry(QtCore.QRect(100, 180, 161, 21))
+        self.lineEditProductname.setGeometry(QtCore.QRect(170, 240, 231, 41))
         self.lineEditProductname.setObjectName("lineEditProductname")
-        self.lineEditQuantity = QtWidgets.QLineEdit(parent=self.groupBox)
-        self.lineEditQuantity.setGeometry(QtCore.QRect(100, 220, 161, 21))
-        self.lineEditQuantity.setObjectName("lineEditQuantity")
-        self.lineEditSearch = QtWidgets.QLineEdit(parent=self.groupBox)
-        self.lineEditSearch.setGeometry(QtCore.QRect(10, 20, 141, 21))
-        self.lineEditSearch.setText("")
-        self.lineEditSearch.setCursorMoveStyle(QtCore.Qt.CursorMoveStyle.LogicalMoveStyle)
-        self.lineEditSearch.setClearButtonEnabled(True)
-        self.lineEditSearch.setObjectName("lineEditSearch")
-        self.pushButtonSearch = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonSearch.setGeometry(QtCore.QRect(160, 20, 56, 21))
-        self.pushButtonSearch.setObjectName("pushButtonSearch")
-        self.pushButtonShowAll = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonShowAll.setGeometry(QtCore.QRect(220, 20, 56, 21))
-        self.pushButtonShowAll.setObjectName("pushButtonShowAll")
-        self.pushButtonUpdate = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonUpdate.setGeometry(QtCore.QRect(0, 260, 71, 31))
-        self.pushButtonUpdate.setObjectName("pushButtonUpdate")
+        self.label_6 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_6.setGeometry(QtCore.QRect(30, 300, 121, 31))
+        self.label_6.setObjectName("label_6")
+        self.pushButtonSave = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonSave.setGeometry(QtCore.QRect(90, 340, 111, 31))
+        self.pushButtonSave.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}\n"
+"")
+        self.pushButtonSave.setObjectName("pushButtonSave")
         self.pushButtonClear = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonClear.setGeometry(QtCore.QRect(140, 260, 71, 31))
+        self.pushButtonClear.setGeometry(QtCore.QRect(90, 380, 111, 31))
+        self.pushButtonClear.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}\n"
+"")
         self.pushButtonClear.setObjectName("pushButtonClear")
         self.pushButtonDelete = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonDelete.setGeometry(QtCore.QRect(210, 260, 71, 31))
+        self.pushButtonDelete.setGeometry(QtCore.QRect(230, 380, 111, 31))
+        self.pushButtonDelete.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}\n"
+"")
         self.pushButtonDelete.setObjectName("pushButtonDelete")
+        self.pushButtonUpdate = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonUpdate.setGeometry(QtCore.QRect(230, 340, 111, 31))
+        self.pushButtonUpdate.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}\n"
+"")
+        self.pushButtonUpdate.setObjectName("pushButtonUpdate")
+        self.pushButtonSearch = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonSearch.setGeometry(QtCore.QRect(230, 40, 91, 31))
+        self.pushButtonSearch.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}\n"
+"")
+        self.pushButtonSearch.setObjectName("pushButtonSearch")
+        self.pushButtonShowAll = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonShowAll.setGeometry(QtCore.QRect(330, 40, 101, 31))
+        self.pushButtonShowAll.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}\n"
+"")
+        self.pushButtonShowAll.setObjectName("pushButtonShowAll")
         self.label_7 = QtWidgets.QLabel(parent=self.groupBox)
-        self.label_7.setGeometry(QtCore.QRect(10, 300, 71, 21))
+        self.label_7.setGeometry(QtCore.QRect(10, 410, 121, 31))
         self.label_7.setObjectName("label_7")
-        self.pushButtonSave = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonSave.setGeometry(QtCore.QRect(70, 260, 71, 31))
-        self.pushButtonSave.setObjectName("pushButtonSave")
+        self.lineEditQuantity = QtWidgets.QLineEdit(parent=self.groupBox)
+        self.lineEditQuantity.setGeometry(QtCore.QRect(170, 290, 231, 41))
+        self.lineEditQuantity.setObjectName("lineEditQuantity")
+        self.lineEditDescription = QtWidgets.QLineEdit(parent=self.groupBox)
+        self.lineEditDescription.setGeometry(QtCore.QRect(40, 440, 361, 131))
+        self.lineEditDescription.setObjectName("lineEditDescription")
         self.textEditDescription = QtWidgets.QTextEdit(parent=self.groupBox)
-        self.textEditDescription.setGeometry(QtCore.QRect(30, 320, 231, 81))
-        self.textEditDescription.setPlaceholderText("")
+        self.textEditDescription.setGeometry(QtCore.QRect(50, 450, 341, 111))
         self.textEditDescription.setObjectName("textEditDescription")
-        self.verticalLayout_4.addWidget(self.groupBox)
-        self.horizontalLayout.addLayout(self.verticalLayout_4)
-        self.verticalLayout.addLayout(self.horizontalLayout)
-        self.verticalLayout_2.addLayout(self.verticalLayout)
+        self.horizontalLayout_4.addWidget(self.groupBox)
+        self.label = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(10, 0, 1071, 48))
+        self.label.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.label.setStyleSheet("font: 22pt \"Tahoma\";\n"
+"color: rgb(26, 140, 118);\n"
+"")
+        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label.setObjectName("label")
+        self.label_10 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_10.setGeometry(QtCore.QRect(0, 0, 1111, 751))
+        self.label_10.setStyleSheet("background-image: url(:/bg-img/FARMERS_bg.jpg);\n"
+"")
+        self.label_10.setText("")
+        self.label_10.setPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/khanhthi/.designer/IMAGES/nen.png"))
+        self.label_10.setScaledContents(True)
+        self.label_10.setObjectName("label_10")
         self.pushButtonBack = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonBack.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.pushButtonBack.setAutoDefault(False)
-        self.pushButtonBack.setDefault(False)
+        self.pushButtonBack.setGeometry(QtCore.QRect(950, 650, 91, 31))
+        self.pushButtonBack.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}\n"
+"")
         self.pushButtonBack.setObjectName("pushButtonBack")
-        self.verticalLayout_2.addWidget(self.pushButtonBack)
+        self.label_10.raise_()
+        self.layoutWidget.raise_()
+        self.label.raise_()
+        self.pushButtonBack.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 694, 18))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1074, 23))
         self.menubar.setObjectName("menubar")
         self.menuSystem = QtWidgets.QMenu(parent=self.menubar)
         self.menuSystem.setObjectName("menuSystem")
         self.menuImport_Data = QtWidgets.QMenu(parent=self.menuSystem)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/khanhthi/.designer/images/8725915_file_import_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/Khanh Tran/.designer/images/12918945.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.menuImport_Data.setIcon(icon)
         self.menuImport_Data.setObjectName("menuImport_Data")
-        self.menuExport_Data = QtWidgets.QMenu(parent=self.menuSystem)
-        self.menuExport_Data.setObjectName("menuExport_Data")
         self.menuHelp = QtWidgets.QMenu(parent=self.menubar)
         self.menuHelp.setObjectName("menuHelp")
         MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
         self.actionExit = QtGui.QAction(parent=MainWindow)
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/khanhthi/.designer/images/7853741_logout_kashifarif_exit_out_close_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/Khanh Tran/.designer/images/9104334_sign out_logout_exit_out_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.actionExit.setIcon(icon1)
         self.actionExit.setObjectName("actionExit")
-        self.actiontxt_file = QtGui.QAction(parent=MainWindow)
-        self.actiontxt_file.setObjectName("actiontxt_file")
-        self.actioncsv_file = QtGui.QAction(parent=MainWindow)
-        self.actioncsv_file.setObjectName("actioncsv_file")
-        self.actionxml_file = QtGui.QAction(parent=MainWindow)
-        self.actionxml_file.setObjectName("actionxml_file")
-        self.actionjson_file = QtGui.QAction(parent=MainWindow)
-        self.actionjson_file.setObjectName("actionjson_file")
-        self.actionexcel_file = QtGui.QAction(parent=MainWindow)
+        self.actionImport_Excel = QtGui.QAction(parent=MainWindow)
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/khanhthi/.designer/images/2993694_brand_brands_excel_logo_logos_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.actionexcel_file.setIcon(icon2)
-        self.actionexcel_file.setObjectName("actionexcel_file")
-        self.actionpickle_file = QtGui.QAction(parent=MainWindow)
-        self.actionpickle_file.setObjectName("actionpickle_file")
-        self.actiontxt_file_2 = QtGui.QAction(parent=MainWindow)
-        self.actiontxt_file_2.setObjectName("actiontxt_file_2")
-        self.actioncsv_file_2 = QtGui.QAction(parent=MainWindow)
-        self.actioncsv_file_2.setObjectName("actioncsv_file_2")
-        self.actionjson_file_2 = QtGui.QAction(parent=MainWindow)
-        self.actionjson_file_2.setObjectName("actionjson_file_2")
-        self.actionjson_file_3 = QtGui.QAction(parent=MainWindow)
-        self.actionjson_file_3.setObjectName("actionjson_file_3")
-        self.actionexcel_file_2 = QtGui.QAction(parent=MainWindow)
-        self.actionexcel_file_2.setIcon(icon2)
-        self.actionexcel_file_2.setObjectName("actionexcel_file_2")
-        self.actionpickle_file_2 = QtGui.QAction(parent=MainWindow)
-        self.actionpickle_file_2.setObjectName("actionpickle_file_2")
-        self.actionHelp = QtGui.QAction(parent=MainWindow)
+        icon2.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/Khanh Tran/.designer/images/bxs-file-txt-512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.actionImport_Excel.setIcon(icon2)
+        self.actionImport_Excel.setObjectName("actionImport_Excel")
+        self.actionExport_Excel = QtGui.QAction(parent=MainWindow)
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/khanhthi/.designer/images/2303195_about_faq_help_info_information_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.actionHelp.setIcon(icon3)
-        self.actionHelp.setObjectName("actionHelp")
-        self.actionAbout = QtGui.QAction(parent=MainWindow)
+        icon3.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/Khanh Tran/.designer/images/4344184.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.actionExport_Excel.setIcon(icon3)
+        self.actionExport_Excel.setObjectName("actionExport_Excel")
+        self.importXML_file = QtGui.QAction(parent=MainWindow)
+        self.importXML_file.setObjectName("importXML_file")
+        self.importJSON_file = QtGui.QAction(parent=MainWindow)
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/khanhthi/.designer/images/2303158_contact us_headphones_headset_help_listne_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.actionAbout.setIcon(icon4)
-        self.actionAbout.setObjectName("actionAbout")
-        self.menuImport_Data.addAction(self.actionexcel_file)
-        self.menuExport_Data.addAction(self.actionexcel_file_2)
+        icon4.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/Khanh Tran/.designer/images/3456434.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.importJSON_file.setIcon(icon4)
+        self.importJSON_file.setObjectName("importJSON_file")
+        self.importExcel_file = QtGui.QAction(parent=MainWindow)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.importExcel_file.setIcon(icon5)
+        self.importExcel_file.setObjectName("importExcel_file")
+        self.importPickle_file = QtGui.QAction(parent=MainWindow)
+        self.importPickle_file.setObjectName("importPickle_file")
+        self.exportTXT_file = QtGui.QAction(parent=MainWindow)
+        self.exportTXT_file.setIcon(icon2)
+        self.exportTXT_file.setObjectName("exportTXT_file")
+        self.exportCSV_file = QtGui.QAction(parent=MainWindow)
+        self.exportCSV_file.setIcon(icon3)
+        self.exportCSV_file.setObjectName("exportCSV_file")
+        self.exportXML_file = QtGui.QAction(parent=MainWindow)
+        self.exportXML_file.setObjectName("exportXML_file")
+        self.exportJSON_file = QtGui.QAction(parent=MainWindow)
+        self.exportJSON_file.setIcon(icon4)
+        self.exportJSON_file.setObjectName("exportJSON_file")
+        self.exportPickle_file = QtGui.QAction(parent=MainWindow)
+        self.exportPickle_file.setObjectName("exportPickle_file")
+        self.exportExcel_file = QtGui.QAction(parent=MainWindow)
+        self.exportExcel_file.setIcon(icon5)
+        self.exportExcel_file.setObjectName("exportExcel_file")
+        self.actionHelp = QtGui.QAction(parent=MainWindow)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/Khanh Tran/.designer/images/9044348_help_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.actionHelp.setIcon(icon6)
+        self.actionHelp.setObjectName("actionHelp")
+        self.actionFeedback = QtGui.QAction(parent=MainWindow)
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap("C:\\Python\\Chương5_GUI\\DoAn\\ui\\../../../../Users/Khanh Tran/.designer/images/8207898_about_info_information_help_ui_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.actionFeedback.setIcon(icon7)
+        self.actionFeedback.setObjectName("actionFeedback")
+        self.importJson_file = QtGui.QAction(parent=MainWindow)
+        self.importJson_file.setObjectName("importJson_file")
+        self.exportJson_file = QtGui.QAction(parent=MainWindow)
+        self.exportJson_file.setObjectName("exportJson_file")
+        self.actionCurrent_Help = QtGui.QAction(parent=MainWindow)
+        self.actionCurrent_Help.setObjectName("actionCurrent_Help")
+        self.menuImport_Data.addAction(self.actionImport_Excel)
+        self.menuImport_Data.addAction(self.actionExport_Excel)
         self.menuSystem.addAction(self.menuImport_Data.menuAction())
-        self.menuSystem.addAction(self.menuExport_Data.menuAction())
-        self.menuSystem.addAction(self.actionExit)
-        self.menuHelp.addAction(self.actionHelp)
-        self.menuHelp.addAction(self.actionAbout)
+        self.menuHelp.addAction(self.actionCurrent_Help)
         self.menubar.addAction(self.menuSystem.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
 
@@ -281,8 +553,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Phạm Khánh Thi - K244060806"))
-        self.label.setText(_translate("MainWindow", "SUPPLIER MANAGEMENT"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Suppliers"))
         item = self.tableWidgetSupplier.verticalHeaderItem(0)
         item.setText(_translate("MainWindow", "1"))
         item = self.tableWidgetSupplier.verticalHeaderItem(1)
@@ -303,16 +574,6 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "9"))
         item = self.tableWidgetSupplier.verticalHeaderItem(9)
         item.setText(_translate("MainWindow", "10"))
-        item = self.tableWidgetSupplier.verticalHeaderItem(10)
-        item.setText(_translate("MainWindow", "11"))
-        item = self.tableWidgetSupplier.verticalHeaderItem(11)
-        item.setText(_translate("MainWindow", "12"))
-        item = self.tableWidgetSupplier.verticalHeaderItem(12)
-        item.setText(_translate("MainWindow", "13"))
-        item = self.tableWidgetSupplier.verticalHeaderItem(13)
-        item.setText(_translate("MainWindow", "14"))
-        item = self.tableWidgetSupplier.verticalHeaderItem(14)
-        item.setText(_translate("MainWindow", "15"))
         item = self.tableWidgetSupplier.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Supplier ID"))
         item = self.tableWidgetSupplier.horizontalHeaderItem(1)
@@ -322,46 +583,49 @@ class Ui_MainWindow(object):
         item = self.tableWidgetSupplier.horizontalHeaderItem(3)
         item.setText(_translate("MainWindow", "Product Name"))
         item = self.tableWidgetSupplier.horizontalHeaderItem(4)
-        item.setText(_translate("MainWindow", "Quantity"))
-        __sortingEnabled = self.tableWidgetSupplier.isSortingEnabled()
-        self.tableWidgetSupplier.setSortingEnabled(False)
-        self.tableWidgetSupplier.setSortingEnabled(__sortingEnabled)
+        item.setText(_translate("MainWindow", "Quantity (Kg)"))
         self.groupBox.setTitle(_translate("MainWindow", "Supplier Details:"))
         self.label_2.setText(_translate("MainWindow", "Supplier ID:"))
+        self.lineEditSearch.setPlaceholderText(_translate("MainWindow", "Please enter Supplier ID"))
         self.label_3.setText(_translate("MainWindow", "Supplier Name:"))
         self.label_4.setText(_translate("MainWindow", "Supply Date:"))
         self.label_5.setText(_translate("MainWindow", "Product Name:"))
         self.label_6.setText(_translate("MainWindow", "Quantity:"))
-        self.lineEditSearch.setPlaceholderText(_translate("MainWindow", "Please enter Supplier ID"))
-        self.pushButtonSearch.setText(_translate("MainWindow", "Search"))
-        self.pushButtonShowAll.setText(_translate("MainWindow", "Show All"))
-        self.pushButtonUpdate.setText(_translate("MainWindow", "Update"))
+        self.pushButtonSave.setText(_translate("MainWindow", "Save"))
         self.pushButtonClear.setText(_translate("MainWindow", "Clear"))
         self.pushButtonDelete.setText(_translate("MainWindow", "Delete"))
+        self.pushButtonUpdate.setText(_translate("MainWindow", "Update"))
+        self.pushButtonSearch.setText(_translate("MainWindow", "Search"))
+        self.pushButtonShowAll.setText(_translate("MainWindow", "Show all"))
         self.label_7.setText(_translate("MainWindow", "Description:"))
-        self.pushButtonSave.setText(_translate("MainWindow", "Save"))
+        self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt; font-weight:600; color:#30806c;\">Supplier Management</span></p></body></html>"))
         self.pushButtonBack.setText(_translate("MainWindow", "Back"))
         self.menuSystem.setTitle(_translate("MainWindow", "System"))
-        self.menuImport_Data.setTitle(_translate("MainWindow", "Import Data"))
-        self.menuExport_Data.setTitle(_translate("MainWindow", "Export Data"))
+        self.menuImport_Data.setTitle(_translate("MainWindow", "Data"))
         self.menuHelp.setTitle(_translate("MainWindow", "Help"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.actionExit.setShortcut(_translate("MainWindow", "Esc"))
-        self.actiontxt_file.setText(_translate("MainWindow", "txt file"))
-        self.actiontxt_file.setShortcut(_translate("MainWindow", "Backspace"))
-        self.actioncsv_file.setText(_translate("MainWindow", "csv file"))
-        self.actionxml_file.setText(_translate("MainWindow", "xml file"))
-        self.actionjson_file.setText(_translate("MainWindow", "json file"))
-        self.actionexcel_file.setText(_translate("MainWindow", "Excel File"))
-        self.actionexcel_file.setShortcut(_translate("MainWindow", "Ctrl+I"))
-        self.actionpickle_file.setText(_translate("MainWindow", "pickle file"))
-        self.actiontxt_file_2.setText(_translate("MainWindow", "txt file"))
-        self.actioncsv_file_2.setText(_translate("MainWindow", "csv file"))
-        self.actionjson_file_2.setText(_translate("MainWindow", "xml file"))
-        self.actionjson_file_3.setText(_translate("MainWindow", "json file"))
-        self.actionexcel_file_2.setText(_translate("MainWindow", "Excel File"))
-        self.actionexcel_file_2.setShortcut(_translate("MainWindow", "Ctrl+E"))
-        self.actionpickle_file_2.setText(_translate("MainWindow", "pickle file"))
-        self.actionHelp.setText(_translate("MainWindow", "Current help"))
-        self.actionHelp.setShortcut(_translate("MainWindow", "Shift+F1"))
-        self.actionAbout.setText(_translate("MainWindow", "About"))
+        self.actionImport_Excel.setText(_translate("MainWindow", "Import Excel"))
+        self.actionExport_Excel.setText(_translate("MainWindow", "Export Excel"))
+        self.importXML_file.setText(_translate("MainWindow", "xml file"))
+        self.importJSON_file.setText(_translate("MainWindow", "json file"))
+        self.importExcel_file.setText(_translate("MainWindow", "excel file"))
+        self.importExcel_file.setShortcut(_translate("MainWindow", "Ctrl+I"))
+        self.importPickle_file.setText(_translate("MainWindow", "pickle file"))
+        self.exportTXT_file.setText(_translate("MainWindow", "txt file"))
+        self.exportTXT_file.setShortcut(_translate("MainWindow", "Ctrl+R"))
+        self.exportCSV_file.setText(_translate("MainWindow", "csv file"))
+        self.exportCSV_file.setShortcut(_translate("MainWindow", "Ctrl+G"))
+        self.exportXML_file.setText(_translate("MainWindow", "xml file"))
+        self.exportJSON_file.setText(_translate("MainWindow", "json file"))
+        self.exportPickle_file.setText(_translate("MainWindow", "pickle file"))
+        self.exportExcel_file.setText(_translate("MainWindow", "excel file"))
+        self.exportExcel_file.setShortcut(_translate("MainWindow", "Ctrl+E"))
+        self.actionHelp.setText(_translate("MainWindow", "Help"))
+        self.actionHelp.setShortcut(_translate("MainWindow", "F1"))
+        self.actionFeedback.setText(_translate("MainWindow", "Feedback"))
+        self.actionFeedback.setShortcut(_translate("MainWindow", "Ctrl+F"))
+        self.importJson_file.setText(_translate("MainWindow", "json file"))
+        self.exportJson_file.setText(_translate("MainWindow", "json file"))
+        self.actionCurrent_Help.setText(_translate("MainWindow", "Current Help"))
+        self.actionCurrent_Help.setShortcut(_translate("MainWindow", "Ctrl+H"))

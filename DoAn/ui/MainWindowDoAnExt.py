@@ -1,8 +1,10 @@
-from email import message
+import json
+import os
+import webbrowser
 
-from PyQt6 import QtCore, QtWidgets
+from PyQt6 import QtCore
 from PyQt6.QtGui import QColor
-from PyQt6.QtWidgets import QTableWidgetItem, QMessageBox, QTextEdit
+from PyQt6.QtWidgets import QTableWidgetItem, QMessageBox
 from DoAn.libs.DataConnector import DataConnector
 from DoAn.libs.ExportTools import ExportTool
 from DoAn.models.Supplier import Supplier
@@ -23,24 +25,23 @@ class MainWindowDoAnExt(Ui_MainWindow):
         self.suppliers = self.dc.get_all_suppliers()
         self.setupSignalAndSlot()
 
-        self.textEditDescription = QtWidgets.QTextEdit(parent=self.groupBox)
-        self.textEditDescription.setGeometry(QtCore.QRect(30, 320, 231, 81))
-        self.textEditDescription.setObjectName("textEditDescription")
 
     def showWindow(self):
         self.MainWindow.show()
 
     def show_supplier_gui(self):
         self.tableWidgetSupplier.setRowCount(0)
-        for suppliers in self.suppliers:
+        for supplier in self.suppliers:
             row = self.tableWidgetSupplier.rowCount()
             self.tableWidgetSupplier.insertRow(row)
 
-            col_supid = QTableWidgetItem(suppliers.id)
-            col_suppname = QTableWidgetItem(suppliers.ten)
-            col_supday = QTableWidgetItem(suppliers.ngaynhaphang)
-            col_suptensp = QTableWidgetItem(suppliers.tensanpham)
-            col_supsoluong = QTableWidgetItem(suppliers.soluong)
+            col_supid = QTableWidgetItem(supplier.id)
+            col_suppname = QTableWidgetItem(supplier.ten)
+            col_supday = QTableWidgetItem(str(supplier.ngaynhaphang))
+            col_suptensp = QTableWidgetItem(supplier.tensanpham)
+            col_supsoluong = QTableWidgetItem(str(supplier.soluong))
+
+
 
 
             self.tableWidgetSupplier.setItem(row, 0, col_supid)
@@ -49,19 +50,23 @@ class MainWindowDoAnExt(Ui_MainWindow):
             self.tableWidgetSupplier.setItem(row, 3, col_suptensp)
             self.tableWidgetSupplier.setItem(row, 4, col_supsoluong)
 
+            self.tableWidgetSupplier.resizeColumnsToContents()
+            self.tableWidgetSupplier.resizeRowsToContents()
+
     def setupSignalAndSlot(self):
-        self.pushButtonShowAll.clicked.connect(self.show_all_products)
+        self.pushButtonShowAll.clicked.connect(self.show_all_suppliers)
         self.tableWidgetSupplier.itemSelectionChanged.connect(self.show_detail_supplier)
         self.pushButtonSearch.clicked.connect(self.search_supplier)
         self.pushButtonUpdate.clicked.connect(self.xuly_capnhat)
         self.pushButtonSave.clicked.connect(self.save_supplier)
         self.pushButtonClear.clicked.connect(self.clear_supplier_detail)
         self.pushButtonDelete.clicked.connect(self.xuly_xoa)
-        self.actionexcel_file.triggered.connect(self.import_to_excel)
-        self.actionexcel_file_2.triggered.connect(self.export_to_excel)
+        self.actionImport_Excel.triggered.connect(self.import_to_excel)
+        self.actionExport_Excel.triggered.connect(self.export_to_excel)
         self.pushButtonBack.clicked.connect(self.xuly_quayve)
+        self.actionCurrent_Help.triggered.connect(self.open_help)
 
-    def show_all_products(self):
+    def show_all_suppliers(self):
         self.suppliers = self.dc.get_all_suppliers()
         self.show_supplier_gui()
 
@@ -78,11 +83,11 @@ class MainWindowDoAnExt(Ui_MainWindow):
 
         description = (
             f"Thời gian hợp tác: {supplier.thoigian_hoptac}\n"
-            
+                
             f"Chứng nhận chất lượng: {supplier.chung_nhan}\n"
-            
+                
             f"Nguồn gốc sản phẩm: {supplier.nguon_goc}\n"
-            
+                
             f"Thông tin liên lạc: {supplier.thongtin_lienlac}"
         )
         self.textEditDescription.setText(description)
@@ -99,24 +104,6 @@ class MainWindowDoAnExt(Ui_MainWindow):
             for col in range(self.tableWidgetSupplier.columnCount()):
                 if self.tableWidgetSupplier.item(row, col): 
                     self.tableWidgetSupplier.item(row, col).setBackground(QColor(255, 255, 255))
-
-    def show_employee_gui(self):
-        self.tableWidgetSupplier.setRowCount(0)
-        for supplier in self.suppliers:
-            row = self.tableWidgetSupplier.rowCount()
-            self.tableWidgetSupplier.insertRow(row)
-
-            col_id = QTableWidgetItem(supplier.id)
-            col_ten = QTableWidgetItem(supplier.ten)
-            col_ngaynhaphang = QTableWidgetItem(str(supplier.ngaynhaphang))
-            col_tensanpham = QTableWidgetItem(supplier.tensanpham)
-            col_soluong = QTableWidgetItem(int(supplier.soluong))
-
-            self.tableWidgetSupplier.setItem(row, 0, col_id)
-            self.tableWidgetSupplier.setItem(row, 1, col_ten)
-            self.tableWidgetSupplier.setItem(row, 2, col_ngaynhaphang)
-            self.tableWidgetSupplier.setItem(row, 3, col_tensanpham)
-            self.tableWidgetSupplier.setItem(row, 4, col_soluong)
 
 
     def xuly_xoa(self):
@@ -144,12 +131,13 @@ class MainWindowDoAnExt(Ui_MainWindow):
         self.lineEditProductname.clear()
         self.lineEditQuantity.clear()
 
+
         QMessageBox.information(self.MainWindow, "Thông báo", f"Đã xoá nhà cung cấp [{id}] thành công!")
 
     def export_to_excel(self):
         filename = '../dataset/suppliers.xlsx'
         extool = ExportTool()
-        extool.export_employee_to_excel(filename, self.suppliers)
+        extool.export_supplier_to_excel(filename, self.suppliers)
         msgbox = QMessageBox(self.MainWindow)
         msgbox.setText("Đã export excel thành công")
         msgbox.setWindowTitle("Thông báo")
@@ -158,8 +146,8 @@ class MainWindowDoAnExt(Ui_MainWindow):
     def import_to_excel(self):
         filename_cate = "../dataset/suppliers.xlsx"
         extool = ExportTool()
-        self.suppliers = extool.import_employee_excel(filename_cate)
-        self.show_employee_gui()
+        self.suppliers = extool.import_supplier_excel(filename_cate)
+        self.show_supplier_gui()
 
     def xuly_quayve(self):
         msgbox = QMessageBox(self.MainWindow)
@@ -223,6 +211,7 @@ class MainWindowDoAnExt(Ui_MainWindow):
         message = f"Đã lưu nhà cung cấp: {supplier.ten} (ID: {supplier.id})"
         QMessageBox.information(self.MainWindow, "Thành công", message)
 
+
     def search_supplier(self):
         search_id = self.lineEditSearch.text().strip()
         if not search_id:
@@ -249,15 +238,19 @@ class MainWindowDoAnExt(Ui_MainWindow):
             )
             self.textEditDescription.setText(description)
 
-            for row in range(self.tableWidgetSupplier.rowCount()):
-                if self.tableWidgetSupplier.item(row, 0).text() == search_id:
-                    for col in range(self.tableWidgetSupplier.columnCount()):
-                        self.tableWidgetSupplier.item(row, col).setBackground(QColor(255, 255, 0))
-                    break
+        for row in range(self.tableWidgetSupplier.rowCount()):
+            if self.tableWidgetSupplier.item(row, 0).text() == search_id:
+                for col in range(self.tableWidgetSupplier.columnCount()):
+                    self.tableWidgetSupplier.item(row, col).setBackground(QColor(255, 255, 0))
+                break
 
         else:
             QMessageBox.warning(self.MainWindow, "Không tìm thấy", f"Không tìm thấy nhà cung cấp có ID: {search_id}")
 
-
+    def open_help(self):
+        file_help = "HElP SUPPLIER.pdf"
+        current_path = os.getcwd()
+        file_help = f"{current_path}/../assets/{file_help}"
+        webbrowser.open_new(file_help)
 
 
