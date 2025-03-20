@@ -1,6 +1,8 @@
 import os
 import webbrowser
 
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import QTableWidgetItem, QMessageBox
 from models.DataConnector import DataConnector
 from models.ExportTool import ExportTool
@@ -50,25 +52,24 @@ class MainWindowEmployeeExt(Ui_MainWindow):
             self.tableWidgetProduct.setItem(row,7,col_shift)
             self.tableWidgetProduct.setItem(row,8,col_number)
             self.tableWidgetProduct.setItem(row,9,col_address)
-    def show_detail_product(self):
-        index=self.tableWidgetProduct.currentRow()
-        if index<0:
-            return
-        product=self.employees[index]
-        self.lineEditId.setText(product.EmployeeId)
-        self.lineEditName.setText(product.EmployeeName)
-        self.lineEditUserName.setText(product.UserName)
-        self.lineEditUserPassword.setText(str(product.Password))
-        self.lineEditUserRole.setText(product.Role)
-        self.lineEditEmail.setText(product.Email)
-        self.lineEditLevel.setText(product.Level)
-        self.lineEditShift.setText(product.Shift)
-        self.lineEditNumber.setText(product.Number)
-        self.lineEditAddress.setText(product.Address)
+    # def show_detail_product(self):
+    #     index=self.tableWidgetProduct.currentRow()
+    #     if index<0:
+    #         return
+    #     product=self.employees[index]
+    #     self.lineEditId.setText(product.EmployeeId)
+    #     self.lineEditName.setText(product.EmployeeName)
+    #     self.lineEditUserName.setText(product.UserName)
+    #     self.lineEditUserPassword.setText(str(product.Password))
+    #     self.lineEditUserRole.setText(product.Role)
+    #     self.lineEditEmail.setText(product.Email)
+    #     self.lineEditLevel.setText(product.Level)
+    #     self.lineEditShift.setText(product.Shift)
+    #     self.lineEditNumber.setText(product.Number)
+    #     self.lineEditAddress.setText(product.Address)
 
 
     def setupSignalAndSlot(self):
-        """Gán sự kiện cho các nút."""
         self.pushButtonSave.clicked.connect(self.xuly_luu_moi)
         self.pushButtonUpdate.clicked.connect(self.xuly_cap_nhat)
         self.pushButtonRemove.clicked.connect(self.xuly_xoa)
@@ -78,6 +79,19 @@ class MainWindowEmployeeExt(Ui_MainWindow):
         self.pushButtonClear.clicked.connect(self.clear_product_detail)
         self.pushButtonSearch.clicked.connect(self.search_employee)
         self.pushButtonShowAll.clicked.connect(self.show_all_employees)
+        self.actionHelp.triggered.connect(self.open_help)
+
+        self.lineEditId.textChanged.connect(self.toggle_clear_button)
+        self.lineEditName.textChanged.connect(self.toggle_clear_button)
+        self.lineEditUserName.textChanged.connect(self.toggle_clear_button)
+        self.lineEditUserPassword.textChanged.connect(self.toggle_clear_button)
+        self.lineEditUserRole.textChanged.connect(self.toggle_clear_button)
+        self.lineEditEmail.textChanged.connect(self.toggle_clear_button)
+        self.lineEditLevel.textChanged.connect(self.toggle_clear_button)
+        self.lineEditShift.textChanged.connect(self.toggle_clear_button)
+        self.lineEditNumber.textChanged.connect(self.toggle_clear_button)
+        self.lineEditAddress.textChanged.connect(self.toggle_clear_button)
+        self.toggle_clear_button()
 
     def xuly_luu_moi(self):
         empid = self.lineEditId.text().strip()
@@ -181,6 +195,100 @@ class MainWindowEmployeeExt(Ui_MainWindow):
         self.lineEditNumber.setText("")
         self.lineEditAddress.setText("")
         self.lineEditId.setFocus()
+        self.load_all_employees()
+        self.toggle_clear_button()
+
+    # def search_employee(self):
+    #     search_id = self.lineEditId.text().strip()
+    #
+    #     if not search_id:
+    #         QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
+    #         return
+    #
+    #     # Tìm nhân viên theo ID
+    #     employee = next((e for e in self.employees if e.EmployeeId == search_id), None)
+    #
+    #     if employee:
+    #         self.lineEditName.setText(employee.EmployeeName)
+    #         self.lineEditUserName.setText(employee.UserName)
+    #         self.lineEditUserPassword.setText(employee.Password)
+    #         self.lineEditUserRole.setText(employee.Role)
+    #         self.lineEditEmail.setText(employee.Email)
+    #         self.lineEditShift.setText(employee.Shift)
+    #         self.lineEditLevel.setText(employee.Level)
+    #         self.lineEditNumber.setText(employee.Number)
+    #         self.lineEditAddress.setText(employee.Address)
+    #
+    #         # Cập nhật các trường có ComboBox (nếu có)
+    #         if hasattr(self, 'comboBoxLevel'):
+    #             self.comboBoxLevel.setCurrentText(employee.Level)
+    #         if hasattr(self, 'comboBoxShift'):
+    #             self.comboBoxShift.setCurrentText(employee.Shift)
+    #
+    #     else:
+    #         QMessageBox.warning(self.MainWindow, "Không tìm thấy", f"Không tìm thấy nhân viên có ID: {search_id}")
+
+    def show_all_employees(self):
+        self.employees = self.dc.get_all_employees()
+        self.show_employee_gui()
+
+    def show_detail_product(self):
+        index = self.tableWidgetProduct.currentRow()
+        if index < 0:
+            return
+        product = self.employees[index]
+        self.lineEditId.setText(product.EmployeeId)
+        self.lineEditName.setText(product.EmployeeName)
+        self.lineEditUserName.setText(product.UserName)
+        self.lineEditUserPassword.setText(str(product.Password))
+        self.lineEditUserRole.setText(product.Role)
+        self.lineEditEmail.setText(product.Email)
+        self.lineEditLevel.setText(product.Level)
+        self.lineEditShift.setText(product.Shift)
+        self.lineEditNumber.setText(product.Number)
+        self.lineEditAddress.setText(product.Address)
+        for i in range(self.tableWidgetProduct.rowCount()):
+            for j in range(self.tableWidgetProduct.columnCount()):
+                if self.tableWidgetProduct.item(i, j):
+                    self.tableWidgetProduct.item(i, j).setBackground(QColor(Qt.GlobalColor.white))
+        pastel_color = QColor("#FFFACD")
+        for j in range(self.tableWidgetProduct.columnCount()):
+            if self.tableWidgetProduct.item(index, j):
+                self.tableWidgetProduct.item(index, j).setBackground(pastel_color)
+
+    def show_search_result_in_table(self, employee):
+
+        self.tableWidgetProduct.setRowCount(0)
+        row = self.tableWidgetProduct.rowCount()
+        self.tableWidgetProduct.insertRow(row)
+        col_proid = QTableWidgetItem(employee.EmployeeId)
+        col_proname = QTableWidgetItem(employee.EmployeeName)
+        col_price = QTableWidgetItem(str(employee.UserName))
+        col_quantity = QTableWidgetItem(str(employee.Password))
+        col_cateid = QTableWidgetItem(str(employee.Role))
+        col_email = QTableWidgetItem(employee.Email)
+        col_level = QTableWidgetItem(employee.Level)
+        col_shift = QTableWidgetItem(employee.Shift)
+        col_number = QTableWidgetItem(employee.Number)
+        col_address = QTableWidgetItem(employee.Address)
+
+
+        self.tableWidgetProduct.setItem(row, 0, col_proid)
+        self.tableWidgetProduct.setItem(row, 1, col_proname)
+        self.tableWidgetProduct.setItem(row, 2, col_price)
+        self.tableWidgetProduct.setItem(row, 3, col_quantity)
+        self.tableWidgetProduct.setItem(row, 4, col_cateid)
+        self.tableWidgetProduct.setItem(row, 5, col_email)
+        self.tableWidgetProduct.setItem(row, 6, col_level)
+        self.tableWidgetProduct.setItem(row, 7, col_shift)
+        self.tableWidgetProduct.setItem(row, 8, col_number)
+        self.tableWidgetProduct.setItem(row, 9, col_address)
+
+
+        pastel_color = QColor("#B2D8D8")
+        for j in range(self.tableWidgetProduct.columnCount()):
+            if self.tableWidgetProduct.item(row, j):
+                self.tableWidgetProduct.item(row, j).setBackground(pastel_color)
 
     def search_employee(self):
         search_id = self.lineEditId.text().strip()
@@ -189,10 +297,11 @@ class MainWindowEmployeeExt(Ui_MainWindow):
             QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
             return
 
-        # Tìm nhân viên theo ID
+
         employee = next((e for e in self.employees if e.EmployeeId == search_id), None)
 
         if employee:
+
             self.lineEditName.setText(employee.EmployeeName)
             self.lineEditUserName.setText(employee.UserName)
             self.lineEditUserPassword.setText(employee.Password)
@@ -202,8 +311,7 @@ class MainWindowEmployeeExt(Ui_MainWindow):
             self.lineEditLevel.setText(employee.Level)
             self.lineEditNumber.setText(employee.Number)
             self.lineEditAddress.setText(employee.Address)
-
-            # Cập nhật các trường có ComboBox (nếu có)
+            self.show_search_result_in_table(employee)
             if hasattr(self, 'comboBoxLevel'):
                 self.comboBoxLevel.setCurrentText(employee.Level)
             if hasattr(self, 'comboBoxShift'):
@@ -212,15 +320,44 @@ class MainWindowEmployeeExt(Ui_MainWindow):
         else:
             QMessageBox.warning(self.MainWindow, "Không tìm thấy", f"Không tìm thấy nhân viên có ID: {search_id}")
 
-    def show_all_employees(self):
-        self.employees = self.dc.get_all_employees()
-        self.show_employee_gui()
+    def load_all_employees(self):
+        self.tableWidgetProduct.setRowCount(0)
+        for employee in self.employees:
+            row = self.tableWidgetProduct.rowCount()
+            self.tableWidgetProduct.insertRow(row)
 
-    # def open_help(self):
-    #     file_help = "Help.pdf"
-    #     current_path = os.getcwd()
-    #     file_help = f"{current_path}/../asset/{file_help}"
-    #     webbrowser.open_new(file_help)
+            self.tableWidgetProduct.setItem(row, 0, QTableWidgetItem(employee.EmployeeId))
+            self.tableWidgetProduct.setItem(row, 1, QTableWidgetItem(employee.EmployeeName))
+            self.tableWidgetProduct.setItem(row, 2, QTableWidgetItem(employee.UserName))
+            self.tableWidgetProduct.setItem(row, 3, QTableWidgetItem(employee.Password))
+            self.tableWidgetProduct.setItem(row, 4, QTableWidgetItem(employee.Role))
+            self.tableWidgetProduct.setItem(row, 5, QTableWidgetItem(employee.Email))
+            self.tableWidgetProduct.setItem(row, 6, QTableWidgetItem(employee.Level))
+            self.tableWidgetProduct.setItem(row, 7, QTableWidgetItem(employee.Shift))
+            self.tableWidgetProduct.setItem(row, 8, QTableWidgetItem(employee.Number))
+            self.tableWidgetProduct.setItem(row, 9, QTableWidgetItem(employee.Address))
+
+    def open_help(self):
+        file_help = "HDSD.pdf"
+        current_path = os.getcwd()
+        file_help = f"{current_path}/../help/{file_help}"
+        webbrowser.open_new(file_help)
+
+    def toggle_clear_button(self):
+        has_text = any([
+            self.lineEditId.text().strip(),
+            self.lineEditName.text().strip(),
+            self.lineEditUserName.text().strip(),
+            self.lineEditUserPassword.text().strip(),
+            self.lineEditUserRole.text().strip(),
+            self.lineEditEmail.text().strip(),
+            self.lineEditLevel.text().strip(),
+            self.lineEditShift.text().strip(),
+            self.lineEditNumber.text().strip(),
+            self.lineEditAddress.text().strip()
+        ])
+
+        self.pushButtonClear.setEnabled(has_text)
 
     # def show_all_products(self):
     #     self.products = self.dc.get_all_products()

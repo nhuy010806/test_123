@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1101</width>
-    <height>771</height>
+    <width>1155</width>
+    <height>800</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>700</height>
+   </size>
   </property>
   <property name="maximumSize">
    <size>
@@ -16,8 +22,21 @@
     <height>16777215</height>
    </size>
   </property>
+  <property name="tabletTracking">
+   <bool>false</bool>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
    <string>Products</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../IMAGES/z6425228061834_7a09334b4f7b1934dff973f38dcd7f2c.jpg</normaloff>../IMAGES/z6425228061834_7a09334b4f7b1934dff973f38dcd7f2c.jpg</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
   </property>
   <property name="styleSheet">
    <string notr="true">QMenuBar {
@@ -52,476 +71,693 @@ QTableCornerButton::section {
     background-color: #00806c; /* Cùng màu với tiêu đề */
     border: 1px solid #006400;
 }
-background-image: url(&quot;nentron.png&quot;);
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
+
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>12</x>
-      <y>57</y>
-      <width>1061</width>
-      <height>671</height>
+      <x>30</x>
+      <y>0</y>
+      <width>1141</width>
+      <height>48</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: bold 22pt &quot;Tahoma&quot;;        /* Cỡ chữ */
+    color: #00806c;             /* Màu chữ */
+    font-weight: bold;      /* Chữ đậm */
+
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string>Product Management</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-30</y>
+      <width>1161</width>
+      <height>801</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../IMAGES/productbackgr.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonBack">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>720</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: bold 12pt &quot;Tahoma&quot;; /* Chữ in đậm */
+
+}
+
+QPushButton:enabled {
+		background-color: #00806c;
+		color: White;
+}
+
+QPushButton:pressed {
+		background-color: #dfc456;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #86ad6f;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../IMAGES/all.png</normaloff>../IMAGES/all.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>1091</width>
+      <height>661</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMaximumSize</enum>
+     </property>
      <item>
-      <widget class="QListWidget" name="listWidgetCategory">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>700</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QListWidget {
-    font: 12pt &quot;Tahoma&quot;;
-	color: #00806c; /* Màu chữ xanh ngọc */
-    background-color: rgb(210, 227, 195); /* Màu nền */
-    border: 2px solid #30806c; /* Viền xanh lá đậm (mã màu #006400) */
-    border-radius: 5px; /* Bo tròn góc viền (có thể thay đổi) */
-}</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="flow">
-        <enum>QListView::TopToBottom</enum>
-       </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <property name="text">
-         <string>Trái cây</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
+        <widget class="QTableWidget" name="tableWidgetProduct">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>700</width>
+           <height>900</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    font: 11pt &quot;Tahoma&quot;;
+    background: transparent;
+}
+
+QTableWidget::item:hover {
+    background-color: white; /* Màu xanh nhạt khi di chuột */
+}
+
+QHeaderView::section:hover {
+    background-color: #AED6F1; /* Màu xanh dương nhạt khi di chuột vào tiêu đề */
+}
+</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAsNeeded</enum>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustIgnored</enum>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>false</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ContiguousSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <property name="verticalScrollMode">
+          <enum>QAbstractItemView::ScrollPerItem</enum>
+         </property>
+         <property name="showGrid">
+          <bool>true</bool>
+         </property>
+         <property name="gridStyle">
+          <enum>Qt::SolidLine</enum>
+         </property>
+         <property name="sortingEnabled">
+          <bool>false</bool>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+         <property name="cornerButtonEnabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="horizontalHeaderVisible">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>120</number>
+         </attribute>
+         <attribute name="horizontalHeaderHighlightSections">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>70</number>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderDefaultSectionSize">
+          <number>50</number>
+         </attribute>
+         <attribute name="verticalHeaderHighlightSections">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderMinimumSectionSize">
+          <number>50</number>
+         </attribute>
+         <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderStretchLastSection">
+          <bool>false</bool>
+         </attribute>
+         <row>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>3</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>4</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>5</string>
+          </property>
+         </row>
+         <column>
+          <property name="text">
+           <string> ID</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Times New Roman</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+          <property name="background">
+           <color>
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Name</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Times New Roman</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Entry Price</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Times New Roman</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Quantity</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Times New Roman</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Cate ID</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Times New Roman</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Date</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Times New Roman</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
+         <item row="0" column="0">
+          <property name="text">
+           <string>P1</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="0" column="1">
+          <property name="text">
+           <string>Product 1</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="0" column="2">
+          <property name="text">
+           <string>100</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="0" column="3">
+          <property name="text">
+           <string>1</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="0" column="4">
+          <property name="text">
+           <string>C1</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="0">
+          <property name="text">
+           <string>P2</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="1">
+          <property name="text">
+           <string>Product 2</string>
+          </property>
+         </item>
+         <item row="1" column="2">
+          <property name="text">
+           <string>50</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="3">
+          <property name="text">
+           <string>7</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="4">
+          <property name="text">
+           <string>C2</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="0">
+          <property name="text">
+           <string>P3</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="1">
+          <property name="text">
+           <string>Product 3</string>
+          </property>
+         </item>
+         <item row="2" column="2">
+          <property name="text">
+           <string>15</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="3">
+          <property name="text">
+           <string>9</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="4">
+          <property name="text">
+           <string>C2</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="0">
+          <property name="text">
+           <string>P4</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="1">
+          <property name="text">
+           <string>Product 4</string>
+          </property>
+         </item>
+         <item row="3" column="2">
+          <property name="text">
+           <string>48</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="3">
+          <property name="text">
+           <string>15</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="4">
+          <property name="text">
+           <string>C3</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="0">
+          <property name="text">
+           <string>P5</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="1">
+          <property name="text">
+           <string>Product 5</string>
+          </property>
+         </item>
+         <item row="4" column="2">
+          <property name="text">
+           <string>8</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="3">
+          <property name="text">
+           <string>3</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="4">
+          <property name="text">
+           <string>C1</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+        </widget>
        </item>
        <item>
-        <property name="text">
-         <string>Rau củ</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
+        <widget class="QListWidget" name="listWidgetCategory">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>700</width>
+           <height>500</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QListWidget {
+    border: 2px solid #00806c;  /* Viền xanh đậm */
+    border-radius: 5px;  /* Bo góc nhẹ */
+	background: transparent;
+    font: bold 12pt &quot;Tahoma&quot;; /* Font chữ đậm */
+    color: #00806c; /* Chữ xanh đậm */
+    padding: 5px;
+}
+
+QListWidget::item {
+    padding: 10px;
+    border-radius: 10px; /* Bo góc item */
+    background-color: rgb(186, 216, 171); /* Màu xanh nhạt */
+    color: #00806c; /* Chữ xanh đậm */
+    margin: 5px;
+    text-align: center;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+QListWidget::item:hover {
+    background: white; /* Khi di chuột vào, nền trắng */
+    color: #00806c; /* Giữ chữ xanh đậm */
+}
+
+QListWidget::item:selected,
+QListWidget::item:selected:active {
+    background: #00806c; /* Nền xanh đậm khi chọn */
+    color: white; /* Chữ trắng nổi bật */
+    font-weight: bold;
+    border: none; /* Bỏ viền */
+    outline: none; /* Không hiển thị đường viền focus */
+}
+</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAsNeeded</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAsNeeded</enum>
+         </property>
+         <property name="flow">
+          <enum>QListView::TopToBottom</enum>
+         </property>
+         <item>
+          <property name="text">
+           <string>Trái cây</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Tahoma</family>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Rau củ</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Tahoma</family>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Khác</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Tahoma</family>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+        </widget>
        </item>
-       <item>
-        <property name="text">
-         <string>Khác</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTableWidget" name="tableWidgetProduct">
-       <property name="maximumSize">
-        <size>
-         <width>500</width>
-         <height>700</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 11pt &quot;Tahoma&quot;;
-background-color: rgb(208, 225, 193);</string>
-       </property>
-       <property name="gridStyle">
-        <enum>Qt::CustomDashLine</enum>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>true</bool>
-       </attribute>
-       <attribute name="horizontalHeaderCascadingSectionResizes">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>120</number>
-       </attribute>
-       <attribute name="horizontalHeaderHighlightSections">
-        <bool>true</bool>
-       </attribute>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>70</number>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>true</bool>
-       </attribute>
-       <attribute name="verticalHeaderCascadingSectionResizes">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderDefaultSectionSize">
-        <number>40</number>
-       </attribute>
-       <attribute name="verticalHeaderHighlightSections">
-        <bool>true</bool>
-       </attribute>
-       <attribute name="verticalHeaderMinimumSectionSize">
-        <number>50</number>
-       </attribute>
-       <attribute name="verticalHeaderShowSortIndicator" stdset="0">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderStretchLastSection">
-        <bool>false</bool>
-       </attribute>
-       <row>
-        <property name="text">
-         <string>1</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>2</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>3</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>4</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>5</string>
-        </property>
-       </row>
-       <column>
-        <property name="text">
-         <string> ID</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>Times New Roman</family>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-        <property name="background">
-         <color>
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
-         </color>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>Times New Roman</family>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Entry Price</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>Times New Roman</family>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Quantity</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>Times New Roman</family>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Cate ID</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>Times New Roman</family>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Date</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>Times New Roman</family>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </column>
-       <item row="0" column="0">
-        <property name="text">
-         <string>P1</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="0" column="1">
-        <property name="text">
-         <string>Product 1</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="0" column="2">
-        <property name="text">
-         <string>100</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="0" column="3">
-        <property name="text">
-         <string>1</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="0" column="4">
-        <property name="text">
-         <string>C1</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="1" column="0">
-        <property name="text">
-         <string>P2</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="1" column="1">
-        <property name="text">
-         <string>Product 2</string>
-        </property>
-       </item>
-       <item row="1" column="2">
-        <property name="text">
-         <string>50</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="1" column="3">
-        <property name="text">
-         <string>7</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="1" column="4">
-        <property name="text">
-         <string>C2</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="2" column="0">
-        <property name="text">
-         <string>P3</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="2" column="1">
-        <property name="text">
-         <string>Product 3</string>
-        </property>
-       </item>
-       <item row="2" column="2">
-        <property name="text">
-         <string>15</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="2" column="3">
-        <property name="text">
-         <string>9</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="2" column="4">
-        <property name="text">
-         <string>C2</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="3" column="0">
-        <property name="text">
-         <string>P4</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="3" column="1">
-        <property name="text">
-         <string>Product 4</string>
-        </property>
-       </item>
-       <item row="3" column="2">
-        <property name="text">
-         <string>48</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="3" column="3">
-        <property name="text">
-         <string>15</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="3" column="4">
-        <property name="text">
-         <string>C3</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="4" column="0">
-        <property name="text">
-         <string>P5</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="4" column="1">
-        <property name="text">
-         <string>Product 5</string>
-        </property>
-       </item>
-       <item row="4" column="2">
-        <property name="text">
-         <string>8</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="4" column="3">
-        <property name="text">
-         <string>3</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-       <item row="4" column="4">
-        <property name="text">
-         <string>C1</string>
-        </property>
-        <property name="textAlignment">
-         <set>AlignCenter</set>
-        </property>
-       </item>
-      </widget>
+      </layout>
      </item>
      <item>
       <widget class="QGroupBox" name="groupBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="maximumSize">
         <size>
-         <width>500</width>
+         <width>700</width>
          <height>700</height>
         </size>
        </property>
@@ -532,7 +768,7 @@ background-color: rgb(208, 225, 193);</string>
     margin-top: 10px; /* Đẩy tiêu đề lên trên viền */
     font: bold 14pt &quot;Tahoma&quot;; /* Chữ in đậm */
     color: #00806c; /* Màu chữ xanh ngọc */
-	background-color: rgb(208, 225, 193);
+
 }
 
 QGroupBox::title {
@@ -545,15 +781,14 @@ QLabel {
 	font: bold 12pt &quot;Tahoma&quot;;        /* Cỡ chữ */
     color: #00806c;             /* Màu chữ */
     font-weight: bold;      /* Chữ đậm */
-}
-QLineEdit {
-    font-size: 14px;        /* Cỡ chữ */
+
 }
 QLineEdit {
     border: 2px solid #00806c; /* Viền xanh lá đậm */
     border-radius: 10px;       /* Bo tròn góc */
     padding: 5px;              /* Khoảng cách nội dung với viền */
     background-color: white;   /* Nền trắng */
+	 font-size: 15px;        /* Cỡ chữ */
 }</string>
        </property>
        <property name="title">
@@ -565,8 +800,8 @@ QLineEdit {
        <widget class="QLabel" name="label_2">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>40</y>
+          <x>30</x>
+          <y>300</y>
           <width>131</width>
           <height>31</height>
          </rect>
@@ -578,18 +813,24 @@ QLineEdit {
        <widget class="QLineEdit" name="lineEditProductID">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>40</y>
-          <width>231</width>
-          <height>31</height>
+          <x>190</x>
+          <y>290</y>
+          <width>301</width>
+          <height>41</height>
          </rect>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Normal</enum>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLabel" name="label_3">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>80</y>
+          <x>30</x>
+          <y>350</y>
           <width>151</width>
           <height>31</height>
          </rect>
@@ -601,28 +842,34 @@ QLineEdit {
        <widget class="QLineEdit" name="lineEditProductName">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>80</y>
-          <width>231</width>
-          <height>31</height>
+          <x>190</x>
+          <y>340</y>
+          <width>301</width>
+          <height>41</height>
          </rect>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEditPrice">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>120</y>
-          <width>231</width>
-          <height>31</height>
+          <x>190</x>
+          <y>390</y>
+          <width>301</width>
+          <height>41</height>
          </rect>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLabel" name="label_4">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>120</y>
+          <x>30</x>
+          <y>400</y>
           <width>121</width>
           <height>31</height>
          </rect>
@@ -634,18 +881,21 @@ QLineEdit {
        <widget class="QLineEdit" name="lineEditQuantity">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>160</y>
-          <width>231</width>
-          <height>31</height>
+          <x>190</x>
+          <y>440</y>
+          <width>301</width>
+          <height>41</height>
          </rect>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLabel" name="label_5">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>160</y>
+          <x>30</x>
+          <y>450</y>
           <width>121</width>
           <height>31</height>
          </rect>
@@ -657,32 +907,35 @@ QLineEdit {
        <widget class="QLineEdit" name="lineEditCateID">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>200</y>
-          <width>231</width>
-          <height>31</height>
+          <x>190</x>
+          <y>490</y>
+          <width>301</width>
+          <height>41</height>
          </rect>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLabel" name="label_6">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>200</y>
+          <x>30</x>
+          <y>500</y>
           <width>121</width>
           <height>31</height>
          </rect>
         </property>
         <property name="text">
-         <string>Cate ID:</string>
+         <string>Cate Name:</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButtonSave">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>350</y>
-          <width>111</width>
+          <x>20</x>
+          <y>610</y>
+          <width>121</width>
           <height>31</height>
          </rect>
         </property>
@@ -720,12 +973,22 @@ QPushButton:disabled {
         <property name="text">
          <string>Save</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../IMAGES/save (2).png</normaloff>../IMAGES/save (2).png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
        </widget>
        <widget class="QPushButton" name="pushButtonClear">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>350</y>
+          <x>280</x>
+          <y>610</y>
           <width>111</width>
           <height>31</height>
          </rect>
@@ -764,13 +1027,23 @@ QPushButton:disabled {
         <property name="text">
          <string>Clear</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../IMAGES/745192.png</normaloff>../IMAGES/745192.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
        </widget>
        <widget class="QPushButton" name="pushButtonDelete">
         <property name="geometry">
          <rect>
-          <x>310</x>
-          <y>350</y>
-          <width>111</width>
+          <x>400</x>
+          <y>610</y>
+          <width>121</width>
           <height>31</height>
          </rect>
         </property>
@@ -808,13 +1081,23 @@ QPushButton:disabled {
         <property name="text">
          <string>Delete</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../IMAGES/de.png</normaloff>../IMAGES/de.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
        </widget>
        <widget class="QPushButton" name="pushButtonFilterDate">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>300</y>
-          <width>111</width>
+          <x>150</x>
+          <y>610</y>
+          <width>121</width>
           <height>31</height>
          </rect>
         </property>
@@ -852,13 +1135,23 @@ QPushButton:disabled {
         <property name="text">
          <string>Filter</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../IMAGES/filter--edit-512.webp</normaloff>../IMAGES/filter--edit-512.webp</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
        </widget>
        <widget class="QPushButton" name="pushButtonSearch">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>300</y>
-          <width>111</width>
+          <x>160</x>
+          <y>50</y>
+          <width>131</width>
           <height>31</height>
          </rect>
         </property>
@@ -896,13 +1189,23 @@ QPushButton:disabled {
         <property name="text">
          <string>Search</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../IMAGES/-_Magnifier-Search-Zoom--512.webp</normaloff>../IMAGES/-_Magnifier-Search-Zoom--512.webp</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
        </widget>
        <widget class="QPushButton" name="pushButtonShowall">
         <property name="geometry">
          <rect>
-          <x>310</x>
-          <y>300</y>
-          <width>111</width>
+          <x>10</x>
+          <y>50</y>
+          <width>141</width>
           <height>31</height>
          </rect>
         </property>
@@ -940,12 +1243,22 @@ QPushButton:disabled {
         <property name="text">
          <string>Show all</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../IMAGES/ic_fluent_select_all_on_24_regular-512.webp</normaloff>../IMAGES/ic_fluent_select_all_on_24_regular-512.webp</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
        </widget>
        <widget class="QLabel" name="label_7">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>240</y>
+          <x>30</x>
+          <y>550</y>
           <width>121</width>
           <height>31</height>
          </rect>
@@ -957,24 +1270,33 @@ QPushButton:disabled {
        <widget class="QLineEdit" name="lineEditDate">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>240</y>
-          <width>231</width>
-          <height>31</height>
+          <x>190</x>
+          <y>540</y>
+          <width>301</width>
+          <height>41</height>
          </rect>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLabel" name="labelPhoto">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>400</y>
-          <width>411</width>
-          <height>241</height>
+          <y>90</y>
+          <width>501</width>
+          <height>191</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">    QLabel {
+        border: 2px solid #00806c;  /* Viền màu xanh lá */
+        border-radius: 10px;  /* Bo góc 10px */
+        padding: 5px;  /* Tạo khoảng cách nội dung với viền */
+		background-color: rgb(255, 255, 255);
+		font: bold 12pt &quot;Tahoma&quot;;        /* Cỡ chữ */
+    }</string>
         </property>
         <property name="text">
          <string>TextLabel</string>
@@ -983,72 +1305,40 @@ QPushButton:disabled {
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
+       <widget class="QLineEdit" name="lineEditSearch">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>50</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>1071</width>
-      <height>48</height>
-     </rect>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>16777215</width>
-      <height>50</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 22pt &quot;Tahoma&quot;;
-color: rgb(26, 140, 118);
-</string>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600; color:#30806c;&quot;&gt;Product Management&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_10">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1111</width>
-      <height>751</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../IMAGES/nen.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <zorder>label_10</zorder>
-   <zorder>layoutWidget</zorder>
    <zorder>label</zorder>
+   <zorder>horizontalLayoutWidget</zorder>
+   <zorder>pushButtonBack</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1101</width>
+     <width>1155</width>
      <height>31</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSystem">
     <property name="title">
-     <string>System</string>
+     <string>Options</string>
     </property>
     <widget class="QMenu" name="menuImport_Data">
      <property name="title">
@@ -1080,13 +1370,7 @@ color: rgb(26, 140, 118);
     <addaction name="menuExport_Data"/>
     <addaction name="actionHelp_2"/>
    </widget>
-   <widget class="QMenu" name="menuBack">
-    <property name="title">
-     <string>Back</string>
-    </property>
-   </widget>
    <addaction name="menuSystem"/>
-   <addaction name="menuBack"/>
   </widget>
   <action name="actionExit">
    <property name="icon">

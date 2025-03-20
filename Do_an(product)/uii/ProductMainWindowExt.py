@@ -2,7 +2,7 @@ import os
 import webbrowser
 import datetime
 
-
+from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import QListWidgetItem, QTableWidgetItem, QMessageBox
 
@@ -23,28 +23,27 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.products = self.all_products.copy()
         self.selected_cate = None
         self.is_filtered = False
-        # self.categories=[]
-        # self.products=[]
-    def setupUi(self,MainWindow):
+
+    def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
-        self.MainWindow=MainWindow
+        self.MainWindow = MainWindow
+        self.set_buttons_enabled(False)
+        self.listWidgetCategory.hide()
         self.show_categories_gui()
+        self.products = []
         self.show_products_gui()
+        self.is_show_all_clicked = False
         self.setupSignalAndSlot()
+
     def showWindow(self):
         self.MainWindow.show()
 
     def show_categories_gui(self):
         self.listWidgetCategory.clear()
         for cate in self.categories:
-            cate_item=QListWidgetItem(str(cate))
+            cate_item = QListWidgetItem(str(cate))
+            cate_item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
             self.listWidgetCategory.addItem(cate_item)
-
-    def show_all_products(self):
-        self.products = self.original_all_products.copy()
-        self.is_filtered = False
-        self.listWidgetCategory.clearSelection()
-        self.show_products_gui()
 
     def show_products_gui(self):
         self.tableWidgetProduct.setRowCount(0)
@@ -68,6 +67,14 @@ class ProductMainWindowExt(Ui_MainWindow):
             self.tableWidgetProduct.setItem(row, 5, col_date)
 
         self.labelPhoto.setText("")
+    def show_all_products(self):
+        self.products = self.original_all_products.copy()
+        self.is_filtered = False
+        self.is_show_all_clicked = True
+        self.listWidgetCategory.clearSelection()
+        self.listWidgetCategory.show()
+        self.show_products_gui()
+        self.set_buttons_enabled(True)
 
     def setupSignalAndSlot(self):
         self.listWidgetCategory.itemSelectionChanged.connect(self.filter_product)
@@ -78,8 +85,8 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.pushButtonSearch.clicked.connect(self.search_product)
         self.pushButtonFilterDate.clicked.connect(self.toggle_filter_colored_products)
         self.pushButtonShowall.clicked.connect(self.show_all_products)
+        self.pushButtonBack.clicked.connect(self.back_program)
 
-        self.actionExit.triggered.connect(self.exit_program)
         self.exportExcel_file.triggered.connect(self.export_to_excel)
         self.importExcel_file.triggered.connect(self.import_from_excel)
         self.actionHelp_2.triggered.connect(self.open_help)
@@ -94,7 +101,16 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.exportJson_file.triggered.connect(self.export_to_json)
         self.importJson_file.triggered.connect(self.import_from_json)
 
+    def set_buttons_enabled(self, enabled):
+        self.pushButtonSearch.setEnabled(enabled)
+        self.pushButtonFilterDate.setEnabled(enabled)
+        self.pushButtonSave.setEnabled(enabled)
+        self.pushButtonDelete.setEnabled(enabled)
+        self.pushButtonClear.setEnabled(enabled)
+
     def filter_product(self):
+        if not self.is_show_all_clicked:
+            return
         row = self.listWidgetCategory.currentRow()
         if row < 0:
             return
@@ -105,25 +121,20 @@ class ProductMainWindowExt(Ui_MainWindow):
     def toggle_filter_colored_products(self):
         if not self.is_filtered:
             self.products = self.original_all_products.copy()
-
-        self.products = [
-            p for p in self.original_all_products
-            if p and self.get_product_color(p, datetime.date.today()) is not None
-        ]
+        self.products = [p for p in self.original_all_products
+                         if p and self.get_product_color(p, datetime.date.today()) is not None]
         self.is_filtered = True
         self.show_products_gui()
         self.update_colored_products()
+
     def filter_colored_products(self):
         today = datetime.date.today()
         if self.selected_cate:
             all_products = self.dc.get_products_by_categories(self.selected_cate.cateid)
         else:
             all_products = self.dc.get_all_products()
-
-        self.products = [
-            p for p in all_products
-            if p and self.get_product_color(p, today) is not None
-        ]
+        self.products = [p for p in all_products
+                         if p and self.get_product_color(p, today) is not None]
         self.show_products_gui()
         self.update_colored_products()
 
@@ -132,33 +143,31 @@ class ProductMainWindowExt(Ui_MainWindow):
         count_expiring = 0
         count_low_stock = 0
         count_both = 0
-
         total_rows = self.tableWidgetProduct.rowCount()
         total_products = len(self.products)
-
         for row in range(min(total_rows, total_products)):
             product = self.products[row]
             if not product:
                 continue
-
             color = self.get_product_color(product, today)
             if color:
                 for col in range(self.tableWidgetProduct.columnCount()):
                     item = self.tableWidgetProduct.item(row, col)
                     if item:
                         item.setBackground(color)
-
             is_expiring = self.days_until_expiry(product, today) <= 15
             is_low_stock = int(product.quantity) < 30
-
             if is_expiring and is_low_stock:
                 count_both += 1
             elif is_expiring:
                 count_expiring += 1
             elif is_low_stock:
                 count_low_stock += 1
-
-        summary_text = (f"Sắp hết hạn (vàng): {count_expiring}\nSắp hết hàng (xanh): {count_low_stock}\nCả hai (đỏ): {count_both}")
+        summary_text = (f"<p style='line-height: 1.8; text-align: left;'>"
+                        f"<b>Sắp hết hạn (vàng):</b> {count_expiring} sản phẩm<br>"
+                        f"<b>Sắp hết hàng (xanh):</b> {count_low_stock} sản phẩm<br>"
+                        f"<b>Cả hai (đỏ):</b> {count_both} sản phẩm"
+                        f"</p>")
         self.labelPhoto.setText(summary_text)
 
     def days_until_expiry(self, product, today):
@@ -174,16 +183,13 @@ class ProductMainWindowExt(Ui_MainWindow):
             quantity = int(product.quantity)
         except ValueError:
             return None
-
         if days_left <= 15 and quantity < 30:
-            return QColor("red")  # Cả hai
+            return QColor(255, 102, 102)  # Đỏ
         elif days_left <= 15:
-            return QColor("yellow")  # Sắp hết hạn
+            return QColor(253, 253, 150)   # Vàng
         elif quantity < 30:
-            return QColor("green")  # Sắp hết hàng
-
+            return QColor(167, 199, 231)  # Xanh da trời
         return None
-
 
     def show_detail_product(self):
         index = self.tableWidgetProduct.currentRow()
@@ -198,39 +204,38 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.lineEditDate.setText(str(product.date))
 
     def clear_product_details(self):
-        self.lineEditProductID.setText("")
-        self.lineEditProductName.setText("")
-        self.lineEditPrice.setText(str(""))
-        self.lineEditQuantity.setText(str(""))
-        self.lineEditCateID.setText("")
-        self.lineEditDate.setText(str(""))
-        self.lineEditProductID.setFocus()
+        self.lineEditProductID.clear()
+        self.lineEditProductName.clear()
+        self.lineEditPrice.clear()
+        self.lineEditQuantity.clear()
+        self.lineEditCateID.clear()
+        self.lineEditDate.clear()
+        self.lineEditSearch.clear()
+        self.labelPhoto.clear()
+        self.restore_previous_product_color()
 
     def save_product(self):
-        proid = self.lineEditProductID.text()
-        proname = self.lineEditProductName.text()
-        price = float(self.lineEditPrice.text())
-        quantity = int(self.lineEditQuantity.text())
-        cateid = self.lineEditCateID.text()
-        date = str(self.lineEditDate.text())
-        product = Product(proid, proname, price, quantity, cateid,date)
-        if not (proid and proname and price and quantity and cateid and date):
-            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng điền đầy đủ thông tin sản phẩm.")
+        proid = self.lineEditProductID.text().strip()
+        proname = self.lineEditProductName.text().strip()
+        price_text = self.lineEditPrice.text().strip()
+        quantity_text = self.lineEditQuantity.text().strip()
+        cateid = self.lineEditCateID.text().strip()
+        date = self.lineEditDate.text().strip()
+        if not (proid and proname and price_text and quantity_text and cateid and date):
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập đầy đủ thông tin sản phẩm.")
             return
-
         try:
-            price = float(price)
-            quantity = int(quantity)
+            price = float(price_text)
+            quantity = int(quantity_text)
         except ValueError:
             QMessageBox.warning(self.MainWindow, "Lỗi", "Giá và số lượng phải là số hợp lệ.")
             return
+        product = Product(proid, proname, price, quantity, cateid, date)
         index = next((i for i, p in enumerate(self.products) if p.proid == proid), -1)
         if index == -1:
             self.products.append(product)
         else:
-
             self.products[index] = product
-
         jff = JsonFileFactory()
         filename = "../dataset/products.json"
         jff.write_data(self.products, filename)
@@ -255,26 +260,53 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.show_products_gui()
 
     def search_product(self):
-        search_id = self.lineEditProductID.text().strip()
-        if not search_id:
-            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
+        search_text = self.lineEditSearch.text().strip().lower()
+        if not search_text:
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID hoặc Tên sản phẩm để tìm kiếm.")
             return
-
-        product = next((p for p in self.products if p.proid == search_id), None)
-
+        product = next((p for p in self.products if p.proid.lower() == search_text or p.proname.lower() == search_text),None)
+        if hasattr(self, 'selected_row') and self.selected_row is not None:
+            self.restore_previous_product_color()
         if product:
-            self.lineEditProductName.setText(product.proname)
-            self.lineEditPrice.setText(str(product.price))
-            self.lineEditQuantity.setText(str(product.quantity))
-            self.lineEditCateID.setText(product.cateid)
-            self.lineEditDate.setText(str(product.date))
+            info_text = (f"<p style='line-height: 1.5;'>"
+                        f"<b>ID:</b> {product.proid}<br>"
+                        f"<b>Tên:</b> {product.proname}<br>"
+                        f"<b>Giá:</b> {product.price}/kg<br>"
+                        f"<b>Số lượng:</b> {product.quantity}kg<br>"
+                        f"<b>Danh mục:</b> {product.cateid}<br>"
+                        f"<b>Ngày:</b> {product.date}"
+                        f"</p>")
+            self.labelPhoto.setText(info_text)
+            self.labelPhoto.setAlignment(Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
+            for row in range(self.tableWidgetProduct.rowCount()):
+                item = self.tableWidgetProduct.item(row, 0)
+                if item and (item.text().lower() == product.proid.lower()):
+                    self.selected_row = row
+                    self.previous_colors = {}
+                    for col in range(self.tableWidgetProduct.columnCount()):
+                        cell = self.tableWidgetProduct.item(row, col)
+                        if cell:
+                            self.previous_colors[col] = cell.background()
+                            cell.setBackground(QColor("#00806c"))
+                    break
         else:
-            QMessageBox.warning(self.MainWindow, "Không tìm thấy", f"Không tìm thấy sản phẩm có ID: {search_id}")
+            QMessageBox.warning(self.MainWindow, "Không tìm thấy",
+                                f"Không tìm thấy sản phẩm có ID hoặc Tên: {search_text}")
+            self.labelPhoto.setText("Không tìm thấy sản phẩm")
 
-    def exit_program(self):
+    def restore_previous_product_color(self):
+        if hasattr(self, 'selected_row') and self.selected_row is not None:
+            for col, color in self.previous_colors.items():
+                item = self.tableWidgetProduct.item(self.selected_row, col)
+                if item:
+                    item.setBackground(color)
+            self.selected_row = None
+            self.previous_colors = {}
+
+    def back_program(self):
         msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText("Muốn thoát hả?")
-        msgbox.setWindowTitle("Xác nhận thoát")
+        msgbox.setText("Muốn trở về?")
+        msgbox.setWindowTitle("Xác nhận trở về")
         msgbox.setIcon(QMessageBox.Icon.Critical)
         buttons = QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
         msgbox.setStandardButtons(buttons)
@@ -349,51 +381,51 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.show_products_gui()
         self.show_categories_gui()
 
-    # PICKLE
-    def export_to_pickle(self):
-        filename_product = "../dataset/products.pickle"
-        extool = ExportTool()
-        extool.export_products_PICKLE(filename_product, self.products)
-
-        filename_cate = "../dataset/categories.pickle"
-        extool.export_categories_PICKLE(filename_cate, self.categories)
-
-        msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText("Đã export pickle thành công")
-        msgbox.setWindowTitle("Thông báo")
-        msgbox.exec()
-
-    def import_from_pickle(self):
-        filename_product = '../dataset/products.pickle'
-        filename_cate = "../dataset/categories.pickle"
-        extool = ExportTool()
-        self.categories = extool.import_categories_PICKLE(filename_cate)
-        self.products = extool.import_products_PICKLE(filename_product)
-        self.show_products_gui()
-        self.show_categories_gui()
+    # # PICKLE
+    # def export_to_pickle(self):
+    #     filename_product = "../dataset/products.pickle"
+    #     extool = ExportTool()
+    #     extool.export_products_PICKLE(filename_product, self.products)
+    #
+    #     filename_cate = "../dataset/categories.pickle"
+    #     extool.export_categories_PICKLE(filename_cate, self.categories)
+    #
+    #     msgbox = QMessageBox(self.MainWindow)
+    #     msgbox.setText("Đã export pickle thành công")
+    #     msgbox.setWindowTitle("Thông báo")
+    #     msgbox.exec()
+    #
+    # def import_from_pickle(self):
+    #     filename_product = '../dataset/products.pickle'
+    #     filename_cate = "../dataset/categories.pickle"
+    #     extool = ExportTool()
+    #     self.categories = extool.import_categories_PICKLE(filename_cate)
+    #     self.products = extool.import_products_PICKLE(filename_product)
+    #     self.show_products_gui()
+    #     self.show_categories_gui()
 
     # XML
-    def export_to_xml(self):
-        filename_product = "../dataset/products.xml"
-        extool = ExportTool()
-        extool.export_products_XML(filename_product, self.products)
-
-        filename_cate = "../dataset/categories.xml"
-        extool.export_categories_XML(filename_cate, self.categories)
-
-        msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText("Đã export xml thành công")
-        msgbox.setWindowTitle("Thông báo")
-        msgbox.exec()
-
-    def import_from_xml(self):
-        filename_product = '../dataset/products.xml'
-        filename_cate = "../dataset/categories.xml"
-        extool = ExportTool()
-        self.categories = extool.import_categories_XML(filename_cate)
-        self.products = extool.import_products_XML(filename_product)
-        self.show_products_gui()
-        self.show_categories_gui()
+    # def export_to_xml(self):
+    #     filename_product = "../dataset/products.xml"
+    #     extool = ExportTool()
+    #     extool.export_products_XML(filename_product, self.products)
+    #
+    #     filename_cate = "../dataset/categories.xml"
+    #     extool.export_categories_XML(filename_cate, self.categories)
+    #
+    #     msgbox = QMessageBox(self.MainWindow)
+    #     msgbox.setText("Đã export xml thành công")
+    #     msgbox.setWindowTitle("Thông báo")
+    #     msgbox.exec()
+    #
+    # def import_from_xml(self):
+    #     filename_product = '../dataset/products.xml'
+    #     filename_cate = "../dataset/categories.xml"
+    #     extool = ExportTool()
+    #     self.categories = extool.import_categories_XML(filename_cate)
+    #     self.products = extool.import_products_XML(filename_product)
+    #     self.show_products_gui()
+    #     self.show_categories_gui()
 
     # JSON
     def export_to_json(self):
