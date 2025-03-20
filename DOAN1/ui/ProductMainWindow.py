@@ -14,6 +14,9 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1101, 771)
         MainWindow.setMaximumSize(QtCore.QSize(16777207, 16777215))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/famer.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QMenuBar {\n"
 "    background-color: #00806c;  /* Màu nền */\n"
 "    color: White;  /* Màu chữ */\n"
@@ -212,7 +215,7 @@ class Ui_MainWindow(object):
         self.lineEditCateID.setGeometry(QtCore.QRect(160, 70, 321, 51))
         self.lineEditCateID.setObjectName("lineEditCateID")
         self.pushButtonSave = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonSave.setGeometry(QtCore.QRect(20, 260, 131, 51))
+        self.pushButtonSave.setGeometry(QtCore.QRect(10, 270, 111, 41))
         self.pushButtonSave.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -242,13 +245,13 @@ class Ui_MainWindow(object):
 "        color: #ffffff;\n"
 "}\n"
 "")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/save (2).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButtonSave.setIcon(icon)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/save (2).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonSave.setIcon(icon1)
         self.pushButtonSave.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonSave.setObjectName("pushButtonSave")
         self.pushButtonDelete = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonDelete.setGeometry(QtCore.QRect(340, 260, 141, 51))
+        self.pushButtonDelete.setGeometry(QtCore.QRect(260, 270, 111, 41))
         self.pushButtonDelete.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -278,13 +281,13 @@ class Ui_MainWindow(object):
 "        color: #ffffff;\n"
 "}\n"
 "")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/de.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButtonDelete.setIcon(icon1)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/de.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonDelete.setIcon(icon2)
         self.pushButtonDelete.setIconSize(QtCore.QSize(30, 30))
         self.pushButtonDelete.setObjectName("pushButtonDelete")
         self.pushButtonShowall = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonShowall.setGeometry(QtCore.QRect(170, 260, 151, 51))
+        self.pushButtonShowall.setGeometry(QtCore.QRect(130, 270, 121, 41))
         self.pushButtonShowall.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -314,10 +317,10 @@ class Ui_MainWindow(object):
 "        color: #ffffff;\n"
 "}\n"
 "")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/all.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButtonShowall.setIcon(icon2)
-        self.pushButtonShowall.setIconSize(QtCore.QSize(30, 30))
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/showall.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonShowall.setIcon(icon3)
+        self.pushButtonShowall.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonShowall.setObjectName("pushButtonShowall")
         self.labelDescrip = QtWidgets.QLabel(parent=self.groupBox)
         self.labelDescrip.setGeometry(QtCore.QRect(80, 350, 361, 281))
@@ -339,6 +342,42 @@ class Ui_MainWindow(object):
         self.lineEditCateName_2.setGeometry(QtCore.QRect(20, 180, 471, 51))
         self.lineEditCateName_2.setText("")
         self.lineEditCateName_2.setObjectName("lineEditCateName_2")
+        self.pushButtonExit = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonExit.setGeometry(QtCore.QRect(380, 270, 111, 41))
+        self.pushButtonExit.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}\n"
+"")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/exit (2).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonExit.setIcon(icon4)
+        self.pushButtonExit.setIconSize(QtCore.QSize(25, 25))
+        self.pushButtonExit.setObjectName("pushButtonExit")
         self.horizontalLayout_4.addWidget(self.groupBox)
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(10, 0, 1071, 48))
@@ -351,75 +390,110 @@ class Ui_MainWindow(object):
         self.label_10 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_10.setGeometry(QtCore.QRect(0, 0, 1111, 751))
         self.label_10.setText("")
-        self.label_10.setPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/nen.png"))
+        self.label_10.setPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/nenanh.png"))
         self.label_10.setScaledContents(True)
         self.label_10.setObjectName("label_10")
+        self.pushButtonBack = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonBack.setGeometry(QtCore.QRect(30, 10, 111, 31))
+        self.pushButtonBack.setStyleSheet("QPushButton {\n"
+"    border-radius: 15px;\n"
+"    border-right: 1px solid #aaaaaa;\n"
+"    border-bottom: 1px solid #aaaaaa;\n"
+"    font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"    background-color: white;  /* Nền trắng */\n"
+"    color: #0c2f70; /* Chữ xanh đậm */\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"    background-color: white;  /* Nền trắng */\n"
+"    color: #0c2f70; /* Chữ xanh đậm */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #dfc456;\n"
+"    color: #fffffe;\n"
+"}\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: #86ad6f;\n"
+"    color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: white;\n"
+"    color: #0c2f70; /* Xanh đậm */\n"
+"}\n"
+"")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/all.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonBack.setIcon(icon5)
+        self.pushButtonBack.setIconSize(QtCore.QSize(25, 25))
+        self.pushButtonBack.setObjectName("pushButtonBack")
         self.label_10.raise_()
         self.layoutWidget.raise_()
         self.label.raise_()
+        self.pushButtonBack.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1101, 31))
         self.menubar.setObjectName("menubar")
         self.menuHelp = QtWidgets.QMenu(parent=self.menubar)
         self.menuHelp.setObjectName("menuHelp")
-        self.menuBack = QtWidgets.QMenu(parent=self.menubar)
-        self.menuBack.setObjectName("menuBack")
         MainWindow.setMenuBar(self.menubar)
         self.actionExit = QtGui.QAction(parent=MainWindow)
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/9104334_sign out_logout_exit_out_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.actionExit.setIcon(icon3)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/9104334_sign out_logout_exit_out_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.actionExit.setIcon(icon6)
         self.actionExit.setObjectName("actionExit")
         self.importTXT_file = QtGui.QAction(parent=MainWindow)
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/bxs-file-txt-512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.importTXT_file.setIcon(icon4)
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/bxs-file-txt-512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.importTXT_file.setIcon(icon7)
         self.importTXT_file.setObjectName("importTXT_file")
         self.importCSV_file = QtGui.QAction(parent=MainWindow)
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/4344184.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.importCSV_file.setIcon(icon5)
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/4344184.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.importCSV_file.setIcon(icon8)
         self.importCSV_file.setObjectName("importCSV_file")
         self.importXML_file = QtGui.QAction(parent=MainWindow)
         self.importXML_file.setObjectName("importXML_file")
         self.importJSON_file = QtGui.QAction(parent=MainWindow)
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/3456434.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.importJSON_file.setIcon(icon6)
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/3456434.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.importJSON_file.setIcon(icon9)
         self.importJSON_file.setObjectName("importJSON_file")
         self.importExcel_file = QtGui.QAction(parent=MainWindow)
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.importExcel_file.setIcon(icon7)
+        icon10 = QtGui.QIcon()
+        icon10.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.importExcel_file.setIcon(icon10)
         self.importExcel_file.setObjectName("importExcel_file")
         self.importPickle_file = QtGui.QAction(parent=MainWindow)
         self.importPickle_file.setObjectName("importPickle_file")
         self.exportTXT_file = QtGui.QAction(parent=MainWindow)
-        self.exportTXT_file.setIcon(icon4)
+        self.exportTXT_file.setIcon(icon7)
         self.exportTXT_file.setObjectName("exportTXT_file")
         self.exportCSV_file = QtGui.QAction(parent=MainWindow)
-        self.exportCSV_file.setIcon(icon5)
+        self.exportCSV_file.setIcon(icon8)
         self.exportCSV_file.setObjectName("exportCSV_file")
         self.exportXML_file = QtGui.QAction(parent=MainWindow)
         self.exportXML_file.setObjectName("exportXML_file")
         self.exportJSON_file = QtGui.QAction(parent=MainWindow)
-        self.exportJSON_file.setIcon(icon6)
+        self.exportJSON_file.setIcon(icon9)
         self.exportJSON_file.setObjectName("exportJSON_file")
         self.exportPickle_file = QtGui.QAction(parent=MainWindow)
         self.exportPickle_file.setObjectName("exportPickle_file")
         self.exportExcel_file = QtGui.QAction(parent=MainWindow)
-        self.exportExcel_file.setIcon(icon7)
+        self.exportExcel_file.setIcon(icon10)
         self.exportExcel_file.setObjectName("exportExcel_file")
         self.actionHelp = QtGui.QAction(parent=MainWindow)
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/9044348_help_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.actionHelp.setIcon(icon8)
+        icon11 = QtGui.QIcon()
+        icon11.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/9044348_help_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.actionHelp.setIcon(icon11)
         self.actionHelp.setObjectName("actionHelp")
         self.actionFeedback = QtGui.QAction(parent=MainWindow)
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/8207898_about_info_information_help_ui_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.actionFeedback.setIcon(icon9)
+        icon12 = QtGui.QIcon()
+        icon12.addPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../../../Khanh Tran/.designer/images/8207898_about_info_information_help_ui_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.actionFeedback.setIcon(icon12)
         self.actionFeedback.setObjectName("actionFeedback")
         self.importJson_file = QtGui.QAction(parent=MainWindow)
         self.importJson_file.setObjectName("importJson_file")
@@ -429,7 +503,6 @@ class Ui_MainWindow(object):
         self.actionCurrentHelp.setObjectName("actionCurrentHelp")
         self.menuHelp.addAction(self.actionCurrentHelp)
         self.menubar.addAction(self.menuHelp.menuAction())
-        self.menubar.addAction(self.menuBack.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -462,9 +535,10 @@ class Ui_MainWindow(object):
         self.pushButtonShowall.setText(_translate("MainWindow", "Show all"))
         self.label_7.setText(_translate("MainWindow", "Cate ID:"))
         self.label_8.setText(_translate("MainWindow", "Cate Description:"))
+        self.pushButtonExit.setText(_translate("MainWindow", "Exit "))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt; font-weight:600; color:#30806c;\">Product Management</span></p></body></html>"))
+        self.pushButtonBack.setText(_translate("MainWindow", "Back"))
         self.menuHelp.setTitle(_translate("MainWindow", "Help"))
-        self.menuBack.setTitle(_translate("MainWindow", "Back"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.actionExit.setShortcut(_translate("MainWindow", "Esc"))
         self.importTXT_file.setText(_translate("MainWindow", "txt file"))

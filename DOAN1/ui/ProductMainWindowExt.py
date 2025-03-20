@@ -12,6 +12,7 @@ class ProductMainWindowExt(Ui_MainWindow):
         #self.categories = self.dc.get_all_categories()  # Load danh sách Cate ID và description
         self.categories = []
         self.selected_cate = None
+        #self.product_window = product_window
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
@@ -34,7 +35,8 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.pushButtonDelete.clicked.connect(self.delete_category)
         self.pushButtonShowall.clicked.connect(self.show_all_category)
         self.actionCurrentHelp.triggered.connect(self.open_help)
-        self.menuBack.triggered.connect(self.back_window )
+        self.pushButtonBack.clicked.connect(self.back_window)
+        self.pushButtonExit.clicked.connect(self.exit_window)
 
     def filter_category(self):
         row = self.listWidgetCategory.currentRow()
@@ -61,6 +63,9 @@ class ProductMainWindowExt(Ui_MainWindow):
 
         self.categories = self.dc.get_all_categories()
         self.show_categories_gui()
+        # if self.product_window:
+        #     self.product_window.save_update_category(category)
+
 
     def delete_category(self):
         cateid = self.lineEditCateID.text().strip()
@@ -104,3 +109,12 @@ class ProductMainWindowExt(Ui_MainWindow):
     def back_window(self):
         self.MainWindow.close()  # Đóng cửa sổ hiện tại
         self.previous_window.show()  # Hiển thị cửa sổ trước đó
+    def exit_window(self):
+        msgbox = QMessageBox(self.MainWindow)
+        msgbox.setText("Bạn có chắc chắn muốn thoát không?")
+        msgbox.setWindowTitle("Xác nhận thoát")
+        msgbox.setIcon(QMessageBox.Icon.Critical)
+        buttons = QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        msgbox.setStandardButtons(buttons)
+        if msgbox.exec() == QMessageBox.StandardButton.Yes:
+            exit()

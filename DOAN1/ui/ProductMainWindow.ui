@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Products</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../ima/famer.jpg</normaloff>../ima/famer.jpg</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">QMenuBar {
     background-color: #00806c;  /* Màu nền */
@@ -317,10 +321,10 @@ QLineEdit {
        <widget class="QPushButton" name="pushButtonSave">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>260</y>
-          <width>131</width>
-          <height>51</height>
+          <x>10</x>
+          <y>270</y>
+          <width>111</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -371,10 +375,10 @@ QPushButton:disabled {
        <widget class="QPushButton" name="pushButtonDelete">
         <property name="geometry">
          <rect>
-          <x>340</x>
-          <y>260</y>
-          <width>141</width>
-          <height>51</height>
+          <x>260</x>
+          <y>270</y>
+          <width>111</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -425,10 +429,10 @@ QPushButton:disabled {
        <widget class="QPushButton" name="pushButtonShowall">
         <property name="geometry">
          <rect>
-          <x>170</x>
-          <y>260</y>
-          <width>151</width>
-          <height>51</height>
+          <x>130</x>
+          <y>270</y>
+          <width>121</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -467,12 +471,12 @@ QPushButton:disabled {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../ima/all.png</normaloff>../ima/all.png</iconset>
+          <normaloff>../ima/showall.webp</normaloff>../ima/showall.webp</iconset>
         </property>
         <property name="iconSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+          <width>25</width>
+          <height>25</height>
          </size>
         </property>
        </widget>
@@ -540,6 +544,60 @@ background-color: white;   /* Nền trắng */</string>
          <string/>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButtonExit">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>270</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: bold 12pt &quot;Tahoma&quot;; /* Chữ in đậm */
+
+}
+
+QPushButton:enabled {
+		background-color: #00806c;
+		color: White;
+}
+
+QPushButton:pressed {
+		background-color: #dfc456;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #86ad6f;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Exit </string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../ima/exit (2).png</normaloff>../ima/exit (2).png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+       </widget>
       </widget>
      </item>
     </layout>
@@ -584,15 +642,70 @@ color: rgb(26, 140, 118);
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../ima/nen.png</pixmap>
+     <pixmap>../ima/nenanh.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButtonBack">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 15px;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    font: bold 12pt &quot;Tahoma&quot;; /* Chữ in đậm */
+    background-color: white;  /* Nền trắng */
+    color: #0c2f70; /* Chữ xanh đậm */
+}
+
+QPushButton:enabled {
+    background-color: white;  /* Nền trắng */
+    color: #0c2f70; /* Chữ xanh đậm */
+}
+
+QPushButton:pressed {
+    background-color: #dfc456;
+    color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+    background-color: #86ad6f;
+    color: #0c2f70;
+}
+
+QPushButton:disabled {
+    background-color: white;
+    color: #0c2f70; /* Xanh đậm */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../ima/all.png</normaloff>../ima/all.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+   </widget>
    <zorder>label_10</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>label</zorder>
+   <zorder>pushButtonBack</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -609,13 +722,7 @@ color: rgb(26, 140, 118);
     </property>
     <addaction name="actionCurrentHelp"/>
    </widget>
-   <widget class="QMenu" name="menuBack">
-    <property name="title">
-     <string>Back</string>
-    </property>
-   </widget>
    <addaction name="menuHelp"/>
-   <addaction name="menuBack"/>
   </widget>
   <action name="actionExit">
    <property name="icon">
