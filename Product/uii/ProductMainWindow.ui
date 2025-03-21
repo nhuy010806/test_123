@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1155</width>
+    <width>1162</width>
     <height>800</height>
    </rect>
   </property>
@@ -127,7 +127,7 @@ QTableCornerButton::section {
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_10">
+   <widget class="QLabel" name="labelBackground">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -138,6 +138,9 @@ QTableCornerButton::section {
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
     </property>
     <property name="pixmap">
      <pixmap>../IMAGES/productbackgr.png</pixmap>
@@ -1322,7 +1325,7 @@ QPushButton:disabled {
      </item>
     </layout>
    </widget>
-   <zorder>label_10</zorder>
+   <zorder>labelBackground</zorder>
    <zorder>label</zorder>
    <zorder>horizontalLayoutWidget</zorder>
    <zorder>pushButtonBack</zorder>
@@ -1332,7 +1335,7 @@ QPushButton:disabled {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1155</width>
+     <width>1162</width>
      <height>31</height>
     </rect>
    </property>
