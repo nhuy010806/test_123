@@ -84,6 +84,9 @@ background-size: cover;
          <height>700</height>
         </size>
        </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
        <property name="styleSheet">
         <string notr="true">QListWidget::item:selected {
     background: #00806c;  /* Giữ màu nền xanh đậm */
@@ -96,7 +99,7 @@ background-size: cover;
 QListWidget {
     border: 2px solid #00806c;  /* Viền xanh đậm */
     border-radius: 5px;         /* Bo góc nhẹ */
-    background: rgb(208, 225, 193); /* Nền tổng thể xanh nhạt */
+    background: transparent; /* Nền tổng thể xanh nhạt */
     font: bold 14pt &quot;Tahoma&quot;;   /* Font chữ đậm */
     color: #00806c;             /* Chữ xanh đậm */
     padding: 5px;
@@ -128,8 +131,7 @@ QListWidget::item:selected:active {
     color: white; 
     border: none;
     outline: none; /* Bỏ đường viền khi focus */
-}
-</string>
+}</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
@@ -278,7 +280,7 @@ QListWidget::item:selected:active {
     margin-top: 10px; /* Đẩy tiêu đề lên trên viền */
     font: bold 14pt &quot;Tahoma&quot;; /* Chữ in đậm */
     color: #00806c; /* Màu chữ xanh ngọc */
-	background-color: rgb(208, 225, 193);
+
 }
 
 QGroupBox::title {
@@ -291,15 +293,14 @@ QLabel {
 	font: bold 12pt &quot;Tahoma&quot;;        /* Cỡ chữ */
     color: #00806c;             /* Màu chữ */
     font-weight: bold;      /* Chữ đậm */
-}
-QLineEdit {
-    font-size: 16px;        /* Cỡ chữ */
+
 }
 QLineEdit {
     border: 2px solid #00806c; /* Viền xanh lá đậm */
     border-radius: 10px;       /* Bo tròn góc */
     padding: 5px;              /* Khoảng cách nội dung với viền */
     background-color: white;   /* Nền trắng */
+	 font-size: 15px;        /* Cỡ chữ */
 }</string>
        </property>
        <property name="title">
@@ -316,6 +317,17 @@ QLineEdit {
           <width>321</width>
           <height>51</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    font-size: 16px; /* Cỡ chữ */
+    border: 2px solid #00806c; /* Viền xanh lá đậm */
+    border-radius: 10px; /* Bo tròn góc */
+    padding: 5px; /* Khoảng cách nội dung với viền */
+    background-color: white; /* Nền trắng */
+    color: #00806c; /* Chữ xanh đậm */
+}
+</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButtonSave">
@@ -480,31 +492,6 @@ QPushButton:disabled {
          </size>
         </property>
        </widget>
-       <widget class="QLabel" name="labelDescrip">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>350</y>
-          <width>361</width>
-          <height>281</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid #00806c; /* Viền xanh lá đậm */
-border-radius: 10px;       /* Bo tròn góc */
-padding: 5px;              /* Khoảng cách nội dung với viền */
-background-color: white;   /* Nền trắng */</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../../Downloads/famer.jpg</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_7">
         <property name="geometry">
          <rect>
@@ -539,6 +526,17 @@ background-color: white;   /* Nền trắng */</string>
           <width>471</width>
           <height>51</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    font-size: 16px; /* Cỡ chữ */
+    border: 2px solid #00806c; /* Viền xanh lá đậm */
+    border-radius: 10px; /* Bo tròn góc */
+    padding: 5px; /* Khoảng cách nội dung với viền */
+    background-color: white; /* Nền trắng */
+    color: #00806c; /* Chữ xanh đậm */
+}
+</string>
         </property>
         <property name="text">
          <string/>
@@ -598,6 +596,25 @@ QPushButton:disabled {
          </size>
         </property>
        </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>340</y>
+          <width>381</width>
+          <height>261</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../ima/famer.jpg</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
       </widget>
      </item>
     </layout>
@@ -629,7 +646,7 @@ color: rgb(26, 140, 118);
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_10">
+   <widget class="QLabel" name="labelBackground">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -702,7 +719,7 @@ QPushButton:disabled {
      </size>
     </property>
    </widget>
-   <zorder>label_10</zorder>
+   <zorder>labelBackground</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>label</zorder>
    <zorder>pushButtonBack</zorder>
