@@ -1,0 +1,10 @@
+[
+    {
+        "userid": "U1",
+        "name": "Coca",
+        "username": "Coca1",
+        "password": 10,
+        "classid": 11,
+        "borrowed_books": 1
+    }
+]

@@ -15,13 +15,13 @@ class DataConnector:
         filename = "../dataset/suppliers.json"
         suppliers = jff.read_data(filename, Supplier)
         return suppliers
-    def find_index_supplier(self,id):
+    def find_index_supplier(self,supplier_id):
         self.suppliers = self.get_all_suppliers()
         for i in range(len(self.suppliers)):
             supplier=self.suppliers[i]
-            if supplier.id==id:
+            if supplier.id==supplier_id:
                 return i
-            return -1
+        return -1
     def save_new_supplier(self,supplier):
         suppliers = self.get_all_suppliers()
         suppliers.append(supplier)
@@ -34,11 +34,11 @@ class DataConnector:
             self.suppliers[index]=current_supplier
             jff = JsonFileFactory()
             filename = "../dataset/suppliers.json"
-            suppliers = jff.read_data(self.suppliers,filename)
+            jff.write_data(self.suppliers,filename)
 
-    def delete_supplier(self,id):
+    def delete_supplier(self,supplier_id):
 
-        index = self.find_index_supplier(id)
+        index = self.find_index_supplier(supplier_id)
         if index != -1:
             self.suppliers.pop(index)
             jff = JsonFileFactory()

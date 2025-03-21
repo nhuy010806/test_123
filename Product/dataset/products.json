@@ -1,0 +1,282 @@
+[
+    {
+        "proid": "F1",
+        "proname": "Cam Sành",
+        "price": 8000.0,
+        "quantity": 100,
+        "cateid": "Trái cây",
+        "date": "2025-03-10"
+    },
+    {
+        "proid": "F2",
+        "proname": "Xoài Tứ Quý",
+        "price": 15800.0,
+        "quantity": 50,
+        "cateid": "Trái cây",
+        "date": "2025-03-12"
+    },
+    {
+        "proid": "F3",
+        "proname": "Táo Envy",
+        "price": 70000.0,
+        "quantity": 20,
+        "cateid": "Trái cây",
+        "date": "2025-05-20"
+    },
+    {
+        "proid": "F4",
+        "proname": "Ổi Hồng",
+        "price": 20000.0,
+        "quantity": 100,
+        "cateid": "Trái cây",
+        "date": "2025-04-20"
+    },
+    {
+        "proid": "V1",
+        "proname": "Cải Thảo",
+        "price": 10000.0,
+        "quantity": 150,
+        "cateid": "Rau củ",
+        "date": "2025-04-10"
+    },
+    {
+        "proid": "V2",
+        "proname": "Khoai Tây",
+        "price": 11000.0,
+        "quantity": 100,
+        "cateid": "Rau củ",
+        "date": "2025-04-15"
+    },
+    {
+        "proid": "V3",
+        "proname": "Bí Ngô",
+        "price": 20000.0,
+        "quantity": 10,
+        "cateid": "Rau củ",
+        "date": "2025-03-15"
+    },
+    {
+        "proid": "V4",
+        "proname": "Dưa leo",
+        "price": 25000.0,
+        "quantity": 100,
+        "cateid": "Rau củ",
+        "date": "2025-04-20"
+    },
+    {
+        "proid": "O1",
+        "proname": "Hạt Dẻ Cười",
+        "price": 70000.0,
+        "quantity": 50,
+        "cateid": "Khác",
+        "date": "2025-06-20"
+    },
+    {
+        "proid": "O2",
+        "proname": "Hạt Óc Chó",
+        "price": 90000.0,
+        "quantity": 50,
+        "cateid": "Khác",
+        "date": "2025-07-20"
+    },
+    {
+        "proid": "O3",
+        "proname": "Nước Ép Táo",
+        "price": 6000.0,
+        "quantity": 50,
+        "cateid": "Khác",
+        "date": "2025-08-20"
+    },
+    {
+        "proid": "F5",
+        "proname": "Chuối Tiêu",
+        "price": 12000.0,
+        "quantity": 120,
+        "cateid": "Trái cây",
+        "date": "2025-03-05"
+    },
+    {
+        "proid": "F6",
+        "proname": "Dưa Hấu",
+        "price": 18000.0,
+        "quantity": 80,
+        "cateid": "Trái cây",
+        "date": "2025-03-07"
+    },
+    {
+        "proid": "F7",
+        "proname": "Lê Hàn Quốc",
+        "price": 80000.0,
+        "quantity": 60,
+        "cateid": "Trái cây",
+        "date": "2025-03-13"
+    },
+    {
+        "proid": "F8",
+        "proname": "Cam Xoàn",
+        "price": 10000.0,
+        "quantity": 25,
+        "cateid": "Trái cây",
+        "date": "2025-06-01"
+    },
+    {
+        "proid": "F9",
+        "proname": "Thanh Long",
+        "price": 15000.0,
+        "quantity": 18,
+        "cateid": "Trái cây",
+        "date": "2025-07-10"
+    },
+    {
+        "proid": "F10",
+        "proname": "Măng Cụt",
+        "price": 90000.0,
+        "quantity": 12,
+        "cateid": "Trái cây",
+        "date": "2025-03-08"
+    },
+    {
+        "proid": "V5",
+        "proname": "Cà Rốt",
+        "price": 8000.0,
+        "quantity": 5,
+        "cateid": "Rau củ",
+        "date": "2025-03-10"
+    },
+    {
+        "proid": "L1",
+        "proname": "Dâu Tây Đà Lạt",
+        "price": 120000.0,
+        "quantity": 15,
+        "cateid": "Nông sản địa phương",
+        "date": "2025-03-09"
+    },
+    {
+        "proid": "L2",
+        "proname": "Nho Xanh Ninh Thuận",
+        "price": 75000.0,
+        "quantity": 50,
+        "cateid": "Nông sản địa phương",
+        "date": "2025-06-15"
+    },
+    {
+        "proid": "L3",
+        "proname": "Mận Hà Nội",
+        "price": 55000.0,
+        "quantity": 30,
+        "cateid": "Nông sản địa phương",
+        "date": "2025-07-01"
+    },
+    {
+        "proid": "F11",
+        "proname": "Chôm Chôm ",
+        "price": 50000.0,
+        "quantity": 18,
+        "cateid": "Trái cây",
+        "date": "2025-03-06"
+    },
+    {
+        "proid": "V6",
+        "proname": "Bắp Cải",
+        "price": 10000.0,
+        "quantity": 100,
+        "cateid": "Rau củ",
+        "date": "2025-04-10"
+    },
+    {
+        "proid": "V7",
+        "proname": "Rau Muống",
+        "price": 6000.0,
+        "quantity": 80,
+        "cateid": "Rau củ",
+        "date": "2025-03-08"
+    },
+    {
+        "proid": "V8",
+        "proname": "Cải Bó Xôi",
+        "price": 20000.0,
+        "quantity": 40,
+        "cateid": "Rau củ",
+        "date": "2025-03-15"
+    },
+    {
+        "proid": "V9",
+        "proname": "Su Hào",
+        "price": 12000.0,
+        "quantity": 25,
+        "cateid": "Rau củ",
+        "date": "2025-06-20"
+    },
+    {
+        "proid": "V10",
+        "proname": "Măng Tây",
+        "price": 30000.0,
+        "quantity": 10,
+        "cateid": "Rau củ",
+        "date": "2025-03-07"
+    },
+    {
+        "proid": "H1",
+        "proname": "Gừng Tươi",
+        "price": 18000.0,
+        "quantity": 60,
+        "cateid": "Thảo mộc & Gia vị",
+        "date": "2025-04-25"
+    },
+    {
+        "proid": "H2",
+        "proname": "Hành Tím",
+        "price": 16000.0,
+        "quantity": 90,
+        "cateid": "Thảo mộc & Gia vị",
+        "date": "2025-03-15"
+    },
+    {
+        "proid": "E1",
+        "proname": "Trứng Gà Ta",
+        "price": 4000.0,
+        "quantity": 200,
+        "cateid": "Trứng gà, vịt",
+        "date": "2025-03-20"
+    },
+    {
+        "proid": "E2",
+        "proname": "Trứng Vịt Lộn",
+        "price": 7000.0,
+        "quantity": 50,
+        "cateid": "Trứng gà, vịt",
+        "date": "2025-03-05"
+    },
+    {
+        "proid": "M1",
+        "proname": "Sữa Tươi Vinamilk",
+        "price": 28000.0,
+        "quantity": 30,
+        "cateid": "Sữa & Sản phẩm từ sữa",
+        "date": "2025-03-08"
+    },
+    {
+        "proid": "M2",
+        "proname": "Phô Mai Con Bò Cười",
+        "price": 60000.0,
+        "quantity": 25,
+        "cateid": "Sữa & Sản phẩm từ sữa",
+        "date": "2025-07-01"
+    },
+    {
+        "proid": "T1",
+        "proname": "Đậu Nành Hữu Cơ",
+        "price": 30000.0,
+        "quantity": 35,
+        "cateid": "Thực phẩm hữu cơ",
+        "date": "2025-05-20"
+    },
+    {
+        "proid": "T2",
+        "proname": "Mè Đen Hữu Cơ",
+        "price": 45000.0,
+        "quantity": 25,
+        "cateid": "Thực phẩm hữu cơ",
+        "date": "2025-07-15"
+    }
+]
