@@ -3,7 +3,7 @@ import webbrowser
 import datetime
 
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QColor
+from PyQt6.QtGui import QColor, QMovie
 from PyQt6.QtWidgets import QListWidgetItem, QTableWidgetItem, QMessageBox
 
 from libs.DataConnector import DataConnector
@@ -27,6 +27,9 @@ class ProductMainWindowExt(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
+        self.movie = QMovie("../IMAGES/backgrproduct.gif")
+        self.labelBackground.setMovie(self.movie)
+        self.movie.start()
         self.set_buttons_enabled(False)
         self.listWidgetCategory.hide()
         self.show_categories_gui()
