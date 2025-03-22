@@ -31,7 +31,7 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.menu_window = menu_window
         self.dc = DataConnector()
         self.suppliers = self.dc.get_all_suppliers()
-        self.setupUi(self)  # Set up UI on self
+        self.setupUi(self)
         self.setupSignalAndSlot()
 
     def showWindow(self):

@@ -59,11 +59,11 @@
         "ten": "Công ty TNHH SOOBIN",
         "ngaynhaphang": "7/7/2024",
         "tensanpham": "Tỏi",
-        "soluong": 25,
-        "thoigian_hoptac": "15 năm",
-        "chung_nhan": "Organic",
-        "nguon_goc": "Hải Phòng",
-        "thongtin_lienlac": "soobin@supplier.com|+84 987 654 321"
+        "soluong": "25",
+        "thoigian_hoptac": "",
+        "chung_nhan": "",
+        "nguon_goc": "",
+        "thongtin_lienlac": ""
     },
     {
         "id": "SUP8",
