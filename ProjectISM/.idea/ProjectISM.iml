@@ -6,7 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="DoAn" />
     <orderEntry type="module" module-name="ProductManagement" />
-    <orderEntry type="module" module-name="Product" />
     <orderEntry type="module" module-name="DOAN1" />
+    <orderEntry type="module" module-name="Product &amp; Category" />
   </component>
 </module>

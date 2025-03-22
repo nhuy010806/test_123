@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow
 
-from uiPro.ProductMainWindowExt import ProductMainWindowExt
+from Product.ui_product.ProductMainWindowExt import ProductMainWindowExt
 
 app=QApplication([])
 mainwindow=QMainWindow()

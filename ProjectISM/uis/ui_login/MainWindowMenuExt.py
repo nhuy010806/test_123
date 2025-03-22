@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QMainWindow
 
+from uiCate.CategoryMainWindowExt import ProductMainWindow1Ext
 from uiPro.ProductMainWindowExt import ProductMainWindowExt
 from uiSup.MainWindowDoAnExt import MainWindowDoAnExt
 from uis.ui_employee.MainWindowEmployeeExt import MainWindowEmployeeExt
@@ -17,7 +18,7 @@ class MainWindowMenuExt( QMainWindow, Ui_MainWindow):
         self.pushButtonEmployee.clicked.connect(self.xuli_nhanvien)
         self.pushButtonSupplier.clicked.connect(self.xuli_supplier)
         self.pushButtonProduct.clicked.connect(self.xuly_product)
-
+        self.pushButtonCategory.clicked.connect(self.xuly_category)
     def xuli_nhanvien(self):
         self.employee_window = MainWindowEmployeeExt(self)
         self.employee_window.show()
@@ -29,6 +30,10 @@ class MainWindowMenuExt( QMainWindow, Ui_MainWindow):
     def xuly_product(self):
         self.product_window=ProductMainWindowExt(self)
         self.product_window.show()
+        self.close()
+    def xuly_category(self):
+        self.product_category = ProductMainWindow1Ext(self)
+        self.product_category.show()
         self.close()
 
 

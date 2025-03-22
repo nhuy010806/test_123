@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\DO_AN\uii\ProductMainWindow.ui'
+# Form implementation generated from reading ui file 'D:\DO_AN\Product\ui_product\ProductMainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.1
 #
@@ -12,13 +12,13 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1162, 800)
+        MainWindow.resize(1138, 798)
         MainWindow.setMinimumSize(QtCore.QSize(700, 700))
         MainWindow.setMaximumSize(QtCore.QSize(16777207, 16777215))
         MainWindow.setTabletTracking(False)
         MainWindow.setAcceptDrops(False)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("D:\\DO_AN\\uii\\../IMAGES/z6425228061834_7a09334b4f7b1934dff973f38dcd7f2c.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("D:\\DO_AN\\Product\\ui_product\\../IMAGES/z6425228061834_7a09334b4f7b1934dff973f38dcd7f2c.jpg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setWindowOpacity(1.0)
         MainWindow.setStyleSheet("QMenuBar {\n"
@@ -58,7 +58,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(30, 0, 1141, 48))
+        self.label.setGeometry(QtCore.QRect(30, 0, 1071, 50))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -83,11 +83,11 @@ class Ui_MainWindow(object):
         self.labelBackground.setGeometry(QtCore.QRect(0, -30, 1161, 801))
         self.labelBackground.setText("")
         self.labelBackground.setTextFormat(QtCore.Qt.TextFormat.PlainText)
-        self.labelBackground.setPixmap(QtGui.QPixmap("D:\\DO_AN\\uii\\../IMAGES/productbackgr.png"))
+        self.labelBackground.setPixmap(QtGui.QPixmap("D:\\DO_AN\\Product\\ui_product\\../images_product/backgrproduct.gif"))
         self.labelBackground.setScaledContents(True)
         self.labelBackground.setObjectName("labelBackground")
         self.pushButtonBack = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonBack.setGeometry(QtCore.QRect(30, 720, 131, 31))
+        self.pushButtonBack.setGeometry(QtCore.QRect(30, 730, 131, 31))
         self.pushButtonBack.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -118,14 +118,14 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("D:\\DO_AN\\uii\\../IMAGES/all.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap("D:\\DO_AN\\Product\\ui_product\\../images_product/all.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonBack.setIcon(icon1)
         self.pushButtonBack.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonBack.setCheckable(False)
         self.pushButtonBack.setAutoRepeat(False)
         self.pushButtonBack.setObjectName("pushButtonBack")
         self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(30, 50, 1091, 661))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(30, 60, 1091, 661))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetMaximumSize)
@@ -454,7 +454,7 @@ class Ui_MainWindow(object):
         self.label_6.setGeometry(QtCore.QRect(30, 500, 121, 31))
         self.label_6.setObjectName("label_6")
         self.pushButtonSave = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonSave.setGeometry(QtCore.QRect(20, 610, 121, 31))
+        self.pushButtonSave.setGeometry(QtCore.QRect(20, 600, 121, 41))
         self.pushButtonSave.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -485,12 +485,12 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("D:\\DO_AN\\uii\\../IMAGES/save (2).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap("D:\\DO_AN\\Product\\ui_product\\../images_product/save (2).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonSave.setIcon(icon2)
         self.pushButtonSave.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonSave.setObjectName("pushButtonSave")
         self.pushButtonClear = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonClear.setGeometry(QtCore.QRect(280, 610, 111, 31))
+        self.pushButtonClear.setGeometry(QtCore.QRect(280, 600, 111, 41))
         self.pushButtonClear.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -521,12 +521,12 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("D:\\DO_AN\\uii\\../IMAGES/745192.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon3.addPixmap(QtGui.QPixmap("D:\\DO_AN\\Product\\ui_product\\../images_product/745192.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonClear.setIcon(icon3)
         self.pushButtonClear.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonClear.setObjectName("pushButtonClear")
         self.pushButtonDelete = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonDelete.setGeometry(QtCore.QRect(400, 610, 121, 31))
+        self.pushButtonDelete.setGeometry(QtCore.QRect(400, 600, 121, 41))
         self.pushButtonDelete.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -557,12 +557,12 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("D:\\DO_AN\\uii\\../IMAGES/de.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon4.addPixmap(QtGui.QPixmap("D:\\DO_AN\\Product\\ui_product\\../images_product/de.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonDelete.setIcon(icon4)
         self.pushButtonDelete.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonDelete.setObjectName("pushButtonDelete")
         self.pushButtonFilterDate = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonFilterDate.setGeometry(QtCore.QRect(150, 610, 121, 31))
+        self.pushButtonFilterDate.setGeometry(QtCore.QRect(150, 600, 121, 41))
         self.pushButtonFilterDate.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -593,12 +593,12 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("D:\\DO_AN\\uii\\../IMAGES/filter--edit-512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon5.addPixmap(QtGui.QPixmap("D:\\DO_AN\\Product\\ui_product\\../images_product/filter--edit-512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonFilterDate.setIcon(icon5)
         self.pushButtonFilterDate.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonFilterDate.setObjectName("pushButtonFilterDate")
         self.pushButtonSearch = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonSearch.setGeometry(QtCore.QRect(160, 50, 131, 31))
+        self.pushButtonSearch.setGeometry(QtCore.QRect(160, 40, 131, 41))
         self.pushButtonSearch.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -629,12 +629,12 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("D:\\DO_AN\\uii\\../IMAGES/-_Magnifier-Search-Zoom--512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon6.addPixmap(QtGui.QPixmap("D:\\DO_AN\\Product\\ui_product\\../images_product/-_Magnifier-Search-Zoom--512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonSearch.setIcon(icon6)
         self.pushButtonSearch.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonSearch.setObjectName("pushButtonSearch")
         self.pushButtonShowall = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonShowall.setGeometry(QtCore.QRect(10, 50, 141, 31))
+        self.pushButtonShowall.setGeometry(QtCore.QRect(10, 40, 141, 41))
         self.pushButtonShowall.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -665,7 +665,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("D:\\DO_AN\\uii\\../IMAGES/ic_fluent_select_all_on_24_regular-512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon7.addPixmap(QtGui.QPixmap("D:\\DO_AN\\Product\\ui_product\\../images_product/ic_fluent_select_all_on_24_regular-512.webp"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonShowall.setIcon(icon7)
         self.pushButtonShowall.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonShowall.setObjectName("pushButtonShowall")
@@ -677,7 +677,7 @@ class Ui_MainWindow(object):
         self.lineEditDate.setClearButtonEnabled(True)
         self.lineEditDate.setObjectName("lineEditDate")
         self.labelPhoto = QtWidgets.QLabel(parent=self.groupBox)
-        self.labelPhoto.setGeometry(QtCore.QRect(20, 90, 501, 191))
+        self.labelPhoto.setGeometry(QtCore.QRect(20, 90, 511, 191))
         self.labelPhoto.setStyleSheet("    QLabel {\n"
 "        border: 2px solid #00806c;  /* Viền màu xanh lá */\n"
 "        border-radius: 10px;  /* Bo góc 10px */\n"
@@ -688,7 +688,7 @@ class Ui_MainWindow(object):
         self.labelPhoto.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.labelPhoto.setObjectName("labelPhoto")
         self.lineEditSearch = QtWidgets.QLineEdit(parent=self.groupBox)
-        self.lineEditSearch.setGeometry(QtCore.QRect(310, 50, 221, 31))
+        self.lineEditSearch.setGeometry(QtCore.QRect(300, 40, 231, 41))
         self.lineEditSearch.setClearButtonEnabled(True)
         self.lineEditSearch.setObjectName("lineEditSearch")
         self.horizontalLayout.addWidget(self.groupBox)
@@ -698,7 +698,7 @@ class Ui_MainWindow(object):
         self.pushButtonBack.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1162, 31))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1138, 31))
         self.menubar.setObjectName("menubar")
         self.menuSystem = QtWidgets.QMenu(parent=self.menubar)
         self.menuSystem.setObjectName("menuSystem")
@@ -793,7 +793,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Products"))
-        self.label.setText(_translate("MainWindow", "Product Management"))
+        self.label.setText(_translate("MainWindow", "Product"))
         self.pushButtonBack.setText(_translate("MainWindow", "Back"))
         self.tableWidgetProduct.setSortingEnabled(False)
         item = self.tableWidgetProduct.verticalHeaderItem(0)
@@ -880,7 +880,7 @@ class Ui_MainWindow(object):
         item = self.listWidgetCategory.item(2)
         item.setText(_translate("MainWindow", "Khác"))
         self.listWidgetCategory.setSortingEnabled(__sortingEnabled)
-        self.groupBox.setTitle(_translate("MainWindow", "Product Details:"))
+        self.groupBox.setTitle(_translate("MainWindow", "Details:"))
         self.label_2.setText(_translate("MainWindow", "Product ID:"))
         self.label_3.setText(_translate("MainWindow", "Product Name:"))
         self.label_4.setText(_translate("MainWindow", "Entry Price:"))
@@ -894,6 +894,7 @@ class Ui_MainWindow(object):
         self.pushButtonShowall.setText(_translate("MainWindow", "Show all"))
         self.label_7.setText(_translate("MainWindow", "Date:"))
         self.labelPhoto.setText(_translate("MainWindow", "TextLabel"))
+        self.lineEditSearch.setPlaceholderText(_translate("MainWindow", "Nhập ID hoặc tên của sản phẩm"))
         self.menuSystem.setTitle(_translate("MainWindow", "Options"))
         self.menuImport_Data.setTitle(_translate("MainWindow", "Import Data"))
         self.menuExport_Data.setTitle(_translate("MainWindow", "Export Data"))

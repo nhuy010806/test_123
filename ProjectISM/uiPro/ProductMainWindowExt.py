@@ -14,26 +14,24 @@ from uiPro.ProductMainWindow import Ui_MainWindow
 
 
 class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
-    def __init__(self, menu_window):
+    def __init__(self,menu_window):
         super().__init__()
         self.menu_window = menu_window
-
-        # Khởi tạo dữ liệu TRƯỚC khi gọi setupUi
         self.dateEditFilter = None
         self.dc = DataConnector()
-        self.categories = self.dc.get_all_categories()
+        self.categories = self.dc.get_all_cateids()
         self.all_products = self.dc.get_all_products()
         self.original_all_products = self.all_products.copy()
         self.products = self.all_products.copy()
         self.selected_cate = None
         self.is_filtered = False
-
-        self.setupUi(self)  # Gọi setup UI sau khi đã có dữ liệu
+        self.setupUi(self)
+        self.setupSignalAndSlot()
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
-        self.movie = QMovie("../IMAGES/backgrproduct.gif")
+        self.movie = QMovie("../images/backgrproduct.gif")
         self.labelBackground.setMovie(self.movie)
         self.movie.start()
         self.set_buttons_enabled(False)
@@ -103,10 +101,6 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.importCSV_file.triggered.connect(self.import_from_csv)
         self.exportTXT_file.triggered.connect(self.export_to_txt)
         self.importTXT_file.triggered.connect(self.import_from_txt)
-        # self.ExportXML.triggered.connect(self.export_to_xml)
-        # self.ImportXML.triggered.connect(self.import_from_xml)
-        # self.ExportPicke.triggered.connect(self.export_to_pickle)
-        # self.ImportPicke.triggered.connect(self.import_from_pickle)
         self.exportJson_file.triggered.connect(self.export_to_json)
         self.importJson_file.triggered.connect(self.import_from_json)
 
@@ -124,7 +118,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         if row < 0:
             return
         self.selected_cate = self.categories[row]
-        self.products = self.dc.get_products_by_categories(self.selected_cate.cateid)
+        self.products = self.dc.get_products_by_categories(self.selected_cate)
         self.show_products_gui()
 
     def toggle_filter_colored_products(self):
@@ -271,7 +265,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
     def search_product(self):
         search_text = self.lineEditSearch.text().strip().lower()
         if not search_text:
-            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID hoặc Tên sản phẩm để tìm kiếm.")
+            self.labelPhoto.setText(f"Vui lòng nhập ID hoặc Tên sản phẩm để tìm kiếm.")
             return
         product = next((p for p in self.products if p.proid.lower() == search_text or p.proname.lower() == search_text),None)
         if hasattr(self, 'selected_row') and self.selected_row is not None:
@@ -299,9 +293,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
                             cell.setBackground(QColor("#00806c"))
                     break
         else:
-            QMessageBox.warning(self.MainWindow, "Không tìm thấy",
-                                f"Không tìm thấy sản phẩm có ID hoặc Tên: {search_text}")
-            self.labelPhoto.setText("Không tìm thấy sản phẩm")
+            self.labelPhoto.setText(f"Không tìm thấy sản phẩm có ID hay tên: {search_text}")
 
     def restore_previous_product_color(self):
         if hasattr(self, 'selected_row') and self.selected_row is not None:
@@ -314,20 +306,26 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
 
     def back_program(self):
         msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText("Muốn trở về?")
-        msgbox.setWindowTitle("Xác nhận trở về")
-        msgbox.setIcon(QMessageBox.Icon.Critical)
+        msgbox.setText("Bạn muốn quay về trang trước đó?")
+        msgbox.setWindowTitle("Xác nhận")
+        msgbox.setIcon(QMessageBox.Icon.Question)
         buttons = QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
         msgbox.setStandardButtons(buttons)
         if msgbox.exec() == QMessageBox.StandardButton.Yes:
-            exit()
+            # Ẩn cửa sổ hiện tại
+            self.MainWindow.hide()
+            # Hiển thị lại màn hình trung gian (menu_window)
+            if self.menu_window:
+                self.menu_window.show()
+            else:
+                print("Không tìm thấy menu_window!")
 
     def export_to_excel(self):
-        filename_product = '../dataset/products.xlsx'
+        filename_product = '../dataset_product/products.xlsx'
         extool = ExportTool()
         extool.export_products_EXCEL(filename_product, self.products)
 
-        filename_cate = "../dataset/categories.xlsx"
+        filename_cate = "../../Category/dataset_cate/categories.xlsx"
         extool.export_categories_EXCEL(filename_cate, self.categories)
 
         msgbox = QMessageBox(self.MainWindow)
@@ -336,8 +334,8 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         msgbox.exec()
 
     def import_from_excel(self):
-        filename_product = '../dataset/products.xlsx'
-        filename_cate = "../dataset/categories.xlsx"
+        filename_product = '../dataset_product/products.xlsx'
+        filename_cate = "../../Category/dataset_cate/categories.xlsx"
         extool = ExportTool()
         self.categories = extool.import_categories_EXCEL(filename_cate)
         self.products = extool.import_products_EXCEL(filename_product)
@@ -392,11 +390,11 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
 
     # # PICKLE
     # def export_to_pickle(self):
-    #     filename_product = "../dataset/products.pickle"
+    #     filename_product = "../dataset_product/products.pickle"
     #     extool = ExportTool()
     #     extool.export_products_PICKLE(filename_product, self.products)
     #
-    #     filename_cate = "../dataset/categories.pickle"
+    #     filename_cate = "../dataset_product/categories.pickle"
     #     extool.export_categories_PICKLE(filename_cate, self.categories)
     #
     #     msgbox = QMessageBox(self.MainWindow)
@@ -405,8 +403,8 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
     #     msgbox.exec()
     #
     # def import_from_pickle(self):
-    #     filename_product = '../dataset/products.pickle'
-    #     filename_cate = "../dataset/categories.pickle"
+    #     filename_product = '../dataset_product/products.pickle'
+    #     filename_cate = "../dataset_product/categories.pickle"
     #     extool = ExportTool()
     #     self.categories = extool.import_categories_PICKLE(filename_cate)
     #     self.products = extool.import_products_PICKLE(filename_product)
@@ -415,11 +413,11 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
 
     # XML
     # def export_to_xml(self):
-    #     filename_product = "../dataset/products.xml"
+    #     filename_product = "../dataset_product/products.xml"
     #     extool = ExportTool()
     #     extool.export_products_XML(filename_product, self.products)
     #
-    #     filename_cate = "../dataset/categories.xml"
+    #     filename_cate = "../dataset_product/categories.xml"
     #     extool.export_categories_XML(filename_cate, self.categories)
     #
     #     msgbox = QMessageBox(self.MainWindow)
@@ -428,8 +426,8 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
     #     msgbox.exec()
     #
     # def import_from_xml(self):
-    #     filename_product = '../dataset/products.xml'
-    #     filename_cate = "../dataset/categories.xml"
+    #     filename_product = '../dataset_product/products.xml'
+    #     filename_cate = "../dataset_product/categories.xml"
     #     extool = ExportTool()
     #     self.categories = extool.import_categories_XML(filename_cate)
     #     self.products = extool.import_products_XML(filename_product)
@@ -462,7 +460,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
     def open_help(self):
         file_help = "Help.pdf"
         current_path = os.getcwd()
-        file_help = f"{current_path}/../assets/{file_help}"
+        file_help = f"{current_path}/../help/{file_help}"
         webbrowser.open_new(file_help)
 
 

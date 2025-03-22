@@ -1,8 +1,5 @@
-import pickle
 import xml.etree.ElementTree as ET
 import pandas as pd
-from openpyxl import load_workbook
-import xlsxwriter as xr
 
 from models.Category import Category
 from models.Product import Product
@@ -16,14 +13,14 @@ class ExportTool:
             "Product Name": [p.proname for p in products],
             "Price": [p.price for p in products],
             "Quantity": [p.quantity for p in products],
-            "Cate ID": [p.cateid for p in products],
+            "Cate Name": [p.cateid for p in products],
             "Date": [p.date for p in products],
         }
         df = pd.DataFrame(data)
         df.to_excel(filename, sheet_name="Products", index=False, engine="xlsxwriter")
     def export_categories_EXCEL(self, filename, categories):
         data = {
-            "Category ID": [c.cateid for c in categories]
+            "Category Name": [c.cateid for c in categories]
         }
         df = pd.DataFrame(data)
         df.to_excel(filename, sheet_name="Categories", index=False, engine="xlsxwriter")
@@ -35,7 +32,7 @@ class ExportTool:
                 row["Product Name"],
                 float(row["Price"]),
                 int(row["Quantity"]),
-                row["Cate ID"],
+                row["Cate Name"],
                 str(row["Date"])
             )
             for _, row in df.iterrows()
@@ -43,7 +40,7 @@ class ExportTool:
         return products
     def import_categories_EXCEL(self, filename):
         df = pd.read_excel(filename, sheet_name=0)
-        categories = [Category(row["Category ID"])
+        categories = [Category(row["Category Name"])
                       for _, row in df.iterrows()]
         return categories
 

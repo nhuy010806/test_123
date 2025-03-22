@@ -41,5 +41,5 @@ print("List of Products: ")
 for product in products:
     print(product)
 jff=JsonFileFactory()
-filename="../dataset/products.json"
+filename= "../dataset/products.json"
 jff.write_data(products,filename)

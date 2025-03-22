@@ -1,10 +1,6 @@
 from libsPro.DataConnector import DataConnector
 
 dc=DataConnector()
-categories=dc.get_all_categories()
-print("List of Categories in database:")
-for cate in categories:
-    print(cate)
 products=dc.get_all_products()
 print("List of Products in database:")
 for product in products:
