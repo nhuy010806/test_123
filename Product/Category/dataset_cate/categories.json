@@ -1,0 +1,34 @@
+[
+    {
+        "cateid": "Trái cây",
+        "description": "Các loại trái cây tươi ngon, giàu vitamin"
+    },
+    {
+        "cateid": "Rau củ",
+        "description": "Rau xanh và củ quả tươi, giàu dinh dưỡng"
+    },
+    {
+        "cateid": "Thực phẩm hữu cơ",
+        "description": "Sản phẩm hữu cơ, an toàn và không hóa chất"
+    },
+    {
+        "cateid": "Nông sản địa phương",
+        "description": "Nông sản được trồng và thu hoạch tại địa phương"
+    },
+    {
+        "cateid": "Thảo mộc & Gia vị",
+        "description": "Các loại gia vị và thảo mộc tự nhiên"
+    },
+    {
+        "cateid": "Trứng gà, vịt",
+        "description": "Trứng sạch từ gà và vịt, giàu protein"
+    },
+    {
+        "cateid": "Sữa & Sản phẩm từ sữa",
+        "description": "Sữa tươi và các sản phẩm từ sữa như phô mai, sữa chua"
+    },
+    {
+        "cateid": "Khác",
+        "description": ""
+    }
+]
