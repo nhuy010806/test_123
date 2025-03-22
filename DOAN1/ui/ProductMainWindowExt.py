@@ -4,6 +4,8 @@ from DOAN1.models.Category import Category
 from DOAN1.ui.ProductMainWindow import Ui_MainWindow
 from PyQt6.QtWidgets import QListWidgetItem, QMessageBox
 from DOAN1.libs.DataConnector import DataConnector
+from PyQt6.QtGui import QMovie
+
 
 class ProductMainWindowExt(Ui_MainWindow):
     def __init__(self):
@@ -19,6 +21,9 @@ class ProductMainWindowExt(Ui_MainWindow):
         self.MainWindow = MainWindow
         self.show_categories_gui()
         self.setupSignalAndSlot()
+        self.movie = QMovie("../ima/FARMERS1.gif")
+        self.labelBackground.setMovie(self.movie)
+        self.movie.start()
 
     def showWindow(self):
         self.MainWindow.show()

@@ -65,6 +65,7 @@ class Ui_MainWindow(object):
         self.listWidgetCategory = QtWidgets.QListWidget(parent=self.layoutWidget)
         self.listWidgetCategory.setEnabled(True)
         self.listWidgetCategory.setMaximumSize(QtCore.QSize(500, 700))
+        self.listWidgetCategory.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.listWidgetCategory.setStyleSheet("QListWidget::item:selected {\n"
 "    background: #00806c;  /* Giữ màu nền xanh đậm */\n"
 "    color: white;         /* Chữ trắng */\n"
@@ -76,7 +77,7 @@ class Ui_MainWindow(object):
 "QListWidget {\n"
 "    border: 2px solid #00806c;  /* Viền xanh đậm */\n"
 "    border-radius: 5px;         /* Bo góc nhẹ */\n"
-"    background: rgb(208, 225, 193); /* Nền tổng thể xanh nhạt */\n"
+"    background: transparent; /* Nền tổng thể xanh nhạt */\n"
 "    font: bold 14pt \"Tahoma\";   /* Font chữ đậm */\n"
 "    color: #00806c;             /* Chữ xanh đậm */\n"
 "    padding: 5px;\n"
@@ -108,8 +109,7 @@ class Ui_MainWindow(object):
 "    color: white; \n"
 "    border: none;\n"
 "    outline: none; /* Bỏ đường viền khi focus */\n"
-"}\n"
-"")
+"}")
         self.listWidgetCategory.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.listWidgetCategory.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.listWidgetCategory.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
@@ -186,7 +186,7 @@ class Ui_MainWindow(object):
 "    margin-top: 10px; /* Đẩy tiêu đề lên trên viền */\n"
 "    font: bold 14pt \"Tahoma\"; /* Chữ in đậm */\n"
 "    color: #00806c; /* Màu chữ xanh ngọc */\n"
-"    background-color: rgb(208, 225, 193);\n"
+"\n"
 "}\n"
 "\n"
 "QGroupBox::title {\n"
@@ -199,20 +199,28 @@ class Ui_MainWindow(object):
 "    font: bold 12pt \"Tahoma\";        /* Cỡ chữ */\n"
 "    color: #00806c;             /* Màu chữ */\n"
 "    font-weight: bold;      /* Chữ đậm */\n"
-"}\n"
-"QLineEdit {\n"
-"    font-size: 16px;        /* Cỡ chữ */\n"
+"\n"
 "}\n"
 "QLineEdit {\n"
 "    border: 2px solid #00806c; /* Viền xanh lá đậm */\n"
 "    border-radius: 10px;       /* Bo tròn góc */\n"
 "    padding: 5px;              /* Khoảng cách nội dung với viền */\n"
 "    background-color: white;   /* Nền trắng */\n"
+"     font-size: 15px;        /* Cỡ chữ */\n"
 "}")
         self.groupBox.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.groupBox.setObjectName("groupBox")
         self.lineEditCateID = QtWidgets.QLineEdit(parent=self.groupBox)
         self.lineEditCateID.setGeometry(QtCore.QRect(160, 70, 321, 51))
+        self.lineEditCateID.setStyleSheet("QLineEdit {\n"
+"    font-size: 16px; /* Cỡ chữ */\n"
+"    border: 2px solid #00806c; /* Viền xanh lá đậm */\n"
+"    border-radius: 10px; /* Bo tròn góc */\n"
+"    padding: 5px; /* Khoảng cách nội dung với viền */\n"
+"    background-color: white; /* Nền trắng */\n"
+"    color: #00806c; /* Chữ xanh đậm */\n"
+"}\n"
+"")
         self.lineEditCateID.setObjectName("lineEditCateID")
         self.pushButtonSave = QtWidgets.QPushButton(parent=self.groupBox)
         self.pushButtonSave.setGeometry(QtCore.QRect(10, 270, 111, 41))
@@ -322,16 +330,6 @@ class Ui_MainWindow(object):
         self.pushButtonShowall.setIcon(icon3)
         self.pushButtonShowall.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonShowall.setObjectName("pushButtonShowall")
-        self.labelDescrip = QtWidgets.QLabel(parent=self.groupBox)
-        self.labelDescrip.setGeometry(QtCore.QRect(80, 350, 361, 281))
-        self.labelDescrip.setStyleSheet("border: 2px solid #00806c; /* Viền xanh lá đậm */\n"
-"border-radius: 10px;       /* Bo tròn góc */\n"
-"padding: 5px;              /* Khoảng cách nội dung với viền */\n"
-"background-color: white;   /* Nền trắng */")
-        self.labelDescrip.setText("")
-        self.labelDescrip.setPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../../../../Downloads/famer.jpg"))
-        self.labelDescrip.setScaledContents(True)
-        self.labelDescrip.setObjectName("labelDescrip")
         self.label_7 = QtWidgets.QLabel(parent=self.groupBox)
         self.label_7.setGeometry(QtCore.QRect(10, 80, 121, 31))
         self.label_7.setObjectName("label_7")
@@ -340,6 +338,15 @@ class Ui_MainWindow(object):
         self.label_8.setObjectName("label_8")
         self.lineEditCateName_2 = QtWidgets.QLineEdit(parent=self.groupBox)
         self.lineEditCateName_2.setGeometry(QtCore.QRect(20, 180, 471, 51))
+        self.lineEditCateName_2.setStyleSheet("QLineEdit {\n"
+"    font-size: 16px; /* Cỡ chữ */\n"
+"    border: 2px solid #00806c; /* Viền xanh lá đậm */\n"
+"    border-radius: 10px; /* Bo tròn góc */\n"
+"    padding: 5px; /* Khoảng cách nội dung với viền */\n"
+"    background-color: white; /* Nền trắng */\n"
+"    color: #00806c; /* Chữ xanh đậm */\n"
+"}\n"
+"")
         self.lineEditCateName_2.setText("")
         self.lineEditCateName_2.setObjectName("lineEditCateName_2")
         self.pushButtonExit = QtWidgets.QPushButton(parent=self.groupBox)
@@ -378,6 +385,12 @@ class Ui_MainWindow(object):
         self.pushButtonExit.setIcon(icon4)
         self.pushButtonExit.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonExit.setObjectName("pushButtonExit")
+        self.label_2 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_2.setGeometry(QtCore.QRect(60, 340, 381, 261))
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/famer.jpg"))
+        self.label_2.setScaledContents(True)
+        self.label_2.setObjectName("label_2")
         self.horizontalLayout_4.addWidget(self.groupBox)
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(10, 0, 1071, 48))
@@ -387,12 +400,12 @@ class Ui_MainWindow(object):
 "")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
-        self.label_10 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_10.setGeometry(QtCore.QRect(0, 0, 1111, 751))
-        self.label_10.setText("")
-        self.label_10.setPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/nenanh.png"))
-        self.label_10.setScaledContents(True)
-        self.label_10.setObjectName("label_10")
+        self.labelBackground = QtWidgets.QLabel(parent=self.centralwidget)
+        self.labelBackground.setGeometry(QtCore.QRect(0, 0, 1111, 751))
+        self.labelBackground.setText("")
+        self.labelBackground.setPixmap(QtGui.QPixmap("C:\\Users\\phuongthao\\PycharmProjects\\chuong5\\DOAN1\\ui\\../ima/nenanh.png"))
+        self.labelBackground.setScaledContents(True)
+        self.labelBackground.setObjectName("labelBackground")
         self.pushButtonBack = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonBack.setGeometry(QtCore.QRect(30, 10, 111, 31))
         self.pushButtonBack.setStyleSheet("QPushButton {\n"
@@ -429,7 +442,7 @@ class Ui_MainWindow(object):
         self.pushButtonBack.setIcon(icon5)
         self.pushButtonBack.setIconSize(QtCore.QSize(25, 25))
         self.pushButtonBack.setObjectName("pushButtonBack")
-        self.label_10.raise_()
+        self.labelBackground.raise_()
         self.layoutWidget.raise_()
         self.label.raise_()
         self.pushButtonBack.raise_()
