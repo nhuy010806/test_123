@@ -21,8 +21,8 @@ class MainWindowEmployeeExt(QMainWindow, Ui_MainWindow):
         self.setupSignalAndSlot()
 
 
-        if hasattr(self, 'pushButtonBack'):
-            self.pushButtonBack.clicked.connect(self.go_back)
+        # if hasattr(self, 'pushButtonBack'):
+        #     self.pushButtonBack.clicked.connect(self.go_back)
 
     def go_back(self):
         self.menu_window.show()
