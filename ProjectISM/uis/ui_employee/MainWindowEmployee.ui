@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>821</width>
-    <height>577</height>
+    <width>834</width>
+    <height>645</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1040,7 +1040,7 @@ background-color: rgb(208, 225, 193);</string>
       <x>100</x>
       <y>20</y>
       <width>641</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1055,22 +1055,78 @@ color: rgb(26, 140, 118);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>10</y>
-      <width>81</width>
-      <height>41</height>
+      <y>570</y>
+      <width>121</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: bold 12pt &quot;Tahoma&quot;; /* Chữ in đậm */
+
+}
+
+QPushButton:enabled {
+		background-color: #00806c;
+		color: White;
+}
+
+QPushButton:pressed {
+		background-color: #dfc456;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #86ad6f;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}
+</string>
     </property>
     <property name="text">
      <string>Back </string>
     </property>
    </widget>
+   <widget class="QLabel" name="labelBackground">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>0</y>
+      <width>851</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../images/employeebackground.gif</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>labelBackground</zorder>
+   <zorder>label</zorder>
+   <zorder>groupBox_2</zorder>
+   <zorder>tableWidgetProduct</zorder>
+   <zorder>label_5</zorder>
+   <zorder>pushButtonBack</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>821</width>
+     <width>834</width>
      <height>31</height>
     </rect>
    </property>

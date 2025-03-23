@@ -305,20 +305,8 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
             self.previous_colors = {}
 
     def back_program(self):
-        msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText("Bạn muốn quay về trang trước đó?")
-        msgbox.setWindowTitle("Xác nhận")
-        msgbox.setIcon(QMessageBox.Icon.Question)
-        buttons = QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
-        msgbox.setStandardButtons(buttons)
-        if msgbox.exec() == QMessageBox.StandardButton.Yes:
-            # Ẩn cửa sổ hiện tại
-            self.MainWindow.hide()
-            # Hiển thị lại màn hình trung gian (menu_window)
-            if self.menu_window:
-                self.menu_window.show()
-            else:
-                print("Không tìm thấy menu_window!")
+        self.menu_window.show()
+        self.close()
 
     def export_to_excel(self):
         filename_product = '../dataset_product/products.xlsx'

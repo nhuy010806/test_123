@@ -1,3 +1,4 @@
+from PyQt6.QtGui import QMovie
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 
 from libs.DataConnector import DataConnector
@@ -11,6 +12,13 @@ class LoginWindowExt(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.setupSignalAndSlot()
+
+    def setupUi(self, MainWindow):
+        super().setupUi(MainWindow)
+        self.MainWindow = MainWindow
+        self.movie = QMovie("../images/loginbackground.gif")
+        self.labelBackground.setMovie(self.movie)
+        self.movie.start()
 
     def setupSignalAndSlot(self):
         self.pushButtonLogin.clicked.connect(self.xuly_login)

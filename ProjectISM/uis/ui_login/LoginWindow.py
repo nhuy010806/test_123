@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\PyCharm\test_github2\Midterm_NgoThiPhuongThao\ui\LoginWindow.ui'
+# Form implementation generated from reading ui file 'D:\ProjectISM\uis\ui_login\LoginWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.1
 #
@@ -12,29 +12,40 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1178, 829)
-        MainWindow.setStyleSheet("")
+        MainWindow.resize(1091, 752)
+        MainWindow.setStyleSheet("QMenuBar {\n"
+"    background-color: #00806c;  /* Màu nền */\n"
+"    color: White;  /* Màu chữ */\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QMenuBar::item {\n"
+"    background-color: transparent;\n"
+"    padding: 5px 10px;\n"
+"}\n"
+"\n"
+"QMenuBar::item:selected { \n"
+"    background-color: #86ad6f;  /* Màu khi hover */\n"
+"}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(0, 0, 1181, 831))
-        self.label_4.setMaximumSize(QtCore.QSize(500000, 500000))
-        self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("D:\\PyCharm\\test_github2\\Midterm_NgoThiPhuongThao\\ui\\../../../../Downloads/2.jpg"))
-        self.label_4.setScaledContents(True)
-        self.label_4.setObjectName("label_4")
         self.label_7 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_7.setGeometry(QtCore.QRect(410, 660, 421, 81))
-        self.label_7.setStyleSheet("font: 20pt \"Tahoma\";\n"
-"color: rgb(0, 128, 108);")
+        self.label_7.setGeometry(QtCore.QRect(330, 600, 421, 101))
+        self.label_7.setStyleSheet("QLabel {\n"
+"    font: bold 50pt \"Tahoma\";        /* Cỡ chữ */\n"
+"    color: #00806c;             /* Màu chữ */\n"
+"    font-weight: bold;      /* Chữ đậm */\n"
+"\n"
+"}\n"
+"")
         self.label_7.setObjectName("label_7")
         self.pushButtonExit = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonExit.setGeometry(QtCore.QRect(660, 570, 231, 51))
+        self.pushButtonExit.setGeometry(QtCore.QRect(580, 510, 231, 51))
         self.pushButtonExit.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
 "        border-bottom: 1px solid #aaaaaa;\n"
-"        font: 16pt \"Segoe UI\";\n"
+"        font: bold 20pt \"Tahoma\"; /* Chữ in đậm */\n"
 "\n"
 "}\n"
 "\n"
@@ -44,7 +55,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"        background-color: #0d2f72;\n"
+"        background-color: #dfc456;\n"
 "        color: #fffffe;\n"
 "}\n"
 "\n"
@@ -61,12 +72,12 @@ class Ui_MainWindow(object):
 "")
         self.pushButtonExit.setObjectName("pushButtonExit")
         self.pushButtonLogin = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonLogin.setGeometry(QtCore.QRect(380, 570, 231, 51))
+        self.pushButtonLogin.setGeometry(QtCore.QRect(300, 510, 231, 51))
         self.pushButtonLogin.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
 "        border-bottom: 1px solid #aaaaaa;\n"
-"        font: 16pt \"Segoe UI\";\n"
+"        font: bold 20pt \"Tahoma\"; /* Chữ in đậm */\n"
 "\n"
 "}\n"
 "\n"
@@ -76,7 +87,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"        background-color: #0d2f72;\n"
+"        background-color: #dfc456;\n"
 "        color: #fffffe;\n"
 "}\n"
 "\n"
@@ -93,66 +104,106 @@ class Ui_MainWindow(object):
 "")
         self.pushButtonLogin.setObjectName("pushButtonLogin")
         self.lineEditUserName = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEditUserName.setGeometry(QtCore.QRect(420, 300, 491, 51))
+        self.lineEditUserName.setGeometry(QtCore.QRect(340, 240, 491, 51))
         self.lineEditUserName.setStyleSheet("QLineEdit {\n"
 "    background-color: white;\n"
 "    border: 4px solid #00806c;\n"
 "    border-radius: 8px;\n"
 "    padding: 5px;\n"
-"    font: 12pt \"Segoe UI\";\n"
+"    font: 12pt \"Tahoma\";\n"
 "}\n"
 "")
         self.lineEditUserName.setObjectName("lineEditUserName")
         self.label_3 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(260, 400, 141, 51))
-        self.label_3.setStyleSheet("font: 75 18pt \"Segoe UI\";\n"
-"color: rgb(0, 0, 0);")
+        self.label_3.setGeometry(QtCore.QRect(150, 340, 171, 51))
+        self.label_3.setStyleSheet("font: 75 18pt \"Tahoma\";\n"
+"color: #00806c; ")
         self.label_3.setObjectName("label_3")
         self.lineEditPassword = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEditPassword.setGeometry(QtCore.QRect(420, 400, 491, 51))
+        self.lineEditPassword.setGeometry(QtCore.QRect(340, 340, 491, 51))
         self.lineEditPassword.setStyleSheet("QLineEdit {\n"
 "    background-color: white;\n"
 "    border: 4px solid #00806c;\n"
 "    border-radius: 8px;\n"
 "    padding: 5px;\n"
-"    font: 12pt \"Segoe UI\";\n"
+"    font: 12pt \"Tahoma\";\n"
 "}")
         self.lineEditPassword.setText("")
         self.lineEditPassword.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.lineEditPassword.setObjectName("lineEditPassword")
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(250, 300, 161, 51))
-        self.label_2.setStyleSheet("font: 75 18pt \"Segoe UI\";\n"
-"color: rgb(0, 0, 0);")
+        self.label_2.setGeometry(QtCore.QRect(150, 240, 181, 51))
+        self.label_2.setStyleSheet("font: 75 18pt \"Tahoma\";\n"
+"color: #00806c; ")
         self.label_2.setObjectName("label_2")
         self.AdminRadio = QtWidgets.QRadioButton(parent=self.centralwidget)
-        self.AdminRadio.setGeometry(QtCore.QRect(580, 480, 111, 41))
-        self.AdminRadio.setStyleSheet("font:  14pt \"Segoe UI\";\n"
-"color: rgb(0, 0, 0);")
+        self.AdminRadio.setGeometry(QtCore.QRect(500, 420, 111, 41))
+        self.AdminRadio.setStyleSheet("QRadioButton {\n"
+"    font: bold 25px \"Tahoma\";\n"
+"    color: rgb(0, 128, 108); /* hoặc color: #00806C; */\n"
+"}")
         self.AdminRadio.setObjectName("AdminRadio")
         self.StaffRadio = QtWidgets.QRadioButton(parent=self.centralwidget)
-        self.StaffRadio.setGeometry(QtCore.QRect(750, 480, 111, 41))
-        self.StaffRadio.setStyleSheet("font:  14pt \"Segoe UI\";\n"
-"color: rgb(0, 0, 0);")
+        self.StaffRadio.setGeometry(QtCore.QRect(640, 420, 111, 41))
+        self.StaffRadio.setStyleSheet("QRadioButton {\n"
+"    font: bold 25px \"Tahoma\";\n"
+"    color: rgb(0, 128, 108); /* hoặc color: #00806C; */\n"
+"}")
         self.StaffRadio.setObjectName("StaffRadio")
         self.label_5 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(420, 470, 141, 51))
-        self.label_5.setStyleSheet("font: 75 18pt \"Segoe UI\";\n"
-"color: rgb(0, 0, 0);")
+        self.label_5.setGeometry(QtCore.QRect(340, 410, 141, 51))
+        self.label_5.setStyleSheet("QLabel {\n"
+"    font: bold 40pt \"Tahoma\";        /* Cỡ chữ */\n"
+"    color: #00806c;             /* Màu chữ */\n"
+"    font-weight: bold;      /* Chữ đậm */\n"
+"\n"
+"}\n"
+"")
         self.label_5.setObjectName("label_5")
+        self.labelBackground = QtWidgets.QLabel(parent=self.centralwidget)
+        self.labelBackground.setGeometry(QtCore.QRect(-10, -20, 1101, 821))
+        self.labelBackground.setText("")
+        self.labelBackground.setPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_login\\../../images/loginbackground.gif"))
+        self.labelBackground.setScaledContents(True)
+        self.labelBackground.setObjectName("labelBackground")
+        self.labelBackground.raise_()
+        self.label_7.raise_()
+        self.pushButtonExit.raise_()
+        self.pushButtonLogin.raise_()
+        self.lineEditUserName.raise_()
+        self.label_3.raise_()
+        self.lineEditPassword.raise_()
+        self.label_2.raise_()
+        self.AdminRadio.raise_()
+        self.StaffRadio.raise_()
+        self.label_5.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
+        self.menuBar = QtWidgets.QMenuBar(parent=MainWindow)
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1091, 31))
+        self.menuBar.setObjectName("menuBar")
+        self.menuHelp = QtWidgets.QMenu(parent=self.menuBar)
+        self.menuHelp.setObjectName("menuHelp")
+        MainWindow.setMenuBar(self.menuBar)
+        self.actionHelp = QtGui.QAction(parent=MainWindow)
+        self.actionHelp.setObjectName("actionHelp")
+        self.menuHelp.addAction(self.actionHelp)
+        self.menuBar.addAction(self.menuHelp.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "K244060778"))
-        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:48pt; font-weight:600;\">LOGIN</span></p></body></html>"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Login"))
+        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">LOGIN</p></body></html>"))
         self.pushButtonExit.setText(_translate("MainWindow", "Exit"))
         self.pushButtonLogin.setText(_translate("MainWindow", "Login"))
+        self.lineEditUserName.setPlaceholderText(_translate("MainWindow", "Vui lòng nhập đầy đủ username"))
         self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Password:</span></p></body></html>"))
+        self.lineEditPassword.setPlaceholderText(_translate("MainWindow", "Vui lòng nhập chính xác password"))
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">UserName:</span></p></body></html>"))
         self.AdminRadio.setText(_translate("MainWindow", "Admin"))
         self.StaffRadio.setText(_translate("MainWindow", "Staff"))
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:600;\">Login as:</span></p></body></html>"))
+        self.menuHelp.setTitle(_translate("MainWindow", "Options"))
+        self.actionHelp.setText(_translate("MainWindow", "Help"))

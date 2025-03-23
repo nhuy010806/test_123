@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\PyCharm\ProjectISM\uis\ui_employee\MainWindowEmployee.ui'
+# Form implementation generated from reading ui file 'D:\ProjectISM\uis\ui_employee\MainWindowEmployee.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.1
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(821, 577)
+        MainWindow.resize(834, 645)
         MainWindow.setStyleSheet("QMenuBar {\n"
 "    background-color: #00806c;  /* Màu nền */\n"
 "    color: White;  /* Màu chữ */\n"
@@ -50,7 +50,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 821, 531))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\PyCharm\\ProjectISM\\uis\\ui_employee\\../images/FARMERS\'(3).png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../images/FARMERS\'(3).png"))
         self.label.setScaledContents(True)
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setWordWrap(False)
@@ -113,7 +113,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("D:\\PyCharm\\ProjectISM\\uis\\ui_employee\\../images/134229_cloud_guardar_save_store_up_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../images/134229_cloud_guardar_save_store_up_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonSave.setIcon(icon)
         self.pushButtonSave.setObjectName("pushButtonSave")
         self.pushButtonRemove = QtWidgets.QPushButton(parent=self.groupBox_2)
@@ -148,7 +148,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("D:\\PyCharm\\ProjectISM\\uis\\ui_employee\\../images/8664938_trash_can_delete_remove_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../images/8664938_trash_can_delete_remove_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonRemove.setIcon(icon1)
         self.pushButtonRemove.setObjectName("pushButtonRemove")
         self.pushButtonClear = QtWidgets.QPushButton(parent=self.groupBox_2)
@@ -183,7 +183,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("D:\\PyCharm\\ProjectISM\\uis\\ui_employee\\../images/3669378_clear_ic_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../images/3669378_clear_ic_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonClear.setIcon(icon2)
         self.pushButtonClear.setObjectName("pushButtonClear")
         self.pushButtonSearch = QtWidgets.QPushButton(parent=self.groupBox_2)
@@ -218,7 +218,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("D:\\PyCharm\\ProjectISM\\uis\\ui_employee\\../images/211817_search_strong_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon3.addPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../images/211817_search_strong_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonSearch.setIcon(icon3)
         self.pushButtonSearch.setObjectName("pushButtonSearch")
         self.lineEditAddress = QtWidgets.QLineEdit(parent=self.groupBox_2)
@@ -336,7 +336,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("D:\\PyCharm\\ProjectISM\\uis\\ui_employee\\../images/1564533_arrow_refrech_reload_update_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon4.addPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../images/1564533_arrow_refrech_reload_update_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonUpdate.setIcon(icon4)
         self.pushButtonUpdate.setObjectName("pushButtonUpdate")
         self.pushButtonShowAll = QtWidgets.QPushButton(parent=self.groupBox_2)
@@ -371,7 +371,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("D:\\PyCharm\\ProjectISM\\uis\\ui_employee\\../images/all_5578931.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon5.addPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../images/all_5578931.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButtonShowAll.setIcon(icon5)
         self.pushButtonShowAll.setIconSize(QtCore.QSize(24, 12))
         self.pushButtonShowAll.setObjectName("pushButtonShowAll")
@@ -547,16 +547,57 @@ class Ui_MainWindow(object):
         self.tableWidgetProduct.horizontalHeader().setDefaultSectionSize(150)
         self.tableWidgetProduct.verticalHeader().setDefaultSectionSize(30)
         self.label_5 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(100, 20, 641, 31))
+        self.label_5.setGeometry(QtCore.QRect(100, 20, 641, 41))
         self.label_5.setStyleSheet("font: 24pt \"Tahoma\";\n"
 "color: rgb(26, 140, 118);")
         self.label_5.setObjectName("label_5")
         self.pushButtonBack = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonBack.setGeometry(QtCore.QRect(20, 10, 81, 41))
+        self.pushButtonBack.setGeometry(QtCore.QRect(20, 570, 121, 31))
+        self.pushButtonBack.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}\n"
+"")
         self.pushButtonBack.setObjectName("pushButtonBack")
+        self.labelBackground = QtWidgets.QLabel(parent=self.centralwidget)
+        self.labelBackground.setGeometry(QtCore.QRect(-10, 0, 851, 611))
+        self.labelBackground.setText("")
+        self.labelBackground.setPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../../images/employeebackground.gif"))
+        self.labelBackground.setScaledContents(True)
+        self.labelBackground.setObjectName("labelBackground")
+        self.labelBackground.raise_()
+        self.label.raise_()
+        self.groupBox_2.raise_()
+        self.tableWidgetProduct.raise_()
+        self.label_5.raise_()
+        self.pushButtonBack.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 821, 31))
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 834, 31))
         self.menuBar.setObjectName("menuBar")
         self.menuOptions = QtWidgets.QMenu(parent=self.menuBar)
         self.menuOptions.setObjectName("menuOptions")
@@ -565,17 +606,17 @@ class Ui_MainWindow(object):
         MainWindow.setMenuBar(self.menuBar)
         self.actionImport = QtGui.QAction(parent=MainWindow)
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("D:\\PyCharm\\ProjectISM\\uis\\ui_employee\\../images/2931171_download_import_save_down_storage_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon6.addPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../images/2931171_download_import_save_down_storage_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.actionImport.setIcon(icon6)
         self.actionImport.setObjectName("actionImport")
         self.actionExxport = QtGui.QAction(parent=MainWindow)
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("D:\\PyCharm\\ProjectISM\\uis\\ui_employee\\../images/2931143_export_share_upload_up_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon7.addPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../images/2931143_export_share_upload_up_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.actionExxport.setIcon(icon7)
         self.actionExxport.setObjectName("actionExxport")
         self.actionHelp = QtGui.QAction(parent=MainWindow)
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("D:\\PyCharm\\ProjectISM\\uis\\ui_employee\\../images/211757_help_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon8.addPixmap(QtGui.QPixmap("D:\\ProjectISM\\uis\\ui_employee\\../images/211757_help_icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.actionHelp.setIcon(icon8)
         self.actionHelp.setObjectName("actionHelp")
         self.menuOptions.addAction(self.actionImport)

@@ -1,3 +1,4 @@
+from PyQt6.QtGui import QMovie
 from PyQt6.QtWidgets import QMainWindow
 
 from uiCate.CategoryMainWindowExt import ProductMainWindow1Ext
@@ -13,6 +14,13 @@ class MainWindowMenuExt( QMainWindow, Ui_MainWindow):
         self.login_window = login_window
         self.setupUi(self)
         self.setupSignalAndSlot()
+
+    def setupUi(self, MainWindow):
+        super().setupUi(MainWindow)
+        self.MainWindow = MainWindow
+        self.movie = QMovie("../images/menubackground.gif")
+        self.labelBackground.setMovie(self.movie)
+        self.movie.start()
 
     def setupSignalAndSlot(self):
         self.pushButtonEmployee.clicked.connect(self.xuli_nhanvien)

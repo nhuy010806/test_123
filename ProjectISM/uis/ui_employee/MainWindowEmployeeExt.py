@@ -2,7 +2,7 @@ import os
 import webbrowser
 
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QColor
+from PyQt6.QtGui import QColor, QMovie
 from PyQt6.QtWidgets import QTableWidgetItem, QMessageBox, QMainWindow
 
 from libs.DataConnector import DataConnector
@@ -38,6 +38,9 @@ class MainWindowEmployeeExt(QMainWindow, Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
+        self.movie = QMovie("../images/employeebackground.gif")
+        self.labelBackground.setMovie(self.movie)
+        self.movie.start()
         self.show_employee_gui()
         self.setupSignalAndSlot()
         self.tableWidgetProduct.setRowCount(0)
@@ -311,14 +314,14 @@ class MainWindowEmployeeExt(QMainWindow, Ui_MainWindow):
                 self.tableWidgetProduct.item(row, j).setBackground(pastel_color)
 
     def search_employee(self):
-        search_id = self.lineEditId.text().strip()
+        search_id = self.lineEditId.text().strip().lower()
 
         if not search_id:
             QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
             return
 
 
-        employee = next((e for e in self.employees if e.EmployeeId == search_id), None)
+        employee = next((e for e in self.employees if e.EmployeeId.lower() == search_id), None)
 
         if employee:
 

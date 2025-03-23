@@ -1,7 +1,7 @@
 import os
 import webbrowser
 
-from PyQt6.QtGui import QColor
+from PyQt6.QtGui import QColor, QMovie
 from PyQt6.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox
 
 from libsSup.DataConnector import DataConnector
@@ -40,6 +40,9 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
     def setupUi(self,MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow=MainWindow
+        self.movie = QMovie("../images/supplierbackground.gif")
+        self.labelBackground.setMovie(self.movie)
+        self.movie.start()
         self.show_supplier_gui()
         self.setupSignalAndSlot()
 
@@ -164,20 +167,8 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.show_supplier_gui()
 
     def xuly_quayve(self):
-        msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText("Bạn muốn quay về trang trước đó?")
-        msgbox.setWindowTitle("Xác nhận")
-        msgbox.setIcon(QMessageBox.Icon.Question)
-        buttons = QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
-        msgbox.setStandardButtons(buttons)
-        if msgbox.exec() == QMessageBox.StandardButton.Yes:
-            # Ẩn cửa sổ hiện tại
-            self.MainWindow.hide()
-            # Hiển thị lại màn hình trung gian (menu_window)
-            if self.menu_window:
-                self.menu_window.show()
-            else:
-                print("Không tìm thấy menu_window!")
+        self.menu_window.show()
+        self.close()
     def xuly_capnhat(self):
         index = self.tableWidgetSupplier.currentRow()
         if index < 0:
