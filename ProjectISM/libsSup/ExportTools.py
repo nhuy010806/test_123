@@ -53,8 +53,8 @@ class ExportTool:
             ten = row[1]
             ngaynhaphang = row[2]
             tensanpham=row[3]
-            loaihopdong=row[4]
-            supplier = Supplier(id,ten,ngaynhaphang,tensanpham,loaihopdong)
+            soluong=row[4]
+            supplier = Supplier(id,ten,ngaynhaphang,tensanpham,soluong)
             suppliers.append(supplier)
 
         wb.close()

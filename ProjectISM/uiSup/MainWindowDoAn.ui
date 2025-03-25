@@ -243,7 +243,7 @@ background-color: rgb(208, 225, 193);</string>
        </column>
        <column>
         <property name="text">
-         <string>Contract Type</string>
+         <string>Quantity (Kg)</string>
         </property>
         <property name="font">
          <font>
@@ -328,9 +328,6 @@ QLineEdit {
         </property>
         <property name="placeholderText">
          <string>Please enter Supplier ID</string>
-        </property>
-        <property name="clearButtonEnabled">
-         <bool>true</bool>
         </property>
        </widget>
        <widget class="QLabel" name="label_3">
@@ -468,10 +465,6 @@ QPushButton:disabled {
         <property name="text">
          <string>Save</string>
         </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../images/images_employee/134229_cloud_guardar_save_store_up_icon.png</normaloff>../images/images_employee/134229_cloud_guardar_save_store_up_icon.png</iconset>
-        </property>
        </widget>
        <widget class="QPushButton" name="pushButtonClear">
         <property name="geometry">
@@ -515,10 +508,6 @@ QPushButton:disabled {
         </property>
         <property name="text">
          <string>Clear</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../images/images_employee/3669378_clear_ic_icon.png</normaloff>../images/images_employee/3669378_clear_ic_icon.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButtonDelete">
@@ -564,10 +553,6 @@ QPushButton:disabled {
         <property name="text">
          <string>Delete</string>
         </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../images/images_employee/8664938_trash_can_delete_remove_icon.png</normaloff>../images/images_employee/8664938_trash_can_delete_remove_icon.png</iconset>
-        </property>
        </widget>
        <widget class="QPushButton" name="pushButtonUpdate">
         <property name="geometry">
@@ -611,10 +596,6 @@ QPushButton:disabled {
         </property>
         <property name="text">
          <string>Update</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../images/images_employee/1564533_arrow_refrech_reload_update_icon.png</normaloff>../images/images_employee/1564533_arrow_refrech_reload_update_icon.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButtonSearch">
@@ -660,10 +641,6 @@ QPushButton:disabled {
         <property name="text">
          <string>Search</string>
         </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../images/images_employee/211817_search_strong_icon.png</normaloff>../images/images_employee/211817_search_strong_icon.png</iconset>
-        </property>
        </widget>
        <widget class="QPushButton" name="pushButtonShowAll">
         <property name="geometry">
@@ -707,10 +684,6 @@ QPushButton:disabled {
         </property>
         <property name="text">
          <string>Show all</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../images/showall.webp</normaloff>../images/showall.webp</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_7">
@@ -804,7 +777,7 @@ color: rgb(26, 140, 118);
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../../Users/khanhthi/Users/khanhthi/.designer/IMAGES/nen.png</pixmap>
+     <pixmap>../../Users/khanhthi/.designer/IMAGES/nen.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -853,10 +826,6 @@ QPushButton:disabled {
     <property name="text">
      <string>Back</string>
     </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>../images/back.png</normaloff>../images/back.png</iconset>
-    </property>
    </widget>
    <zorder>labelBackground</zorder>
    <zorder>layoutWidget</zorder>
@@ -869,7 +838,7 @@ QPushButton:disabled {
      <x>0</x>
      <y>0</y>
      <width>1074</width>
-     <height>23</height>
+     <height>31</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSystem">
@@ -882,7 +851,7 @@ QPushButton:disabled {
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/12918945.png</normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/12918945.png</iconset>
+       <normaloff>../../Users/Khanh Tran/.designer/images/12918945.png</normaloff>../../Users/Khanh Tran/.designer/images/12918945.png</iconset>
      </property>
      <addaction name="actionImport_Excel"/>
      <addaction name="actionExport_Excel"/>
@@ -901,7 +870,7 @@ QPushButton:disabled {
   <action name="actionExit">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/9104334_sign out_logout_exit_out_icon.png</normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/9104334_sign out_logout_exit_out_icon.png</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/9104334_sign out_logout_exit_out_icon.png</normaloff>../../Users/Khanh Tran/.designer/images/9104334_sign out_logout_exit_out_icon.png</iconset>
    </property>
    <property name="text">
     <string>Exit</string>
@@ -913,7 +882,7 @@ QPushButton:disabled {
   <action name="actionImport_Excel">
    <property name="icon">
     <iconset>
-     <normaloff>../images/images_employee/2931171_download_import_save_down_storage_icon.png</normaloff>../images/images_employee/2931171_download_import_save_down_storage_icon.png</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/bxs-file-txt-512.webp</normaloff>../../Users/Khanh Tran/.designer/images/bxs-file-txt-512.webp</iconset>
    </property>
    <property name="text">
     <string>Import Excel</string>
@@ -922,7 +891,7 @@ QPushButton:disabled {
   <action name="actionExport_Excel">
    <property name="icon">
     <iconset>
-     <normaloff>../images/images_employee/2931143_export_share_upload_up_icon.png</normaloff>../images/images_employee/2931143_export_share_upload_up_icon.png</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/4344184.png</normaloff>../../Users/Khanh Tran/.designer/images/4344184.png</iconset>
    </property>
    <property name="text">
     <string>Export Excel</string>
@@ -936,7 +905,7 @@ QPushButton:disabled {
   <action name="importJSON_file">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/3456434.png</normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/3456434.png</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/3456434.png</normaloff>../../Users/Khanh Tran/.designer/images/3456434.png</iconset>
    </property>
    <property name="text">
     <string>json file</string>
@@ -945,7 +914,7 @@ QPushButton:disabled {
   <action name="importExcel_file">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp</normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp</normaloff>../../Users/Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp</iconset>
    </property>
    <property name="text">
     <string>excel file</string>
@@ -962,7 +931,7 @@ QPushButton:disabled {
   <action name="exportTXT_file">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/bxs-file-txt-512.webp</normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/bxs-file-txt-512.webp</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/bxs-file-txt-512.webp</normaloff>../../Users/Khanh Tran/.designer/images/bxs-file-txt-512.webp</iconset>
    </property>
    <property name="text">
     <string>txt file</string>
@@ -974,7 +943,7 @@ QPushButton:disabled {
   <action name="exportCSV_file">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/4344184.png</normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/4344184.png</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/4344184.png</normaloff>../../Users/Khanh Tran/.designer/images/4344184.png</iconset>
    </property>
    <property name="text">
     <string>csv file</string>
@@ -991,7 +960,7 @@ QPushButton:disabled {
   <action name="exportJSON_file">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/3456434.png</normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/3456434.png</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/3456434.png</normaloff>../../Users/Khanh Tran/.designer/images/3456434.png</iconset>
    </property>
    <property name="text">
     <string>json file</string>
@@ -1005,7 +974,7 @@ QPushButton:disabled {
   <action name="exportExcel_file">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp</normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp</normaloff>../../Users/Khanh Tran/.designer/images/logo_brand_brands_logos_excel-512.webp</iconset>
    </property>
    <property name="text">
     <string>excel file</string>
@@ -1017,7 +986,7 @@ QPushButton:disabled {
   <action name="actionHelp">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/9044348_help_icon.png</normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/9044348_help_icon.png</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/9044348_help_icon.png</normaloff>../../Users/Khanh Tran/.designer/images/9044348_help_icon.png</iconset>
    </property>
    <property name="text">
     <string>Help</string>
@@ -1029,7 +998,7 @@ QPushButton:disabled {
   <action name="actionFeedback">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/8207898_about_info_information_help_ui_icon.png</normaloff>../../../../Users/khanhthi/Users/Khanh Tran/.designer/images/8207898_about_info_information_help_ui_icon.png</iconset>
+     <normaloff>../../Users/Khanh Tran/.designer/images/8207898_about_info_information_help_ui_icon.png</normaloff>../../Users/Khanh Tran/.designer/images/8207898_about_info_information_help_ui_icon.png</iconset>
    </property>
    <property name="text">
     <string>Feedback</string>
@@ -1049,10 +1018,6 @@ QPushButton:disabled {
    </property>
   </action>
   <action name="actionCurrent_Help">
-   <property name="icon">
-    <iconset>
-     <normaloff>../images/images_employee/211757_help_icon.png</normaloff>../images/images_employee/211757_help_icon.png</iconset>
-   </property>
    <property name="text">
     <string>Current Help</string>
    </property>

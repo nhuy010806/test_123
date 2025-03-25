@@ -10,7 +10,7 @@ class JsonFileFactory:
         """
         json_string=json.dumps([item.__dict__ for item in arr_data],
                                default=str,indent=4,ensure_ascii=False)
-        json_file=open(filename,'w',encoding='utf-8')
+        json_file = open(filename, 'w', encoding='utf-8')
         json_file.write(json_string)
         json_file.close()
     def read_data(self,filename,ClassName):
