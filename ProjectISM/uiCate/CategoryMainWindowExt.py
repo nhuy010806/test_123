@@ -123,7 +123,7 @@ class ProductMainWindow1Ext(QMainWindow, Ui_MainWindow):
     def open_help(self):
         file_help = "HELP CATEGORY.pdf"
         current_path = os.getcwd()
-        file_help = f"{current_path}/../asset/{file_help}"
+        file_help = f"{current_path}/../help/{file_help}"
         webbrowser.open_new(file_help)
     def back_window(self):
         self.MainWindow.close()
