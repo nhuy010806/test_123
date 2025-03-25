@@ -121,7 +121,7 @@ class ProductMainWindow1Ext(QMainWindow, Ui_MainWindow):
         self.set_buttons_enabled(True)
 
     def open_help(self):
-        file_help = "HELP.pdf"
+        file_help = "Hướng dẫn sử dụng category.pdf"
         current_path = os.getcwd()
         file_help = f"{current_path}/../asset/{file_help}"
         webbrowser.open_new(file_help)
