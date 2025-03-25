@@ -11,7 +11,7 @@ products.append(Product("V2", "Khoai Tây", 11000.0, 100, "Rau củ", "2025-04-1
 products.append(Product("V3", "Bí Ngô", 20000.0, 10, "Rau củ", "2025-03-15"))
 products.append(Product("V4", "Dưa leo", 25000.0, 100, "Rau củ", "2025-04-20"))
 products.append(Product("O1", "Hạt Dẻ Cười", 70000.0, 50, "Khác", "2025-06-20"))
-products.append(Product("O2", "Hạt Óc Chó", 90000.0, 50, "Khác", "2025-07-20"))
+products.append(Product("O2", "Hạt Óc Chó", 90000.0, 50, "Khác", "2025-06-20"))
 products.append(Product("O3", "Nước Ép Táo", 6000.0, 50, "Khác", "2025-08-20"))
 products.append(Product("F5", "Chuối Tiêu", 12000.0, 120, "Trái cây", "2025-03-05"))
 products.append(Product("F6", "Dưa Hấu", 18000.0, 80, "Trái cây", "2025-03-07"))

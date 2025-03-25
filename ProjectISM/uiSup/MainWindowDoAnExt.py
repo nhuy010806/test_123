@@ -1,7 +1,7 @@
 import os
 import webbrowser
 
-from PyQt6.QtGui import QColor, QMovie
+from PyQt6.QtGui import QColor, QMovie, QBrush
 from PyQt6.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox
 
 from libsSup.DataConnector import DataConnector
@@ -43,7 +43,6 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.movie = QMovie("../images/supplierbackground.gif")
         self.labelBackground.setMovie(self.movie)
         self.movie.start()
-        self.show_supplier_gui()
         self.setupSignalAndSlot()
 
     # def showWindow(self):
@@ -59,13 +58,13 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
             col_suppname = QTableWidgetItem(supplier.ten)
             col_supday = QTableWidgetItem(str(supplier.ngaynhaphang))
             col_suptensp = QTableWidgetItem(supplier.tensanpham)
-            col_supsoluong = QTableWidgetItem(str(supplier.soluong))
+            col_suploaihopdong = QTableWidgetItem(str(supplier.loaihopdong))
 
             self.tableWidgetSupplier.setItem(row, 0, col_supid)
             self.tableWidgetSupplier.setItem(row, 1, col_suppname)
             self.tableWidgetSupplier.setItem(row, 2, col_supday)
             self.tableWidgetSupplier.setItem(row, 3, col_suptensp)
-            self.tableWidgetSupplier.setItem(row, 4, col_supsoluong)
+            self.tableWidgetSupplier.setItem(row, 4, col_suploaihopdong)
 
             self.tableWidgetSupplier.resizeColumnsToContents()
             self.tableWidgetSupplier.resizeRowsToContents()
@@ -96,7 +95,7 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.lineEditSupplierName.setText(supplier.ten)
         self.lineEditSupplydate.setText(str(supplier.ngaynhaphang))
         self.lineEditProductname.setText(supplier.tensanpham)
-        self.lineEditQuantity.setText(str(supplier.soluong))
+        self.lineEditQuantity.setText(str(supplier.loaihopdong))
 
         description = (
             f"Thời gian hợp tác: {supplier.thoigian_hoptac}\n"
@@ -116,11 +115,15 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.lineEditProductname.setText("")
         self.lineEditQuantity.setText("")
         self.textEditDescription.setText("")
+        self.lineEditSearch.setText("")
 
         for row in range(self.tableWidgetSupplier.rowCount()):
             for col in range(self.tableWidgetSupplier.columnCount()):
-                if self.tableWidgetSupplier.item(row, col): 
-                    self.tableWidgetSupplier.item(row, col).setBackground(QColor(255, 255, 255))
+                item = self.tableWidgetSupplier.item(row, col)
+                if item:
+                    item.setBackground(QBrush())
+
+        self.tableWidgetSupplier.clearSelection()
 
 
     def xuly_xoa(self):
@@ -245,7 +248,7 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
             self.lineEditSupplierName.setText(supplier.ten)
             self.lineEditSupplydate.setText(str(supplier.ngaynhaphang))
             self.lineEditProductname.setText(supplier.tensanpham)
-            self.lineEditQuantity.setText(str(supplier.soluong))
+            self.lineEditQuantity.setText(str(supplier.loaihopdong))
 
             description = (
                 f"Thời gian hợp tác: {supplier.thoigian_hoptac}\n"
