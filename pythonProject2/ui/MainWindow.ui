@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1021</width>
+    <height>766</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButtonBarChart">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>670</y>
+      <width>241</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: bold 12pt &quot;Tahoma&quot;; /* Chữ in đậm */
+
+}
+
+QPushButton:enabled {
+		background-color: #00806c;
+		color: White;
+}
+
+QPushButton:pressed {
+		background-color: #dfc456;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #86ad6f;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Bar Chart</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../images/bar-chart(1).png</normaloff>../images/bar-chart(1).png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonLineChart">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>670</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: bold 12pt &quot;Tahoma&quot;; /* Chữ in đậm */
+
+}
+
+QPushButton:enabled {
+		background-color: #00806c;
+		color: White;
+}
+
+QPushButton:pressed {
+		background-color: #dfc456;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #86ad6f;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Line Chart</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../images/line-chart(1).png</normaloff>../images/line-chart(1).png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonPieChart">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>670</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: bold 12pt &quot;Tahoma&quot;; /* Chữ in đậm */
+
+}
+
+QPushButton:enabled {
+		background-color: #00806c;
+		color: White;
+}
+
+QPushButton:pressed {
+		background-color: #dfc456;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #86ad6f;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Pie Chart</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../images/pie-chart(1).png</normaloff>../images/pie-chart(1).png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonExit">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+        border-radius: 15px;
+		border-right: 1px solid #aaaaaa;
+		border-bottom: 1px solid #aaaaaa;
+		font: bold 12pt &quot;Tahoma&quot;; /* Chữ in đậm */
+
+}
+
+QPushButton:enabled {
+		background-color: #00806c;
+		color: White;
+}
+
+QPushButton:pressed {
+		background-color: #dfc456;
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+		background-color: #86ad6f;
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Exit</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../images/exit-full-screen(1).png</normaloff>../images/exit-full-screen(1).png</iconset>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>951</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout"/>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>15</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt; color:#00aa00;&quot;&gt;Visualization&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1021</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
