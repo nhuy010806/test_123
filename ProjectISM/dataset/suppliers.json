@@ -33,17 +33,6 @@
         "thongtin_lienlac": "jack@supplier.com|+84 988 112 233"
     },
     {
-        "id": "SUP5",
-        "ten": "Công ty TNHH KICM",
-        "ngaynhaphang": "5/5/2024",
-        "tensanpham": "Cà rốt",
-        "soluong": "0",
-        "thoigian_hoptac": "",
-        "chung_nhan": "",
-        "nguon_goc": "",
-        "thongtin_lienlac": ""
-    },
-    {
         "id": "SUP7",
         "ten": "Công ty TNHH SOOBIN",
         "ngaynhaphang": "7/7/2024",
@@ -59,7 +48,18 @@
         "ten": "Công ty CP MONO",
         "ngaynhaphang": "6/6/2024",
         "tensanpham": "Hành lá",
-        "soluong": "12",
+        "soluong": "20",
+        "thoigian_hoptac": "",
+        "chung_nhan": "",
+        "nguon_goc": "",
+        "thongtin_lienlac": ""
+    },
+    {
+        "id": "SUP5",
+        "ten": "Công ty TNHH KICM",
+        "ngaynhaphang": "5/5/2024",
+        "tensanpham": "Cà rốt",
+        "soluong": "19",
         "thoigian_hoptac": "",
         "chung_nhan": "",
         "nguon_goc": "",

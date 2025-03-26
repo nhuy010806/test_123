@@ -312,18 +312,6 @@
         "Address": "Thành phố 18"
     },
     {
-        "EmployeeId": "U222",
-        "EmployeeName": "Nhân Viên 2",
-        "UserName": "User23",
-        "Password": "Pass23@123",
-        "Role": "admin",
-        "Email": "user23@company.com",
-        "Level": "Undergraduated",
-        "Shift": "Shift 2",
-        "Number": "0987600023",
-        "Address": "Thành phố 23"
-    },
-    {
         "EmployeeId": "U27",
         "EmployeeName": "Nhân Viên 27",
         "UserName": "User27",

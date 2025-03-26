@@ -347,11 +347,9 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         QMessageBox.information(self.MainWindow, "Thành công", message)
 
     def search_supplier(self):
-        search_id = self.lineEditSupplierID.text().strip().lower()
-        print(f"🔍 Trước khi lấy giá trị: {self.lineEditSupplierID.text()}")  # Kiểm tra trước khi lấy ID
 
-        search_id = self.lineEditSupplierID.text().strip().lower()
-        print(f"🔍 Giá trị nhập vào: '{search_id}'")  # Kiểm tra ID sau khi lấy
+
+        search_id = self.lineEditSearch.text().strip().lower()
 
         if not search_id:
             QMessageBox.warning(self, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
