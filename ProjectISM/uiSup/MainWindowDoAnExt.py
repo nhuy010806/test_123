@@ -354,13 +354,12 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         if not search_id:
             QMessageBox.warning(self, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
             return
-        print(f"🔍 Giá trị nhập vào: '{search_id}'")  # Debug: kiểm tra ID nhập vào
-
+        print(f"🔍 Giá trị nhập vào: '{search_id}'")
         if not search_id:
             QMessageBox.warning(self, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
             return
 
-        print(f"📋 Danh sách nhà cung cấp: {[s.id for s in self.suppliers]}")  # Debug: kiểm tra danh sách
+        print(f"📋 Danh sách nhà cung cấp: {[s.id for s in self.suppliers]}")
 
         # Tìm nhà cung cấp, kiểm tra ID có bị None không
         supplier = next((e for e in self.suppliers if e.id and e.id.lower() == search_id), None)
