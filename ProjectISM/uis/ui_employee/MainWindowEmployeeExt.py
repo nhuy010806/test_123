@@ -1,4 +1,5 @@
 import os
+import traceback
 import webbrowser
 
 from PyQt6.QtCore import Qt
@@ -19,6 +20,8 @@ class MainWindowEmployeeExt(QMainWindow, Ui_MainWindow):
         self.employees = self.dc.get_all_employees()
         self.setupUi(self)
         self.setupSignalAndSlot()
+        self.is_deleting = False
+        self.is_updating=False
 
 
         # if hasattr(self, 'pushButtonBack'):
@@ -42,7 +45,7 @@ class MainWindowEmployeeExt(QMainWindow, Ui_MainWindow):
         self.labelBackground.setMovie(self.movie)
         self.movie.start()
         self.show_employee_gui()
-        self.setupSignalAndSlot()
+       # self.setupSignalAndSlot()
         self.tableWidgetProduct.setRowCount(0)
 
 
@@ -92,12 +95,15 @@ class MainWindowEmployeeExt(QMainWindow, Ui_MainWindow):
 
 
     def setupSignalAndSlot(self):
-        self.pushButtonSave.clicked.connect(self.xuly_luu_moi)
         self.pushButtonUpdate.clicked.connect(self.xuly_cap_nhat)
+        self.pushButtonSave.clicked.connect(self.xuly_luu_moi)
         self.pushButtonRemove.clicked.connect(self.xuly_xoa)
+        #self.pushButtonRemove.clicked.disconnect()
         self.actionImport.triggered.connect(self.import_to_excel)
         self.actionExxport.triggered.connect(self.export_to_excel)
         self.tableWidgetProduct.itemSelectionChanged.connect(self.show_detail_product)
+        #self.tableWidgetEmployee.itemSelectionChanged.connect(self.show_detail_employee)
+
         self.pushButtonClear.clicked.connect(self.clear_product_detail)
         self.pushButtonSearch.clicked.connect(self.search_employee)
         self.pushButtonShowAll.clicked.connect(self.show_all_employees)
@@ -142,6 +148,10 @@ class MainWindowEmployeeExt(QMainWindow, Ui_MainWindow):
         QMessageBox.information(self.MainWindow, "Thành công", "Nhân viên mới đã được thêm!")
 
     def xuly_cap_nhat(self):
+        if self.is_updating:
+            return
+
+        self.is_updating = True
         empid = self.lineEditId.text().strip()
         empname = self.lineEditName.text().strip()
         username = self.lineEditUserName.text().strip()
@@ -154,36 +164,49 @@ class MainWindowEmployeeExt(QMainWindow, Ui_MainWindow):
         address = self.lineEditAddress.text().strip()
 
         if not empid or not empname or not username or not role or not email:
-            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập đầy đủ thông tin!")
+            QMessageBox.warning(self, "Lỗi", "Vui lòng nhập đầy đủ thông tin!")
+            self.is_updating = False
             return
 
         existing_employee = self.dc.get_employees_by_categories(empid)
         if not existing_employee:
-            QMessageBox.warning(self.MainWindow, "Lỗi", "Không tìm thấy nhân viên để cập nhật!")
+            QMessageBox.warning(self, "Lỗi", "Không tìm thấy nhân viên để cập nhật!")
+            self.is_updating = False
             return
+
         password = existing_employee.Password if not password else password
         employee = Employee(empid, empname, username, password, role, email, level, shift, number, address)
         self.dc.save_update_employee(employee)
         self.employees = self.dc.get_all_employees()
         self.show_employee_gui()
-        QMessageBox.information(self.MainWindow, "Thành công", "Nhân viên đã được cập nhật!")
 
+        QMessageBox.information(self, "Thành công", "Nhân viên đã được cập nhật!")
+        self.is_updating = False
     def xuly_xoa(self):
+        if self.is_deleting:
+            return
+
+        self.is_deleting = True
         empid = self.lineEditId.text().strip()
         if not empid:
-            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID nhân viên cần xóa!")
+            QMessageBox.warning(self, "Lỗi", "Vui lòng nhập ID nhân viên cần xóa!")
+            self.is_deleting = False  # Reset lại trạng thái nếu không có ID
+            return
+        msgbox = QMessageBox.question(self, "Xác nhận xóa",
+                                      f"Bạn có chắc muốn xóa nhân viên [{empid}] không?",
+                                      QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+
+        if msgbox == QMessageBox.StandardButton.No:
+            self.is_deleting = False
             return
 
-        msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText(f"Bạn có chắc muốn xóa nhân viên [{empid}] không?")
-        msgbox.setWindowTitle("Xác nhận xóa")
-        msgbox.setIcon(QMessageBox.Icon.Warning)
-        msgbox.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-        if msgbox.exec() == QMessageBox.StandardButton.No:
-            return
         self.dc.delete_employee(empid)
         self.employees = self.dc.get_all_employees()
         self.show_employee_gui()
+
+        QMessageBox.information(self, "Thành công", "Nhân viên đã được xóa!")
+        self.is_deleting = False  # Cho phép gọi lại lần sau
+
     def exit_program(self):
         msgbox = QMessageBox(self.MainWindow)
         msgbox.setText("Bạn Muốn Thoát phần mềm này?")
