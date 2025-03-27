@@ -2,7 +2,7 @@ from libs.JsonFileFactory import JsonFileFactory
 from models.Employee import Employee
 
 Users=[]
-Users.append(Employee("U1", "Nguyễn Văn An", "An123", "Pass1@123", "staff", "an@company.com", "Graduated", "Shift 1", "0987600001", "Hà Nội"))
+Users.append(Employee("U1", "Nguyễn Văn An", "staff", "123", "staff", "an@company.com", "Graduated", "Shift 1", "0987600001", "Hà Nội"))
 Users.append(Employee("U2", "Trần Thị Bình", "Binh234", "Pass2@123", "staff", "binh@company.com", "Undergraduated", "Shift 2", "0987600002", "Hải Phòng"))
 Users.append(Employee("U3", "Lê Văn Châu", "Chau345", "Pass3@123", "staff", "chau@company.com", "Graduated", "Shift 3", "0987600003", "Đà Nẵng"))
 Users.append(Employee("U4", "Phạm Thị Duy", "Duy456", "Pass4@123", "admin", "duy@company.com", "Graduated", "Shift 1", "0987600004", "Hồ Chí Minh"))

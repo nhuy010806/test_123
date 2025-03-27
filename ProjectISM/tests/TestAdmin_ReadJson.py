@@ -1,5 +1,5 @@
-from ProjectISM.libs.JsonFileFactory import JsonFileFactory
-from ProjectISM.models.Admin import Admin
+from libs.JsonFileFactory import JsonFileFactory
+from models.Admin import Admin
 
 jff=JsonFileFactory()
 filename="../dataset/admins.json"

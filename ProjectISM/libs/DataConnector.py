@@ -18,7 +18,7 @@ class DataConnector:
     def login1(self, Username, Password):
         employees=self.get_all_employees()
         for e in employees:
-            if e.username==Username and str(e.password)==str(Password):
+            if e.UserName==Username and str(e.Password)==str(Password):
                 return e
         return None
     def login2(self, Username, Password):
