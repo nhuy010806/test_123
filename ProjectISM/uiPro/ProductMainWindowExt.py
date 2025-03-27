@@ -40,7 +40,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.products = []
         self.show_products_gui()
         self.is_show_all_clicked = False
-       # self.setupSignalAndSlot()
+        self.setupSignalAndSlot()
 
     def showWindow(self):
         self.show()

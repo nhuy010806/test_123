@@ -86,7 +86,7 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.actionExport_Excel.triggered.connect(self.export_to_excel)
         self.pushButtonBack.clicked.connect(self.xuly_quayve)
         self.actionCurrent_Help.triggered.connect(self.open_help)
-        self.tableWidgetSupplier.itemSelectionChanged.connect(self.show_detail_supplier)
+        self.tableWidgetSupplier.itemSelectionChanged.connect(self.show_detail_product)
 
 
         self.lineEditSupplierName.textChanged.connect(self.toggle_clear_button)
@@ -96,7 +96,7 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.lineEditProductname.textChanged.connect(self.toggle_clear_button)
         self.toggle_clear_button()
 
-    def show_detail_supplier(self):
+    def show_detail_product(self):
         index = self.tableWidgetSupplier.currentRow()
         if index < 0:
             return
@@ -119,27 +119,27 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.suppliers = self.dc.get_all_suppliers()
         self.show_supplier_gui()
 
-    # def show_detail_supplier(self):
-    #     index=self.tableWidgetSupplier.currentRow()
-    #     if index<0:
-    #         return
-    #     supplier=self.suppliers[index]
-    #     self.lineEditSupplierID.setText(supplier.id)
-    #     self.lineEditSupplierName.setText(supplier.ten)
-    #     self.lineEditSupplydate.setText(str(supplier.ngaynhaphang))
-    #     self.lineEditProductname.setText(supplier.tensanpham)
-    #     self.lineEditQuantity.setText(str(supplier.soluong))
-    #
-    #     description = (
-    #         f"Thời gian hợp tác: {supplier.thoigian_hoptac}\n"
-    #
-    #         f"Chứng nhận chất lượng: {supplier.chung_nhan}\n"
-    #
-    #         f"Nguồn gốc sản phẩm: {supplier.nguon_goc}\n"
-    #
-    #         f"Thông tin liên lạc: {supplier.thongtin_lienlac}"
-    #     )
-    #     self.textEditDescription.setText(description)
+    def show_detail_supplier(self):
+        index=self.tableWidgetSupplier.currentRow()
+        if index<0:
+            return
+        supplier=self.suppliers[index]
+        self.lineEditSupplierID.setText(supplier.id)
+        self.lineEditSupplierName.setText(supplier.ten)
+        self.lineEditSupplydate.setText(str(supplier.ngaynhaphang))
+        self.lineEditProductname.setText(supplier.tensanpham)
+        self.lineEditQuantity.setText(str(supplier.soluong))
+
+        description = (
+            f"Thời gian hợp tác: {supplier.thoigian_hoptac}\n"
+                
+            f"Chứng nhận chất lượng: {supplier.chung_nhan}\n"
+                
+            f"Nguồn gốc sản phẩm: {supplier.nguon_goc}\n"
+                
+            f"Thông tin liên lạc: {supplier.thongtin_lienlac}"
+        )
+        self.textEditDescription.setText(description)
 
     # def clear_supplier_detail(self):
     #     self.lineEditSupplierID.setText("")
@@ -347,31 +347,28 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         QMessageBox.information(self.MainWindow, "Thành công", message)
 
     def search_supplier(self):
-
-
-        search_id = self.lineEditSearch.text().strip().lower()
+        search_id = self.lineEditSupplierID.text().strip().lower()
 
         if not search_id:
-            QMessageBox.warning(self, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
-            return
-        print(f"🔍 Giá trị nhập vào: '{search_id}'")
-        if not search_id:
-            QMessageBox.warning(self, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")
             return
 
-        print(f"📋 Danh sách nhà cung cấp: {[s.id for s in self.suppliers]}")
 
-        # Tìm nhà cung cấp, kiểm tra ID có bị None không
-        supplier = next((e for e in self.suppliers if e.id and e.id.lower() == search_id), None)
+        supplier = next((e for e in self.suppliers if e.id.lower() == search_id), None)
 
         if supplier:
+
             self.lineEditSupplierID.setText(supplier.id)
             self.lineEditSupplierName.setText(supplier.ten)
             self.lineEditSupplydate.setText(str(supplier.ngaynhaphang))
             self.lineEditProductname.setText(supplier.tensanpham)
             self.lineEditQuantity.setText(str(supplier.soluong))
+            # if hasattr(self, 'comboBoxLevel'):
+            #     self.comboBoxLevel.setCurrentText(supplier.Level)
+            # if hasattr(self, 'comboBoxShift'):
+            #     self.comboBoxShift.setCurrentText(supplier.Shift)
         else:
-            QMessageBox.warning(self, "Không tìm thấy", f"Không tìm thấy nhà cung cấp có ID: {search_id}")
+            QMessageBox.warning(self.MainWindow, "Không tìm thấy", f"Không tìm thấy nhà cung cấp có ID: {search_id}")
 
     # def search_supplier(self):
     #     search_id = self.lineEditSearch.text().strip()
