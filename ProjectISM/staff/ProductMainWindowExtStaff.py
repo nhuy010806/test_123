@@ -13,7 +13,7 @@ from models.Product import Product
 from uiPro.ProductMainWindow import Ui_MainWindow
 
 
-class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
+class ProductMainWindowExtStaff(QMainWindow,Ui_MainWindow):
     def __init__(self,menu_window):
         super().__init__()
         self.menu_window = menu_window
@@ -27,7 +27,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.is_filtered = False
         self.setupUi(self)
         self.setupSignalAndSlot()
-        self.pushButtonDelete.setEnabled(True)
+      #  self.pushButtonDelete.setEnabled(False)
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
@@ -90,7 +90,30 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.tableWidgetProduct.itemSelectionChanged.connect(self.show_detail_product)
         self.pushButtonClear.clicked.connect(self.clear_product_details)
         self.pushButtonSave.clicked.connect(self.save_product)
-      #  self.pushButtonDelete.clicked.connect(self.delete_product)
+        from PyQt6.QtCore import Qt
+
+        # Vô hiệu hóa nút Delete
+        self.pushButtonDelete.setEnabled(False)
+
+        # Cấm nút nhận focus để tránh thay đổi màu khi bấm vào widget khác
+        self.pushButtonDelete.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+
+        # Ép màu xám riêng cho nút Delete (dù có stylesheet chung)
+        self.pushButtonDelete.setStyleSheet("""
+            QPushButton {
+                background-color: #aaaaaa !important;
+                color: #ffffff !important;
+                border: 1px solid #888888 !important;
+                border-radius: 15px;
+                font: bold 12pt "Tahoma";
+            }
+            QPushButton:hover, QPushButton:focus {
+                background-color: #aaaaaa !important;
+                color: #ffffff !important;
+            }
+        """)
+
+        #  self.pushButtonDelete.clicked.connect(self.delete_product)
         self.pushButtonSearch.clicked.connect(self.search_product)
         self.pushButtonFilterDate.clicked.connect(self.toggle_filter_colored_products)
         self.pushButtonShowall.clicked.connect(self.show_all_products)

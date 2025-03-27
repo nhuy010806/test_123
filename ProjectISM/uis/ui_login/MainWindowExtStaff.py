@@ -1,9 +1,9 @@
 from PyQt6.QtGui import QMovie
 from PyQt6.QtWidgets import QMainWindow
-
-from uiCate.CategoryMainWindowExt import ProductMainWindow1Ext
-from uiPro.ProductMainWindowExt import ProductMainWindowExt
-from uiSup.MainWindowDoAnExt import MainWindowDoAnExt
+from PyQt6.QtCore import Qt
+from staff.CategoryMainWindowExtStaff import CategoryMainWindowExtStaff
+from staff.MainWindowDoAnExtStaff import MainWindowDoAnExtStaff
+from staff.ProductMainWindowExtStaff import ProductMainWindowExtStaff
 from uis.ui_login.MainWindowMenu import Ui_MainWindow
 
 
@@ -23,23 +23,39 @@ class MainWindowMenuExtStaff( QMainWindow, Ui_MainWindow):
 
     def setupSignalAndSlot(self):
        # self.pushButtonEmployee.clicked.connect(self.xuli_nhanvien)
-        self.pushButtonSupplier.clicked.connect(self.xuli_supplier)
-        self.pushButtonProduct.clicked.connect(self.xuly_product)
-        self.pushButtonCategory.clicked.connect(self.xuly_category)
+       self.pushButtonEmployee.setEnabled(False)
+       self.pushButtonEmployee.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+       self.pushButtonEmployee.setStyleSheet("""
+           QPushButton {
+               background-color: #aaaaaa !important;
+               color: #ffffff !important;
+               border: 1px solid #888888 !important;
+               border-radius: 15px;
+               font: bold 12pt "Tahoma";
+           }
+           QPushButton:hover, QPushButton:focus {
+               background-color: #aaaaaa !important;
+               color: #ffffff !important;
+           }
+       """)
+
+       self.pushButtonSupplier.clicked.connect(self.xuli_supplier)
+       self.pushButtonProduct.clicked.connect(self.xuly_product)
+       self.pushButtonCategory.clicked.connect(self.xuly_category)
     # def xuli_nhanvien(self):
     #     self.employee_window = MainWindowEmployeeExt(self)
     #     self.employee_window.show()
     #     self.close()
     def xuli_supplier(self):
-        self.supplier_window=MainWindowDoAnExt(self)
+        self.supplier_window=MainWindowDoAnExtStaff(self)
         self.supplier_window.show()
         self.close()
     def xuly_product(self):
-        self.product_window=ProductMainWindowExt(self)
+        self.product_window=ProductMainWindowExtStaff(self)
         self.product_window.show()
         self.close()
     def xuly_category(self):
-        self.product_category = ProductMainWindow1Ext(self)
+        self.product_category = CategoryMainWindowExtStaff(self)
         self.product_category.show()
         self.close()
 

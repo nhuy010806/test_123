@@ -40,7 +40,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.products = []
         self.show_products_gui()
         self.is_show_all_clicked = False
-        # self.setupSignalAndSlot()
+        self.setupSignalAndSlot()
 
     def showWindow(self):
         self.show()
@@ -309,11 +309,11 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.close()
 
     def export_to_excel(self):
-        filename_product = '../dataset_product/products.xlsx'
+        filename_product = '../dataset/products.xlsx'
         extool = ExportTool()
         extool.export_products_EXCEL(filename_product, self.products)
 
-        filename_cate = "../../Category/dataset_cate/categories.xlsx"
+        filename_cate = "../dataset/categories.xlsx"
         extool.export_categories_EXCEL(filename_cate, self.categories)
 
         msgbox = QMessageBox(self.MainWindow)
@@ -322,8 +322,8 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         msgbox.exec()
 
     def import_from_excel(self):
-        filename_product = '../dataset_product/products.xlsx'
-        filename_cate = "../../Category/dataset_cate/categories.xlsx"
+        filename_product = '../dataset/products.xlsx'
+        filename_cate = "../dataset/categories.xlsx"
         extool = ExportTool()
         self.categories = extool.import_categories_EXCEL(filename_cate)
         self.products = extool.import_products_EXCEL(filename_product)
@@ -446,7 +446,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.show_categories_gui()
 
     def open_help(self):
-        file_help = "HELP PRODUCT.pdf"
+        file_help = "Help.pdf"
         current_path = os.getcwd()
         file_help = f"{current_path}/../help/{file_help}"
         webbrowser.open_new(file_help)
