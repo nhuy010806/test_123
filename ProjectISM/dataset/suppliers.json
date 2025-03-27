@@ -48,11 +48,11 @@
         "ten": "Công ty CP MCK",
         "ngaynhaphang": "10/10/2024",
         "tensanpham": "Ngó sen",
-        "soluong": 15,
-        "thoigian_hoptac": "10 năm",
-        "chung_nhan": "HACCP",
-        "nguon_goc": "Tiền Giang",
-        "thongtin_lienlac": "mck@supplier.com|+84 977 665 432"
+        "soluong": "15",
+        "thoigian_hoptac": "",
+        "chung_nhan": "",
+        "nguon_goc": "",
+        "thongtin_lienlac": ""
     },
     {
         "id": "SUP7",

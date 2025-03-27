@@ -6,7 +6,7 @@ import seaborn as sns
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 
-from uis.uiVisualization.MainWindow import Ui_MainWindow
+from ui.MainWindow import Ui_MainWindow
 
 
 class MainWindowEx(QMainWindow,Ui_MainWindow):
