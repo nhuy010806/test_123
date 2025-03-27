@@ -294,5 +294,13 @@
         "quantity": 100,
         "cateid": "Trái cây",
         "date": "2025-03-10"
+    },
+    {
+        "proid": "00",
+        "proname": "Cam Sành",
+        "price": 8000.0,
+        "quantity": 100,
+        "cateid": "Trái cây",
+        "date": "2025-03-10"
     }
 ]
