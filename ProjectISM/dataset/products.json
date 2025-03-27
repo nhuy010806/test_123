@@ -278,5 +278,13 @@
         "quantity": 25,
         "cateid": "Thực phẩm hữu cơ",
         "date": "2025-07-15"
+    },
+    {
+        "proid": "11",
+        "proname": "Mè Đen Hữu Cơ",
+        "price": 45000.0,
+        "quantity": 25,
+        "cateid": "Thực phẩm hữu cơ",
+        "date": "2025-07-15"
     }
 ]

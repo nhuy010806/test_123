@@ -12,12 +12,13 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1021, 766)
+        MainWindow.resize(1061, 849)
+        MainWindow.setStyleSheet("background-color: #DCE8C6")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.pushButtonBarChart = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonBarChart.setGeometry(QtCore.QRect(40, 670, 241, 41))
-        self.pushButtonBarChart.setStyleSheet("QPushButton{\n"
+        self.pushButtonShowAll = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonShowAll.setGeometry(QtCore.QRect(2000, -40, 121, 41))
+        self.pushButtonShowAll.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
 "        border-bottom: 1px solid #aaaaaa;\n"
@@ -46,79 +47,50 @@ class Ui_MainWindow(object):
 "        color: #ffffff;\n"
 "}")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/bar-chart(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButtonBarChart.setIcon(icon)
-        self.pushButtonBarChart.setObjectName("pushButtonBarChart")
-        self.pushButtonLineChart = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonLineChart.setGeometry(QtCore.QRect(370, 670, 261, 41))
-        self.pushButtonLineChart.setStyleSheet("QPushButton{\n"
-"        border-radius: 15px;\n"
-"        border-right: 1px solid #aaaaaa;\n"
-"        border-bottom: 1px solid #aaaaaa;\n"
-"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
-"\n"
-"}\n"
-"\n"
-"QPushButton:enabled {\n"
-"        background-color: #00806c;\n"
-"        color: White;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"        background-color: #dfc456;\n"
-"        color: #fffffe;\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton:hover:!pressed {\n"
-"        background-color: #86ad6f;\n"
-"        color: #0c2f70;\n"
-"}\n"
-"\n"
-"QPushButton:disabled {\n"
-"        background-color: #aaaaaa;\n"
-"        color: #ffffff;\n"
-"}")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/line-chart(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButtonLineChart.setIcon(icon1)
-        self.pushButtonLineChart.setObjectName("pushButtonLineChart")
-        self.pushButtonPieChart = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonPieChart.setGeometry(QtCore.QRect(760, 670, 221, 41))
-        self.pushButtonPieChart.setStyleSheet("QPushButton{\n"
-"        border-radius: 15px;\n"
-"        border-right: 1px solid #aaaaaa;\n"
-"        border-bottom: 1px solid #aaaaaa;\n"
-"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
-"\n"
-"}\n"
-"\n"
-"QPushButton:enabled {\n"
-"        background-color: #00806c;\n"
-"        color: White;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"        background-color: #dfc456;\n"
-"        color: #fffffe;\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton:hover:!pressed {\n"
-"        background-color: #86ad6f;\n"
-"        color: #0c2f70;\n"
-"}\n"
-"\n"
-"QPushButton:disabled {\n"
-"        background-color: #aaaaaa;\n"
-"        color: #ffffff;\n"
-"}")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/pie-chart(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButtonPieChart.setIcon(icon2)
-        self.pushButtonPieChart.setObjectName("pushButtonPieChart")
-        self.pushButtonExit = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButtonExit.setGeometry(QtCore.QRect(30, 10, 91, 41))
+        icon.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/statistics(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonShowAll.setIcon(icon)
+        self.pushButtonShowAll.setObjectName("pushButtonShowAll")
+        self.label_6 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(1394, -650, 241, 161))
+        self.label_6.setObjectName("label_6")
+        self.label = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(-10, -20, 1121, 891))
+        self.label.setStyleSheet("background-color: #DCE8C6")
+        self.label.setText("")
+        self.label.setObjectName("label")
+        self.groupBox = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox.setGeometry(QtCore.QRect(0, 0, 1071, 871))
+        self.groupBox.setTitle("")
+        self.groupBox.setObjectName("groupBox")
+        self.label_17 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_17.setGeometry(QtCore.QRect(850, 60, 211, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_17.setFont(font)
+        self.label_17.setObjectName("label_17")
+        self.label_12 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_12.setGeometry(QtCore.QRect(860, 240, 191, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_12.setFont(font)
+        self.label_12.setObjectName("label_12")
+        self.labelSupplier = QtWidgets.QLabel(parent=self.groupBox)
+        self.labelSupplier.setGeometry(QtCore.QRect(910, 380, 41, 51))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(24)
+        font.setBold(True)
+        font.setWeight(75)
+        self.labelSupplier.setFont(font)
+        self.labelSupplier.setObjectName("labelSupplier")
+        self.pushButtonExit = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonExit.setGeometry(QtCore.QRect(620, 730, 181, 51))
         self.pushButtonExit.setStyleSheet("QPushButton{\n"
 "        border-radius: 15px;\n"
 "        border-right: 1px solid #aaaaaa;\n"
@@ -147,29 +119,295 @@ class Ui_MainWindow(object):
 "        background-color: #aaaaaa;\n"
 "        color: #ffffff;\n"
 "}")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/exit-full-screen(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButtonExit.setIcon(icon3)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/exit-full-screen(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonExit.setIcon(icon1)
         self.pushButtonExit.setObjectName("pushButtonExit")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(30, 70, 951, 581))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(300, 15, 331, 41))
+        self.label_18 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_18.setGeometry(QtCore.QRect(860, 100, 141, 91))
+        self.label_18.setText("")
+        self.label_18.setPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/division (2)(1).png"))
+        self.label_18.setObjectName("label_18")
+        self.pushButtonBarChart = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonBarChart.setGeometry(QtCore.QRect(10, 660, 171, 51))
+        self.pushButtonBarChart.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/bar-chart(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonBarChart.setIcon(icon2)
+        self.pushButtonBarChart.setObjectName("pushButtonBarChart")
+        self.pushButtonPieChart = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonPieChart.setGeometry(QtCore.QRect(330, 660, 181, 51))
+        self.pushButtonPieChart.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/pie-chart(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonPieChart.setIcon(icon3)
+        self.pushButtonPieChart.setObjectName("pushButtonPieChart")
+        self.label_20 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_20.setGeometry(QtCore.QRect(850, 430, 201, 41))
         font = QtGui.QFont()
-        font.setPointSize(22)
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setObjectName("label")
+        self.label_20.setFont(font)
+        self.label_20.setObjectName("label_20")
+        self.label_21 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_21.setGeometry(QtCore.QRect(860, 670, 141, 91))
+        self.label_21.setText("")
+        self.label_21.setPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/products(1).png"))
+        self.label_21.setObjectName("label_21")
+        self.label_22 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_22.setGeometry(QtCore.QRect(860, 280, 141, 101))
+        self.label_22.setText("")
+        self.label_22.setPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/manufacture(1).png"))
+        self.label_22.setObjectName("label_22")
+        self.label_24 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_24.setGeometry(QtCore.QRect(860, 470, 141, 101))
+        self.label_24.setText("")
+        self.label_24.setPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/market-segment(1).png"))
+        self.label_24.setObjectName("label_24")
+        self.labelEmployee = QtWidgets.QLabel(parent=self.groupBox)
+        self.labelEmployee.setGeometry(QtCore.QRect(900, 190, 41, 51))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(24)
+        font.setBold(True)
+        font.setWeight(75)
+        self.labelEmployee.setFont(font)
+        self.labelEmployee.setObjectName("labelEmployee")
+        self.labelCategory = QtWidgets.QLabel(parent=self.groupBox)
+        self.labelCategory.setGeometry(QtCore.QRect(910, 570, 41, 51))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(24)
+        font.setBold(True)
+        font.setWeight(75)
+        self.labelCategory.setFont(font)
+        self.labelCategory.setObjectName("labelCategory")
+        self.pushButtonDistribution = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonDistribution.setGeometry(QtCore.QRect(10, 730, 171, 51))
+        self.pushButtonDistribution.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/distribution(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonDistribution.setIcon(icon4)
+        self.pushButtonDistribution.setObjectName("pushButtonDistribution")
+        self.label_27 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_27.setGeometry(QtCore.QRect(860, 630, 191, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_27.setFont(font)
+        self.label_27.setObjectName("label_27")
+        self.pushButtonLineChart = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonLineChart.setGeometry(QtCore.QRect(620, 660, 181, 51))
+        self.pushButtonLineChart.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/line-chart(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonLineChart.setIcon(icon5)
+        self.pushButtonLineChart.setObjectName("pushButtonLineChart")
+        self.verticalLayoutWidget_2 = QtWidgets.QWidget(parent=self.groupBox)
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 50, 831, 591))
+        self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.labelProduct = QtWidgets.QLabel(parent=self.groupBox)
+        self.labelProduct.setGeometry(QtCore.QRect(900, 760, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(24)
+        font.setBold(True)
+        font.setWeight(75)
+        self.labelProduct.setFont(font)
+        self.labelProduct.setObjectName("labelProduct")
+        self.pushButtonPieShift = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonPieShift.setGeometry(QtCore.QRect(330, 730, 181, 51))
+        self.pushButtonPieShift.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("D:\\PyCharm\\pythonProject2\\ui\\../images/replacement(1).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonPieShift.setIcon(icon6)
+        self.pushButtonPieShift.setObjectName("pushButtonPieShift")
+        self.pushButtonShowAll_2 = QtWidgets.QPushButton(parent=self.groupBox)
+        self.pushButtonShowAll_2.setGeometry(QtCore.QRect(850, 0, 171, 51))
+        self.pushButtonShowAll_2.setStyleSheet("QPushButton{\n"
+"        border-radius: 15px;\n"
+"        border-right: 1px solid #aaaaaa;\n"
+"        border-bottom: 1px solid #aaaaaa;\n"
+"        font: bold 12pt \"Tahoma\"; /* Chữ in đậm */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:enabled {\n"
+"        background-color: #00806c;\n"
+"        color: White;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"        background-color: #dfc456;\n"
+"        color: #fffffe;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed {\n"
+"        background-color: #86ad6f;\n"
+"        color: #0c2f70;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: #aaaaaa;\n"
+"        color: #ffffff;\n"
+"}")
+        self.pushButtonShowAll_2.setIcon(icon)
+        self.pushButtonShowAll_2.setObjectName("pushButtonShowAll_2")
+        self.label_2 = QtWidgets.QLabel(parent=self.groupBox)
+        self.label_2.setGeometry(QtCore.QRect(250, 0, 431, 48))
+        self.label_2.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.label_2.setStyleSheet("QLabel {\n"
+"    font-size: 40px;\n"
+"    font-weight: bold;\n"
+"    color: green;\n"
+"}\n"
+"")
+        self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_2.setObjectName("label_2")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1021, 26))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -177,8 +415,21 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButtonBarChart.setText(_translate("MainWindow", "Bar Chart"))
-        self.pushButtonLineChart.setText(_translate("MainWindow", "Line Chart"))
-        self.pushButtonPieChart.setText(_translate("MainWindow", "Pie Chart"))
+        self.pushButtonShowAll.setText(_translate("MainWindow", "Show All"))
+        self.label_6.setText(_translate("MainWindow", "TextLabel"))
+        self.label_17.setText(_translate("MainWindow", "Total Employee"))
+        self.label_12.setText(_translate("MainWindow", "Total Supplier"))
+        self.labelSupplier.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt;\">0</span></p></body></html>"))
         self.pushButtonExit.setText(_translate("MainWindow", "Exit"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; color:#00aa00;\">Visualization</span></p></body></html>"))
+        self.pushButtonBarChart.setText(_translate("MainWindow", "Bar Product"))
+        self.pushButtonPieChart.setText(_translate("MainWindow", "Pie Category"))
+        self.label_20.setText(_translate("MainWindow", "Total Category"))
+        self.labelEmployee.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt;\">0</span></p></body></html>"))
+        self.labelCategory.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt;\">0</span></p></body></html>"))
+        self.pushButtonDistribution.setText(_translate("MainWindow", "Distribution"))
+        self.label_27.setText(_translate("MainWindow", "Total Product"))
+        self.pushButtonLineChart.setText(_translate("MainWindow", "Line Product"))
+        self.labelProduct.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt;\">0</span></p></body></html>"))
+        self.pushButtonPieShift.setText(_translate("MainWindow", "Pie Shift"))
+        self.pushButtonShowAll_2.setText(_translate("MainWindow", "Show All"))
+        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p>Visualization</p><p><br/></p></body></html>"))
