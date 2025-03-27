@@ -446,7 +446,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.show_categories_gui()
 
     def open_help(self):
-        file_help = "Help.pdf"
+        file_help = "HELP PRODUCT.pdf"
         current_path = os.getcwd()
         file_help = f"{current_path}/../help/{file_help}"
         webbrowser.open_new(file_help)
