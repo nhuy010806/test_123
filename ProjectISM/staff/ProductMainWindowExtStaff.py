@@ -27,6 +27,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.is_filtered = False
         self.setupUi(self)
         self.setupSignalAndSlot()
+        self.pushButtonDelete.setEnabled(True)
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
@@ -35,12 +36,13 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.labelBackground.setMovie(self.movie)
         self.movie.start()
         self.set_buttons_enabled(False)
+       # self.set_buttons_enabled1(False)
         self.listWidgetCategory.hide()
         self.show_categories_gui()
         self.products = []
         self.show_products_gui()
         self.is_show_all_clicked = False
-        # self.setupSignalAndSlot()
+        self.setupSignalAndSlot()
 
     def showWindow(self):
         self.show()
@@ -88,7 +90,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.tableWidgetProduct.itemSelectionChanged.connect(self.show_detail_product)
         self.pushButtonClear.clicked.connect(self.clear_product_details)
         self.pushButtonSave.clicked.connect(self.save_product)
-        self.pushButtonDelete.clicked.connect(self.delete_product)
+      #  self.pushButtonDelete.clicked.connect(self.delete_product)
         self.pushButtonSearch.clicked.connect(self.search_product)
         self.pushButtonFilterDate.clicked.connect(self.toggle_filter_colored_products)
         self.pushButtonShowall.clicked.connect(self.show_all_products)
@@ -108,8 +110,11 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.pushButtonSearch.setEnabled(enabled)
         self.pushButtonFilterDate.setEnabled(enabled)
         self.pushButtonSave.setEnabled(enabled)
-        self.pushButtonDelete.setEnabled(enabled)
         self.pushButtonClear.setEnabled(enabled)
+
+    # def set_buttons_enabled1(self, enabled):
+    #     self.pushButtonDelete.setEnabled(enabled)
+
 
     def filter_product(self):
         if not self.is_show_all_clicked:
@@ -309,11 +314,11 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.close()
 
     def export_to_excel(self):
-        filename_product = '../dataset_product/products.xlsx'
+        filename_product = '../dataset/products.xlsx'
         extool = ExportTool()
         extool.export_products_EXCEL(filename_product, self.products)
 
-        filename_cate = "../../Category/dataset_cate/categories.xlsx"
+        filename_cate = "../dataset/categories.xlsx"
         extool.export_categories_EXCEL(filename_cate, self.categories)
 
         msgbox = QMessageBox(self.MainWindow)
@@ -322,8 +327,8 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         msgbox.exec()
 
     def import_from_excel(self):
-        filename_product = '../dataset_product/products.xlsx'
-        filename_cate = "../../Category/dataset_cate/categories.xlsx"
+        filename_product = '../dataset/products.xlsx'
+        filename_cate = "../dataset/categories.xlsx"
         extool = ExportTool()
         self.categories = extool.import_categories_EXCEL(filename_cate)
         self.products = extool.import_products_EXCEL(filename_product)
@@ -446,7 +451,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.show_categories_gui()
 
     def open_help(self):
-        file_help = "HELP PRODUCT.pdf"
+        file_help = "Help.pdf"
         current_path = os.getcwd()
         file_help = f"{current_path}/../help/{file_help}"
         webbrowser.open_new(file_help)

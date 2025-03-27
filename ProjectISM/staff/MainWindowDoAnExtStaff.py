@@ -12,21 +12,7 @@ from uiSup.MainWindowDoAn import Ui_MainWindow
 
 
 class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
-    # def __init__(self):
-    #     super().__init__()
-    #     self.setupUi(self)
-    #     self.dc = DataConnector()
-    #     self.suppliers = self.dc.get_all_suppliers()
-    #     self.setupUi(self)
-    #     self.setupSignalAndSlot()
-    #     self.selected_cate = None
-    #     self.suppliers = []
-    #
-    # def setupUi(self, MainWindow):
-    #     super().setupUi(MainWindow)
-    #     self.MainWindow = MainWindow
-    #     self.show_supplier_gui()
-    #     self.setupSignalAndSlot()
+
     def __init__(self, menu_window):
         super().__init__()
         self.menu_window = menu_window
@@ -38,7 +24,7 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.is_updating=False
 
     def showWindow(self):
-        self.show()
+        self.show()  # Show self instead of self.MainWindow
 
     def setupUi(self,MainWindow):
         super().setupUi(MainWindow)
@@ -47,12 +33,7 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.labelBackground.setMovie(self.movie)
         self.movie.start()
         self.show_supplier_gui()
-       # self.setupSignalAndSlot()
         self.tableWidgetSupplier.setRowCount(0)
-        self.set_buttons_enabled(False)
-    def set_buttons_enabled(self, enabled):
-        self.pushButtonDelete.setEnabled(enabled)
-
 
     def show_supplier_gui(self):
         self.tableWidgetSupplier.setRowCount(0)
@@ -82,13 +63,13 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.pushButtonUpdate.clicked.connect(self.xuly_cap_nhat)
         self.pushButtonSave.clicked.connect(self.save_supplier)
         self.pushButtonClear.clicked.connect(self. clear_product_detail)
- #       self.pushButtonDelete.clicked.connect(self.xuly_xoa)
+     #   self.pushButtonDelete.clicked.connect(self.xuly_xoa)
         self.actionImport_Excel.triggered.connect(self.import_to_excel)
         self.actionExport_Excel.triggered.connect(self.export_to_excel)
         self.pushButtonBack.clicked.connect(self.xuly_quayve)
         self.actionCurrent_Help.triggered.connect(self.open_help)
         self.tableWidgetSupplier.itemSelectionChanged.connect(self.show_detail_product)
-        self.tableWidgetSupplier.itemSelectionChanged.connect(self.enable_delete_button)
+
 
         self.lineEditSupplierName.textChanged.connect(self.toggle_clear_button)
         self.lineEditQuantity.textChanged.connect(self.toggle_clear_button)
@@ -183,30 +164,30 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
     #
     #
     #     QMessageBox.information(self.MainWindow, "Thông báo", f"Đã xoá nhà cung cấp [{id}] thành công!")
-    # def xuly_xoa(self):
-    #     if self.is_deleting:
-    #         return
-    #
-    #     self.is_deleting = True
-    #     empid = self.lineEditSupplierID.text().strip()
-    #     if not empid:
-    #         QMessageBox.warning(self, "Lỗi", "Vui lòng nhập ID nhà cung cấp cần xóa!")
-    #         self.is_deleting = False
-    #         return
-    #     msgbox = QMessageBox.question(self, "Xác nhận xóa",
-    #                                   f"Bạn có chắc muốn xóa nhà cung cấp [{empid}] không?",
-    #                                   QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-    #
-    #     if msgbox == QMessageBox.StandardButton.No:
-    #         self.is_deleting = False
-    #         return
-    #
-    #     self.dc.delete_supplier(empid)
-    #     self.suppliers = self.dc.get_all_suppliers()
-    #     self.show_supplier_gui()
-    #
-    #     QMessageBox.information(self, "Thành công", "Nhân viên đã được xóa!")
-    #     self.is_deleting = False
+    def xuly_xoa(self):
+        if self.is_deleting:
+            return
+
+        self.is_deleting = True
+        empid = self.lineEditSupplierID.text().strip()
+        if not empid:
+            QMessageBox.warning(self, "Lỗi", "Vui lòng nhập ID nhà cung cấp cần xóa!")
+            self.is_deleting = False
+            return
+        msgbox = QMessageBox.question(self, "Xác nhận xóa",
+                                      f"Bạn có chắc muốn xóa nhà cung cấp [{empid}] không?",
+                                      QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+
+        if msgbox == QMessageBox.StandardButton.No:
+            self.is_deleting = False
+            return
+
+        self.dc.delete_supplier(empid)
+        self.suppliers = self.dc.get_all_suppliers()
+        self.show_supplier_gui()
+
+        QMessageBox.information(self, "Thành công", "Nhân viên đã được xóa!")
+        self.is_deleting = False
     def export_to_excel(self):
         filename = '../dataset/suppliers.xlsx'
         extool = ExportTool()
@@ -411,9 +392,5 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         current_path = os.getcwd()
         file_help = f"{current_path}/../help/{file_help}"
         webbrowser.open_new(file_help)
-
-    def enable_delete_button(self):
-        selected = self.tableWidgetSupplier.currentRow() >= 0
-        self.pushButtonDelete.setEnabled(selected)
 
 

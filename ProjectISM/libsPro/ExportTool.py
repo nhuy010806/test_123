@@ -72,20 +72,6 @@ class ExportTool:
         df = pd.read_csv(filename, encoding="utf-8")
         return [Category(**row) for _, row in df.iterrows()]
 
-        # Pickle:
-    def export_products_PICKLE(self, filename, products):
-        df = pd.DataFrame([p.__dict__ for p in products])
-        df.to_pickle(filename)
-    def export_categories_PICKLE(self, filename, categories):
-        df = pd.DataFrame([c.__dict__ for c in categories])
-        df.to_pickle(filename)
-    def import_products_PICKLE(self, filename):
-        df = pd.read_pickle(filename)
-        return [Product(**row) for _, row in df.iterrows()]
-    def import_categories_PICKLE(self, filename):
-        df = pd.read_pickle(filename)
-        return [Category(**row) for _, row in df.iterrows()]
-
     # JSON
     def export_products_JSON(self, filename, products):
         df = pd.DataFrame([p.__dict__ for p in products])
@@ -100,7 +86,6 @@ class ExportTool:
         df = pd.read_json(filename)
         return [Category(**row) for _, row in df.iterrows()]
 
-        # XML:
 
     def export_products_XML(self, filename, products):
         root = ET.Element("Products")
