@@ -1,0 +1,22 @@
+[
+    {
+        "cateid": "Trái cây",
+        "description": "Các loại trái cây tươi ngon, giàu vitamin"
+    },
+    {
+        "cateid": "Rau củ",
+        "description": "Rau xanh và củ quả tươi, giàu dinh dưỡng"
+    },
+    {
+        "cateid": "Thực phẩm hữu cơ",
+        "description": "Sản phẩm hữu cơ, an toàn và không hóa chất"
+    },
+    {
+        "cateid": "Trứng gà, vịt",
+        "description": "Trứng sạch từ gà và vịt, giàu protein"
+    },
+    {
+        "cateid": "Khác",
+        "description": ""
+    }
+]

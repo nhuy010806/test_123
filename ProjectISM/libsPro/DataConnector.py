@@ -44,7 +44,7 @@ class DataConnector:
         if index!=-1:
             self.products.pop(index)
             jff = JsonFileFactory()
-            filename = "../dataset/categories.json"
+            filename = "../dataset/products.json"
             jff.write_data(self.products, filename)
 
     def get_products_by_date(self, selected_date):

@@ -26,7 +26,7 @@ class ProductMainWindowExt(QMainWindow,Ui_MainWindow):
         self.selected_cate = None
         self.is_filtered = False
         self.setupUi(self)
-        self.setupSignalAndSlot()
+       # self.setupSignalAndSlot()
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)

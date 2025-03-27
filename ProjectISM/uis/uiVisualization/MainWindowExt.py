@@ -4,7 +4,10 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
-from ui.MainWindow import Ui_MainWindow
+
+from uis.uiVisualization.MainWindow import Ui_MainWindow
+
+
 class MainWindowEx(QMainWindow,Ui_MainWindow):
     def __init__(self, menu_window):
         super().__init__()
