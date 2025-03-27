@@ -26,7 +26,7 @@ class ProductMainWindowExtStaff(QMainWindow,Ui_MainWindow):
         self.selected_cate = None
         self.is_filtered = False
         self.setupUi(self)
-        self.setupSignalAndSlot()
+      #  self.setupSignalAndSlot()
       #  self.pushButtonDelete.setEnabled(False)
 
     def setupUi(self, MainWindow):
@@ -90,7 +90,7 @@ class ProductMainWindowExtStaff(QMainWindow,Ui_MainWindow):
         self.tableWidgetProduct.itemSelectionChanged.connect(self.show_detail_product)
         self.pushButtonClear.clicked.connect(self.clear_product_details)
         self.pushButtonSave.clicked.connect(self.save_product)
-        from PyQt6.QtCore import Qt
+
 
         # Vô hiệu hóa nút Delete
         self.pushButtonDelete.setEnabled(False)
@@ -122,12 +122,7 @@ class ProductMainWindowExtStaff(QMainWindow,Ui_MainWindow):
         self.exportExcel_file.triggered.connect(self.export_to_excel)
         self.importExcel_file.triggered.connect(self.import_from_excel)
         self.actionHelp_2.triggered.connect(self.open_help)
-        self.exportCSV_file.triggered.connect(self.export_to_csv)
-        self.importCSV_file.triggered.connect(self.import_from_csv)
-        self.exportTXT_file.triggered.connect(self.export_to_txt)
-        self.importTXT_file.triggered.connect(self.import_from_txt)
-        self.exportJson_file.triggered.connect(self.export_to_json)
-        self.importJson_file.triggered.connect(self.import_from_json)
+
 
     def set_buttons_enabled(self, enabled):
         self.pushButtonSearch.setEnabled(enabled)
@@ -357,122 +352,6 @@ class ProductMainWindowExtStaff(QMainWindow,Ui_MainWindow):
         self.products = extool.import_products_EXCEL(filename_product)
         self.show_products_gui()
         self.show_categories_gui()
-
-    # TXT:
-    def export_to_txt(self):
-        filename_product = "../dataset/products.txt"
-        extool = ExportTool()
-        extool.export_products_TXT(filename_product, self.products)
-
-        filename_cate = "../dataset/categories.txt"
-        extool.export_categories_TXT(filename_cate, self.categories)
-
-        msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText("Đã export txt thành công")
-        msgbox.setWindowTitle("Thông báo")
-        msgbox.exec()
-
-    def import_from_txt(self):
-        filename_product = '../dataset/products.txt'
-        filename_cate = "../dataset/categories.txt"
-        extool = ExportTool()
-        self.categories = extool.import_categories_TXT(filename_cate)
-        self.products = extool.import_products_TXT(filename_product)
-        self.show_products_gui()
-        self.show_categories_gui()
-
-    # CSV
-    def export_to_csv(self):
-        filename_product = "../dataset/products.csv"
-        extool = ExportTool()
-        extool.export_products_CSV(filename_product, self.products)
-
-        filename_cate = "../dataset/categories.csv"
-        extool.export_categories_CSV(filename_cate, self.categories)
-
-        msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText("Đã export csv thành công")
-        msgbox.setWindowTitle("Thông báo")
-        msgbox.exec()
-
-    def import_from_csv(self):
-        filename_product = '../dataset/products.csv'
-        filename_cate = "../dataset/categories.csv"
-        extool = ExportTool()
-        self.categories = extool.import_categories_CSV(filename_cate)
-        self.products = extool.import_products_CSV(filename_product)
-        self.show_products_gui()
-        self.show_categories_gui()
-
-    # # PICKLE
-    # def export_to_pickle(self):
-    #     filename_product = "../dataset_product/products.pickle"
-    #     extool = ExportTool()
-    #     extool.export_products_PICKLE(filename_product, self.products)
-    #
-    #     filename_cate = "../dataset_product/categories.pickle"
-    #     extool.export_categories_PICKLE(filename_cate, self.categories)
-    #
-    #     msgbox = QMessageBox(self.MainWindow)
-    #     msgbox.setText("Đã export pickle thành công")
-    #     msgbox.setWindowTitle("Thông báo")
-    #     msgbox.exec()
-    #
-    # def import_from_pickle(self):
-    #     filename_product = '../dataset_product/products.pickle'
-    #     filename_cate = "../dataset_product/categories.pickle"
-    #     extool = ExportTool()
-    #     self.categories = extool.import_categories_PICKLE(filename_cate)
-    #     self.products = extool.import_products_PICKLE(filename_product)
-    #     self.show_products_gui()
-    #     self.show_categories_gui()
-
-    # XML
-    # def export_to_xml(self):
-    #     filename_product = "../dataset_product/products.xml"
-    #     extool = ExportTool()
-    #     extool.export_products_XML(filename_product, self.products)
-    #
-    #     filename_cate = "../dataset_product/categories.xml"
-    #     extool.export_categories_XML(filename_cate, self.categories)
-    #
-    #     msgbox = QMessageBox(self.MainWindow)
-    #     msgbox.setText("Đã export xml thành công")
-    #     msgbox.setWindowTitle("Thông báo")
-    #     msgbox.exec()
-    #
-    # def import_from_xml(self):
-    #     filename_product = '../dataset_product/products.xml'
-    #     filename_cate = "../dataset_product/categories.xml"
-    #     extool = ExportTool()
-    #     self.categories = extool.import_categories_XML(filename_cate)
-    #     self.products = extool.import_products_XML(filename_product)
-    #     self.show_products_gui()
-    #     self.show_categories_gui()
-
-    # JSON
-    def export_to_json(self):
-        filename_product = "../dataset/products.json"
-        extool = ExportTool()
-        extool.export_products_JSON(filename_product, self.products)
-
-        filename_cate = "../dataset/categories.json"
-        extool.export_categories_JSON(filename_cate, self.categories)
-
-        msgbox = QMessageBox(self.MainWindow)
-        msgbox.setText("Đã export json thành công")
-        msgbox.setWindowTitle("Thông báo")
-        msgbox.exec()
-
-    def import_from_json(self):
-        filename_product = '../dataset/products.json'
-        filename_cate = "../dataset/categories.json"
-        extool = ExportTool()
-        self.categories = extool.import_categories_JSON(filename_cate)
-        self.products = extool.import_products_JSON(filename_product)
-        self.show_products_gui()
-        self.show_categories_gui()
-
     def open_help(self):
         file_help = "Help.pdf"
         current_path = os.getcwd()

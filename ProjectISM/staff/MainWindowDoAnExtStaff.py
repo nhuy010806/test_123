@@ -287,7 +287,7 @@ class MainWindowDoAnExtStaff(QMainWindow, Ui_MainWindow):
         QMessageBox.information(self.MainWindow, "Thành công", message)
 
     def search_supplier(self):
-        search_id = self.lineEditSupplierID.text().strip().lower()
+        search_id = self.lineEditSearch.text().strip().lower()
 
         if not search_id:
             QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập ID để tìm kiếm.")

@@ -22,5 +22,21 @@
         "quantity": 120,
         "cateid": "Trái cây",
         "date": "2025-03-05"
+    },
+    {
+        "proid": "1",
+        "proname": "Chuối Tiêu",
+        "price": 12000.0,
+        "quantity": 120,
+        "cateid": "Trái cây",
+        "date": "2025-03-05"
+    },
+    {
+        "proid": "2",
+        "proname": "Chuối Tiêu",
+        "price": 12000.0,
+        "quantity": 120,
+        "cateid": "Trái cây",
+        "date": "2025-03-05"
     }
 ]

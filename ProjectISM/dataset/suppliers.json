@@ -48,11 +48,11 @@
         "ten": "Công ty CP MONO",
         "ngaynhaphang": "6/6/2024",
         "tensanpham": "Hành lá",
-        "soluong": 20,
-        "thoigian_hoptac": "8 năm",
-        "chung_nhan": "HACCP",
-        "nguon_goc": "TP.HCM",
-        "thongtin_lienlac": "mono@supplier.com|+84 901 223 334"
+        "soluong": "20",
+        "thoigian_hoptac": "",
+        "chung_nhan": "",
+        "nguon_goc": "",
+        "thongtin_lienlac": ""
     },
     {
         "id": "SUP7",
