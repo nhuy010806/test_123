@@ -18,9 +18,10 @@ class ExportTool:
         }
         df = pd.DataFrame(data)
         df.to_excel(filename, sheet_name="Products", index=False, engine="xlsxwriter")
+
     def export_categories_EXCEL(self, filename, categories):
         data = {
-            "Category Name": [c.cateid for c in categories]
+            "Category Name": [c if isinstance(c, str) else c.cateid for c in categories]
         }
         df = pd.DataFrame(data)
         df.to_excel(filename, sheet_name="Categories", index=False, engine="xlsxwriter")

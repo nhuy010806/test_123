@@ -3,6 +3,7 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox
 
 from libs.DataConnector import DataConnector
 from uis.ui_login.LoginWindow import Ui_MainWindow
+from uis.ui_login.MainWindowExtStaff import MainWindowMenuExtStaff
 
 from uis.ui_login.MainWindowMenuExt import MainWindowMenuExt
 
@@ -42,7 +43,7 @@ class LoginWindowExt(QMainWindow, Ui_MainWindow):
         if self.StaffRadio.isChecked() == True:
             emp = dc.login1(uid, pwd)
             if emp is not None:
-                self.mainwindow = MainWindowMenuExt(self)  # Truyền self vào để quay lại sau này
+                self.mainwindow = MainWindowMenuExtStaff(self)  # Truyền self vào để quay lại sau này
                 self.mainwindow.show()
                 self.close()  # Đóng màn hình đăng nhập
             else:
