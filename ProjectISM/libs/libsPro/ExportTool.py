@@ -12,7 +12,7 @@ class ExportTool:
             "Product Name": [p.proname for p in products],
             "Price": [p.price for p in products],
             "Quantity": [p.quantity for p in products],
-            "Cate Name": [p.cateid for p in products],
+            "Category Name": [p.cateid for p in products],
             "Date": [p.date for p in products],
         }
         df = pd.DataFrame(data)
@@ -32,7 +32,7 @@ class ExportTool:
                 row["Product Name"],
                 float(row["Price"]),
                 int(row["Quantity"]),
-                row["Cate Name"],
+                row["Category Name"],
                 str(row["Date"])
             )
             for _, row in df.iterrows()
@@ -43,6 +43,8 @@ class ExportTool:
         categories = [Category(row["Category Name"])
                       for _, row in df.iterrows()]
         return categories
+
+
 
 
 

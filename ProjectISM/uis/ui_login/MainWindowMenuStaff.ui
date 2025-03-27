@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>572</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+        font: bold 30px &quot;Tahoma&quot;;
+	background-color: rgb(239, 239, 215);
+    }</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>891</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tahoma</family>
+      <pointsize>30</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: bold 30pt &quot;Tahoma&quot;;        /* Cỡ chữ */
+    color: rgb(0, 128, 108);             /* Màu chữ */
+    font-weight: bold;      /* Chữ đậm */
+	background-color:transparent;
+
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Fruits &amp;amp; Vegetables&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Management System&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>190</y>
+      <width>301</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButtonEmployee">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Employee</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonSupplier">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Supplier</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonCategory">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Category</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonProduct">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Product</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonVisualization">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Visualization</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonLogout">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(38, 120, 99);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Logout</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="labelBackground">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>961</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../images/nenanh.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>labelBackground</zorder>
+   <zorder>label</zorder>
+   <zorder>verticalLayoutWidget</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButtonLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>950</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>502</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
