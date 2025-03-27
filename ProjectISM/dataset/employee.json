@@ -24,18 +24,6 @@
         "Address": "Hải Phòng"
     },
     {
-        "EmployeeId": "U3",
-        "EmployeeName": "Lê Văn Châu",
-        "UserName": "Chau345",
-        "Password": "Pass3@123",
-        "Role": "staff",
-        "Email": "chau@company.com",
-        "Level": "Graduated",
-        "Shift": "Shift 3",
-        "Number": "0987600003",
-        "Address": "Đà Nẵng"
-    },
-    {
         "EmployeeId": "U4",
         "EmployeeName": "Phạm Thị Duy",
         "UserName": "Duy456",
@@ -598,5 +586,17 @@
         "Shift": "Shift 1",
         "Number": "0987600050",
         "Address": "Thành phố 50"
+    },
+    {
+        "EmployeeId": "U3",
+        "EmployeeName": "Lê Văn Châu",
+        "UserName": "Chau345",
+        "Password": "Pass3@123",
+        "Role": "staff",
+        "Email": "chau@company.com",
+        "Level": "Graduated",
+        "Shift": "Shift 3",
+        "Number": "0987600003",
+        "Address": "Đà Nẵng"
     }
 ]

@@ -1,7 +1,7 @@
 from PyQt6.QtGui import QMovie
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 
-from libs.DataConnector import DataConnector
+from libs.libsEmp.DataConnector import DataConnector
 from uis.ui_login.LoginWindow import Ui_MainWindow
 from uis.ui_login.MainWindowExtStaff import MainWindowMenuExtStaff
 

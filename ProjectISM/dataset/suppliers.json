@@ -1,25 +1,14 @@
 [
     {
-        "id": "SUP1",
-        "ten": "Công ty TNHH MTP",
-        "ngaynhaphang": "1/1/2024",
-        "tensanpham": "Cà chua",
-        "soluong": 5,
-        "thoigian_hoptac": "5 năm",
-        "chung_nhan": "ISO 9001",
-        "nguon_goc": "Đà Lạt",
-        "thongtin_lienlac": "mtp@supplier.com|+84 912 345 678"
-    },
-    {
         "id": "SUP2",
         "ten": "Công ty CP SKY",
         "ngaynhaphang": "2/2/2024",
         "tensanpham": "Dưa leo",
-        "soluong": "1",
-        "thoigian_hoptac": "",
-        "chung_nhan": "",
-        "nguon_goc": "",
-        "thongtin_lienlac": ""
+        "soluong": 2,
+        "thoigian_hoptac": "10 năm",
+        "chung_nhan": "HACCP",
+        "nguon_goc": "Đà Nẵng",
+        "thongtin_lienlac": "sky@supplier.com|+84 976 543 210"
     },
     {
         "id": "SUP3",
@@ -33,47 +22,80 @@
         "thongtin_lienlac": "jack@supplier.com|+84 988 112 233"
     },
     {
+        "id": "SUP4",
+        "ten": "Công ty CP J97",
+        "ngaynhaphang": "4/4/2024",
+        "tensanpham": "Bông cải",
+        "soluong": 10,
+        "thoigian_hoptac": "7 năm",
+        "chung_nhan": "ISO 22000",
+        "nguon_goc": "Cần Thơ",
+        "thongtin_lienlac": " j97@supplier.com|+84 935 667 899"
+    },
+    {
         "id": "SUP5",
         "ten": "Công ty TNHH KICM",
         "ngaynhaphang": "5/5/2024",
         "tensanpham": "Cà rốt",
-        "soluong": "0",
-        "thoigian_hoptac": "",
-        "chung_nhan": "",
-        "nguon_goc": "",
-        "thongtin_lienlac": ""
-    },
-    {
-        "id": "SUP10",
-        "ten": "Công ty CP MCK",
-        "ngaynhaphang": "10/10/2024",
-        "tensanpham": "Ngó sen",
-        "soluong": "15",
-        "thoigian_hoptac": "",
-        "chung_nhan": "",
-        "nguon_goc": "",
-        "thongtin_lienlac": ""
-    },
-    {
-        "id": "SUP7",
-        "ten": "Công ty TNHH SOOBIN",
-        "ngaynhaphang": "7/7/2024",
-        "tensanpham": "Tỏi",
-        "soluong": "20",
-        "thoigian_hoptac": "",
-        "chung_nhan": "",
-        "nguon_goc": "",
-        "thongtin_lienlac": ""
+        "soluong": 19,
+        "thoigian_hoptac": "12 năm",
+        "chung_nhan": "VietGAP",
+        "nguon_goc": "Hà Nội",
+        "thongtin_lienlac": "kicm@supplier.com|+84 923 445 678"
     },
     {
         "id": "SUP6",
         "ten": "Công ty CP MONO",
         "ngaynhaphang": "6/6/2024",
         "tensanpham": "Hành lá",
-        "soluong": "12",
-        "thoigian_hoptac": "",
-        "chung_nhan": "",
-        "nguon_goc": "",
-        "thongtin_lienlac": ""
+        "soluong": 20,
+        "thoigian_hoptac": "8 năm",
+        "chung_nhan": "HACCP",
+        "nguon_goc": "TP.HCM",
+        "thongtin_lienlac": "mono@supplier.com|+84 901 223 334"
+    },
+    {
+        "id": "SUP7",
+        "ten": "Công ty TNHH SOOBIN",
+        "ngaynhaphang": "7/7/2024",
+        "tensanpham": "Tỏi",
+        "soluong": 25,
+        "thoigian_hoptac": "15 năm",
+        "chung_nhan": "Organic",
+        "nguon_goc": "Hải Phòng",
+        "thongtin_lienlac": "soobin@supplier.com|+84 987 654 321"
+    },
+    {
+        "id": "SUP8",
+        "ten": "Công ty CP DOMDOM",
+        "ngaynhaphang": "8/8/2024",
+        "tensanpham": "Rau muống",
+        "soluong": 29,
+        "thoigian_hoptac": "6 năm",
+        "chung_nhan": "ISO 14001",
+        "nguon_goc": "Bình Thuận",
+        "thongtin_lienlac": "domdom@supplier.com|+84 934 112 778"
+    },
+    {
+        "id": "SUP9",
+        "ten": "Công ty TNHH HTH",
+        "ngaynhaphang": "9/9/2024",
+        "tensanpham": "Bắp cải",
+        "soluong": 15,
+        "thoigian_hoptac": "9 năm",
+        "chung_nhan": "ISO 22000",
+        "nguon_goc": "Đà Lạt",
+        "thongtin_lienlac": "hth@supplier.com|+84 966 778 889"
+    },
+    {
+        "id": "SUP10",
+        "ten": "Công ty CP MCK",
+        "ngaynhaphang": "10/10/2024",
+        "tensanpham": "Ngó sen",
+        "soluong": 15,
+        "thoigian_hoptac": "10 năm",
+        "chung_nhan": "HACCP",
+        "nguon_goc": "Tiền Giang",
+        "thongtin_lienlac": "mck@supplier.com|+84 977 665 432"
     }
 ]

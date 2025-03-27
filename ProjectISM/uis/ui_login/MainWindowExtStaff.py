@@ -17,7 +17,7 @@ class MainWindowMenuExtStaff( QMainWindow, Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
-        self.movie = QMovie("../images/menubackground.gif")
+        self.movie = QMovie("../../images/menubackground.gif")
         self.labelBackground.setMovie(self.movie)
         self.movie.start()
 

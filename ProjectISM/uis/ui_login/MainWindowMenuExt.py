@@ -1,9 +1,9 @@
 from PyQt6.QtGui import QMovie
 from PyQt6.QtWidgets import QMainWindow
 
-from uiCate.CategoryMainWindowExt import ProductMainWindow1Ext
-from uiPro.ProductMainWindowExt import ProductMainWindowExt
-from uiSup.MainWindowDoAnExt import MainWindowDoAnExt
+from uis.uiCate.CategoryMainWindowExt import ProductMainWindow1Ext
+from uis.uiPro.ProductMainWindowExt import ProductMainWindowExt
+from uis.uiSup.MainWindowDoAnExt import MainWindowDoAnExt
 from uis.uiVisualization.MainWindowExt import MainWindowEx
 from uis.ui_employee.MainWindowEmployeeExt import MainWindowEmployeeExt
 from uis.ui_login.MainWindowMenu import Ui_MainWindow

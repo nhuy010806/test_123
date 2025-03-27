@@ -10,7 +10,7 @@ from models.Category import Category
 from uis.uiCate.CategoryMainWindow import Ui_MainWindow
 
 
-class CategoryMainWindowExtStaff(QMainWindow, Ui_MainWindow):
+class ProductMainWindow1Ext(QMainWindow, Ui_MainWindow):
     category_updated = pyqtSignal()
     def __init__(self,menu_window):
         super().__init__()
@@ -20,7 +20,6 @@ class CategoryMainWindowExtStaff(QMainWindow, Ui_MainWindow):
         self.categories = []
         self.selected_cate = None
         self.setupUi(self)
-      #  self.pushButtonDelete.setEnabled(False)
         #self.product_window = product_window
 
 
@@ -46,29 +45,7 @@ class CategoryMainWindowExtStaff(QMainWindow, Ui_MainWindow):
     def setupSignalAndSlot(self):
         self.listWidgetCategory.itemSelectionChanged.connect(self.filter_category)
         self.pushButtonSave.clicked.connect(self.save_category)
-        from PyQt6.QtCore import Qt
-
-        # Vô hiệu hóa nút Delete
-        self.pushButtonDelete.setEnabled(False)
-
-        # Cấm nút nhận focus để tránh thay đổi màu khi bấm vào widget khác
-        self.pushButtonDelete.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-
-        # Ép màu xám riêng cho nút Delete (dù có stylesheet chung)
-        self.pushButtonDelete.setStyleSheet("""
-            QPushButton {
-                background-color: #aaaaaa !important;
-                color: #ffffff !important;
-                border: 1px solid #888888 !important;
-                border-radius: 15px;
-                font: bold 12pt "Tahoma";
-            }
-            QPushButton:hover, QPushButton:focus {
-                background-color: #aaaaaa !important;
-                color: #ffffff !important;
-            }
-        """)
-
+        self.pushButtonDelete.clicked.connect(self.delete_category)
         self.pushButtonShowall.clicked.connect(self.show_all_category)
         self.actionCurrentHelp.triggered.connect(self.open_help)
         self.pushButtonBack.clicked.connect(self.back_window)
@@ -77,6 +54,7 @@ class CategoryMainWindowExtStaff(QMainWindow, Ui_MainWindow):
     def set_buttons_enabled(self, enabled: bool):
 
         self.pushButtonSave.setEnabled(enabled)
+        self.pushButtonDelete.setEnabled(enabled)
         self.pushButtonClear.setEnabled(enabled)
 
     def filter_category(self):
@@ -107,27 +85,27 @@ class CategoryMainWindowExtStaff(QMainWindow, Ui_MainWindow):
         #     self.product_window.save_update_category(category)
 
 
-    # def delete_category(self):
-    #     cateid = self.lineEditCateID.text().strip()
-    #     if not cateid:
-    #         QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng chọn một Cate ID để xóa!")
-    #         return
-    #
-    #     msgbox = QMessageBox(self.MainWindow)
-    #     msgbox.setText(f"Bạn có chắc muốn xóa [{cateid}] ?")
-    #     msgbox.setWindowTitle("Xác nhận xóa!")
-    #     msgbox.setIcon(QMessageBox.Icon.Critical)
-    #     buttons = QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
-    #     msgbox.setStandardButtons(buttons)
-    #
-    #     if msgbox.exec() == QMessageBox.StandardButton.No:
-    #         return
-    #
-    #     self.dc.delete_category(cateid)
-    #     self.categories = self.dc.get_all_categories()
-    #     self.show_categories_gui()
-    #     self.lineEditCateID.clear()
-    #     self.lineEditDescription.clear()
+    def delete_category(self):
+        cateid = self.lineEditCateID.text().strip()
+        if not cateid:
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng chọn một Cate ID để xóa!")
+            return
+
+        msgbox = QMessageBox(self.MainWindow)
+        msgbox.setText(f"Bạn có chắc muốn xóa [{cateid}] ?")
+        msgbox.setWindowTitle("Xác nhận xóa!")
+        msgbox.setIcon(QMessageBox.Icon.Critical)
+        buttons = QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        msgbox.setStandardButtons(buttons)
+
+        if msgbox.exec() == QMessageBox.StandardButton.No:
+            return
+
+        self.dc.delete_category(cateid)
+        self.categories = self.dc.get_all_categories()
+        self.show_categories_gui()
+        self.lineEditCateID.clear()
+        self.lineEditDescription.clear()
 
     def show_all_category(self):
         self.categories = self.dc.get_all_categories()
@@ -143,7 +121,7 @@ class CategoryMainWindowExtStaff(QMainWindow, Ui_MainWindow):
         self.set_buttons_enabled(True)
 
     def open_help(self):
-        file_help = "HELP CATEGORY.pdf"
+        file_help = "HELP PRODUCT.pdf"
         current_path = os.getcwd()
         file_help = f"{current_path}/../asset/{file_help}"
         webbrowser.open_new(file_help)

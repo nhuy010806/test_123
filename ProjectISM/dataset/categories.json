@@ -12,6 +12,14 @@
         "description": "Sản phẩm hữu cơ, an toàn và không hóa chất"
     },
     {
+        "cateid": "Nông sản địa phương",
+        "description": "Nông sản được trồng và thu hoạch tại địa phương"
+    },
+    {
+        "cateid": "Trứng gà, vịt",
+        "description": "Trứng sạch từ gà và vịt, giàu protein"
+    },
+    {
         "cateid": "Sữa & Sản phẩm từ sữa",
         "description": "Sữa tươi và các sản phẩm từ sữa như phô mai, sữa chua"
     },

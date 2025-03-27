@@ -1,13 +1,12 @@
 import os
-import traceback
 import webbrowser
 
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QColor, QMovie
 from PyQt6.QtWidgets import QTableWidgetItem, QMessageBox, QMainWindow
 
-from libs.DataConnector import DataConnector
-from libs.ExportTool import ExportTool
+from libs.libsEmp.DataConnector import DataConnector
+from libs.libsEmp.ExportTool import ExportTool
 from models.Employee import Employee
 from uis.ui_employee.MainWindowEmployee import Ui_MainWindow
 
