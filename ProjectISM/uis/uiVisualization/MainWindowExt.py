@@ -18,13 +18,14 @@ class MainWindowEx(QMainWindow,Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
-        self.setupPlot()
+       # self.setupPlot()
         self.pushButtonBarChart.clicked.connect(self.showBarChart)
         self.pushButtonLineChart.clicked.connect(self.showLinePlotChart)
         self.pushButtonPieChart.clicked.connect(self.showPieChart)
         self.pushButtonShowAll_2.clicked.connect(self.showAllObject)
         self.pushButtonPieShift.clicked.connect(self.showPieShift)
         self.pushButtonDistribution.clicked.connect(self.showDistribution)
+        self.pushButtonExit.clicked.connect(self.xuly_back)
 
     def show(self):
         QMainWindow.show(self)
@@ -54,14 +55,14 @@ class MainWindowEx(QMainWindow,Ui_MainWindow):
         self.figure.clear()
         ax = self.figure.add_subplot(111)
         # Gộp số lượng sản phẩm theo danh mục và tên sản phẩm
-        df_grouped = df.groupby(["Cate ID", "Product Name"], as_index=False)["Quantity"].sum()
+        df_grouped = df.groupby(["Category Name", "Product Name"], as_index=False)["Quantity"].sum()
         # Danh sách danh mục sản phẩm
-        unique_categories = df_grouped["Cate ID"].unique()
+        unique_categories = df_grouped["Category Name"].unique()
         # Tạo màu sắc riêng cho từng danh mục
         colors = plt.cm.Set2(range(len(unique_categories)))
         category_colors = {category: colors[i] for i, category in enumerate(unique_categories)}
         # Gán màu sắc theo danh mục
-        df_grouped["color"] = df_grouped["Cate ID"].map(category_colors)
+        df_grouped["color"] = df_grouped["Category Name"].map(category_colors)
         # Vẽ biểu đồ cột
         ax.bar(df_grouped["Product Name"], df_grouped["Quantity"], color=df_grouped["color"])
         # Thiết lập tiêu đề và nhãn
@@ -71,11 +72,14 @@ class MainWindowEx(QMainWindow,Ui_MainWindow):
         ax.set_ylabel("Số lượng")
         # Cập nhật lại canvas
         self.canvas.draw()
+        print(df.columns)
+
+
     def showLinePlotChart(self):
         file_path = '../dataset/products.xlsx'
         df = self.load_data(file_path)
         # Chuyển cột Date sang dạng datetime
-        df['Date'] = pd.to_datetime(df['Date'], format='%d-%m-%Y', dayfirst=True)
+        df['Date'] = pd.to_datetime(df['Date'], format='%Y-%m-%d', dayfirst=True)
         # Gộp Quantity theo ngày
         df_grouped = df.groupby('Date', as_index=False)['Quantity'].sum()
         # Sắp xếp theo ngày
@@ -101,7 +105,7 @@ class MainWindowEx(QMainWindow,Ui_MainWindow):
         df = self.load_data(file_path)
         self.figure.clear()
         ax = self.figure.add_subplot(111)
-        category_data = df.groupby("Cate ID")["Quantity"].sum()
+        category_data = df.groupby("Category Name")["Quantity"].sum()
         ax.pie(category_data, labels=category_data.index, autopct='%1.2f%%', startangle=140)
         ax.set_title("Phân bổ danh mục theo số lượng")
         self.canvas.draw()
@@ -156,6 +160,9 @@ class MainWindowEx(QMainWindow,Ui_MainWindow):
             self.canvas.draw()
         else:
             print(f"Cột '{column_name}' không tồn tại trong file Excel.")
+    def xuly_back(self):
+        self.menu_window.show()
+        self.close()
 
 
 
