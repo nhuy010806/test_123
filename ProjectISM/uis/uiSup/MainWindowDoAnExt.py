@@ -86,6 +86,7 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
         self.pushButtonBack.clicked.connect(self.xuly_quayve)
         self.actionCurrent_Help.triggered.connect(self.open_help)
         self.tableWidgetSupplier.itemSelectionChanged.connect(self.show_detail_product)
+        self.pushButtonEnter.clicked.connect(self.update_quantity_on_widget)
 
         self.lineEditSupplierName.textChanged.connect(self.toggle_clear_button)
         self.lineEditQuantity.textChanged.connect(self.toggle_clear_button)
@@ -113,6 +114,36 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
             if self.tableWidgetSupplier.item(index, j):
                 self.tableWidgetSupplier.item(index, j).setBackground(pastel_color)
 
+    def update_quantity_on_widget(self):
+        selected_row = self.tableWidgetSupplier.currentRow()
+        if selected_row < 0:
+            QMessageBox.warning(self, "Lỗi", "Vui lòng chọn một nhà cung cấp trước khi nhập số lượng.")
+            return
+
+        try:
+            input_value = int(self.lineEditNhap.text()) if self.lineEditNhap.text() else 0
+            output_value = int(self.lineEditXuat.text()) if self.lineEditXuat.text() else 0
+
+            # Get the old quantity from the table (column 4 is the quantity)
+            old_quantity = int(self.tableWidgetSupplier.item(selected_row, 4).text()) if self.tableWidgetSupplier.item(
+                selected_row, 4) and self.tableWidgetSupplier.item(selected_row, 4).text().isdigit() else 0
+
+            # Calculate new quantity
+            new_quantity = old_quantity + input_value - output_value
+
+            if new_quantity < 0:
+                QMessageBox.warning(self, "Lỗi", "Số lượng không thể nhỏ hơn 0.")
+                return
+
+            # Update the quantity in the table
+            self.tableWidgetSupplier.setItem(selected_row, 4, QTableWidgetItem(str(new_quantity)))
+
+            # Update the quantity in lineEditQuantity for saving
+            self.lineEditQuantity.setText(str(new_quantity))
+
+        except ValueError:
+            QMessageBox.warning(self, "Lỗi", "Vui lòng nhập số hợp lệ.")
+
     def show_all_suppliers(self):
         self.suppliers = self.dc.get_all_suppliers()
         self.show_supplier_gui()
@@ -137,7 +168,7 @@ class MainWindowDoAnExt(QMainWindow, Ui_MainWindow):
                 
             f"Thông tin liên lạc: {supplier.thongtin_lienlac}"
         )
-        self.textEditDescription.setText(description)
+        # self.textEditDescription.setText(description)
 
     # def clear_supplier_detail(self):
     #     self.lineEditSupplierID.setText("")
