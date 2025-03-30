@@ -1,0 +1,126 @@
+import os
+import webbrowser
+
+from PyQt6.QtGui import QMovie
+from PyQt6.QtCore import pyqtSignal
+from PyQt6.QtWidgets import QListWidgetItem, QMessageBox, QMainWindow
+
+from libs.libsCate.DataConnector import DataConnector
+from models.Category import Category
+from uis.uiCate.CategoryMainWindow import Ui_MainWindow
+
+
+class CategoryMainWindowExtStaff(QMainWindow, Ui_MainWindow):
+    category_updated = pyqtSignal()
+    def __init__(self,menu_window):
+        super().__init__()
+        self.menu_window=menu_window
+        self.dc = DataConnector()
+        self.categories = []
+        self.selected_cate = None
+        self.setupUi(self)
+
+
+    def setupUi(self, MainWindow):
+        super().setupUi(MainWindow)
+        self.MainWindow = MainWindow
+        self.show_categories_gui()
+        self.setupSignalAndSlot()
+        self.movie = QMovie("../images/FARMERS1.gif")
+        self.labelBackground.setMovie(self.movie)
+        self.movie.start()
+        self.set_buttons_enabled(False)
+
+    def showWindow(self):
+        self.show()
+
+    def show_categories_gui(self):
+        self.listWidgetCategory.clear()
+        for cate in self.categories:
+            cate_item = QListWidgetItem(str(cate.cateid))
+            self.listWidgetCategory.addItem(cate_item)
+
+    def setupSignalAndSlot(self):
+        self.listWidgetCategory.itemSelectionChanged.connect(self.filter_category)
+        self.pushButtonSave.clicked.connect(self.save_category)
+        from PyQt6.QtCore import Qt
+
+        self.pushButtonDelete.setEnabled(False)
+
+        self.pushButtonDelete.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+
+        self.pushButtonDelete.setStyleSheet("""
+            QPushButton {
+                background-color: #aaaaaa !important;
+                color: #ffffff !important;
+                border: 1px solid #888888 !important;
+                border-radius: 15px;
+                font: bold 12pt "Tahoma";
+            }
+            QPushButton:hover, QPushButton:focus {
+                background-color: #aaaaaa !important;
+                color: #ffffff !important;
+            }
+        """)
+
+        self.pushButtonShowall.clicked.connect(self.show_all_category)
+        self.actionCurrentHelp.triggered.connect(self.open_help)
+        self.pushButtonBack.clicked.connect(self.back_window)
+        self.pushButtonClear.clicked.connect(self.clear_cate_details)
+
+    def set_buttons_enabled(self, enabled: bool):
+
+        self.pushButtonSave.setEnabled(enabled)
+        self.pushButtonClear.setEnabled(enabled)
+
+    def filter_category(self):
+        row = self.listWidgetCategory.currentRow()
+        if row < 0 or row >= len(self.categories):
+            return
+        self.selected_cate = self.categories[row]
+        self.lineEditCateID.setText(self.selected_cate.cateid)
+        self.lineEditDescription.setText(self.selected_cate.description)
+
+    def save_category(self):
+        cateid = self.lineEditCateID.text().strip()
+        description = self.lineEditDescription.text().strip() # Lấy description từ LineEdit
+        if not cateid:
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập Cate ID!")
+            return
+        category = Category(cateid, description)
+        index = self.dc.find_index_category(category.cateid)
+        if index == -1:
+            self.dc.save_newcategory(category)
+        else:
+            self.dc.save_update_category(category)
+
+        self.categories = self.dc.get_all_categories()
+        self.show_categories_gui()
+        self.category_updated.emit()
+        QMessageBox.information(self.MainWindow, "Thành công", "Danh mục mới đã được thêm!")
+
+    def show_all_category(self):
+        self.categories = self.dc.get_all_categories()
+
+        if not self.categories:
+            QMessageBox.information(
+                self.MainWindow,
+                "Thông báo",
+                " Hiện không có danh mục nào trong hệ thống."
+            )
+            return
+        self.show_categories_gui()
+        self.set_buttons_enabled(True)
+
+    def open_help(self):
+        file_help = "HELP CATEGORY.pdf"
+        current_path = os.getcwd()
+        file_help = f"{current_path}/../asset/{file_help}"
+        webbrowser.open_new(file_help)
+    def back_window(self):
+        self.MainWindow.close()
+        self.menu_window.show()
+
+    def clear_cate_details(self):
+        self.lineEditCateID.clear()
+        self.lineEditDescription.clear()

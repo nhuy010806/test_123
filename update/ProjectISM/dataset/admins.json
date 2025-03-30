@@ -1,0 +1,32 @@
+[
+    {
+        "adminId": "ADMIN1",
+        "adminName": "Nguyễn Văn A",
+        "adminUsername": "admin",
+        "adminPass": "123"
+    },
+    {
+        "adminId": "ADMIN2",
+        "adminName": "Trần Thị B",
+        "adminUsername": "admin.tran",
+        "adminPass": "admin234"
+    },
+    {
+        "adminId": "ADMIN3",
+        "adminName": "Lê Hoàng C",
+        "adminUsername": "admin.le",
+        "adminPass": "admin345"
+    },
+    {
+        "adminId": "ADMIN4",
+        "adminName": "Phạm Thị D",
+        "adminUsername": "admin.pham",
+        "adminPass": "admin456"
+    },
+    {
+        "adminId": "ADMIN5",
+        "adminName": "Đỗ Văn E",
+        "adminUsername": "admin.do",
+        "adminPass": "admin567"
+    }
+]
